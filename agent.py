@@ -30,6 +30,8 @@ try:
 except Exception:
     requests = None
 
+# S'assurer que le dossier du script est dans le chemin Python
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import market  # module local
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
