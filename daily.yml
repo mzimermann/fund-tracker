@@ -1,0 +1,63 @@
+name: Smart Money Radar — run quotidien
+
+on:
+  schedule:
+    # Tous les jours à 11:00 UTC (≈ 13h Paris / 7h ET, après l'ouverture US).
+    # Ajustez si besoin : https://crontab.guru
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}   # bouton "Run workflow" manuel dans l'onglet Actions
+
+permissions:
+  contents: write          # nécessaire pour committer data.json
+
+concurrency:
+  group: smart-money-radar
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Dépendances
+        run: pip install -r requirements.txt
+
+      - name: Exécuter l'agent
+        env:
+          # --- SEC (recommandé : votre e-mail réel dans le User-Agent) ---
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          # --- E-mail (obligatoire pour recevoir le rapport) ---
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO:   ${{ secrets.MAIL_TO }}
+          # --- Optionnels (améliorent la fiabilité / le contexte) ---
+          OPENFIGI_API_KEY:  ${{ secrets.OPENFIGI_API_KEY }}
+          TE_API_KEY:        ${{ secrets.TE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # --- Notification push mobile optionnelle (app ntfy) ---
+          NTFY_TOPIC:        ${{ secrets.NTFY_TOPIC }}
+          NTFY_SERVER:       ${{ secrets.NTFY_SERVER }}
+        run: cd $GITHUB_WORKSPACE && python agent.py
+
+      - name: Committer data.json (si modifié)
+        run: |
+          git config user.name  "smart-money-bot"
+          git config user.email "actions@github.com"
+          git add data.json .cache/state.json .cache/cusip_map.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Aucun changement de données."
+          else
+            git commit -m "data: maj $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
