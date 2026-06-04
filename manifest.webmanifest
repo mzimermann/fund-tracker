@@ -1,0 +1,19 @@
+{
+  "name": "Smart Money Radar",
+  "short_name": "Smart Money",
+  "description": "Radar des mouvements 13F des plus grands fonds, replacés dans le contexte de marché.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0e12",
+  "theme_color": "#0b0e12",
+  "categories": ["finance", "news", "business"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
