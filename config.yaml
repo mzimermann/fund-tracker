@@ -1,0 +1,158 @@
+# ============================================================
+#  config.yaml — paramètres de l'agent Smart Money Radar
+# ============================================================
+
+# --- Fonds suivis -------------------------------------------
+# Le CIK est l'identifiant SEC du déclarant 13F.
+# ⚠️  VÉRIFIEZ chaque CIK sur https://www.sec.gov/cgi-bin/browse-edgar
+#     (recherche par nom, type = 13F). Ceux marqués "verify: true"
+#     sont à confirmer avant le premier run.
+#
+# tier : actionnable | contexte | faible-signal
+#   - actionnable  : portefeuille concentré, signal fort
+#   - contexte     : utile pour les grands thèmes
+#   - faible-signal: indiciel/diversifié (variations ≈ rééquilibrage)
+
+funds:
+  # --- Super-investisseurs concentrés (cœur du signal) ---
+  - name: "Berkshire Hathaway"
+    slug: berkshire
+    cik: "0001067983"
+    manager: "Greg Abel (ère post-Buffett)"
+    style: "Value concentré / long terme"
+    tier: actionnable
+    featured: true
+
+  - name: "Pershing Square"
+    slug: pershing
+    cik: "0001336528"
+    manager: "Bill Ackman"
+    style: "Activiste concentré"
+    tier: actionnable
+
+  - name: "Appaloosa"
+    slug: appaloosa
+    cik: "0001656456"      # verify: true
+    manager: "David Tepper"
+    style: "Macro / opportuniste"
+    tier: actionnable
+
+  - name: "Duquesne Family Office"
+    slug: duquesne
+    cik: "0001571401"      # verify: true
+    manager: "Stan Druckenmiller"
+    style: "Macro multi-actifs"
+    tier: actionnable
+
+  # --- Les 10 plus gros gérants (demandés dans le cahier des charges) ---
+  - name: "Bridgewater Associates"
+    slug: bridgewater
+    cik: "0001350694"
+    manager: "Ray Dalio (fondateur)"
+    style: "Macro systématique / diversifié"
+    tier: contexte
+
+  - name: "BlackRock"
+    slug: blackrock
+    cik: "0001364742"
+    manager: "Larry Fink"
+    style: "Indiciel / multi-stratégies"
+    tier: faible-signal
+
+  - name: "Vanguard Group"
+    slug: vanguard
+    cik: "0000102909"
+    manager: "Mutualiste"
+    style: "Indiciel"
+    tier: faible-signal
+
+  - name: "State Street (SSGA)"
+    slug: statestreet
+    cik: "0000093751"
+    manager: "SPDR"
+    style: "Indiciel / ETF"
+    tier: faible-signal
+
+  - name: "FMR LLC (Fidelity)"
+    slug: fidelity
+    cik: "0000315066"
+    manager: "Gestion active + indicielle"
+    style: "Diversifié"
+    tier: faible-signal
+
+  - name: "T. Rowe Price"
+    slug: trowe
+    cik: "0001113169"      # verify: true
+    manager: "Gestion active"
+    style: "Croissance / diversifié"
+    tier: faible-signal
+
+  - name: "Goldman Sachs Group"
+    slug: goldman
+    cik: "0000886982"
+    manager: "Gestion d'actifs"
+    style: "Multi-stratégies"
+    tier: faible-signal
+
+  - name: "Morgan Stanley"
+    slug: morganstanley
+    cik: "0000895421"
+    manager: "Gestion d'actifs"
+    style: "Multi-stratégies"
+    tier: faible-signal
+
+  # Capital Group : plusieurs entités déposent (Capital World Investors,
+  # Capital Research Global Investors...). À ajouter après vérification du CIK.
+  # - name: "Capital World Investors"
+  #   slug: capital
+  #   cik: "00000000"      # verify: true
+  #   tier: contexte
+
+# --- Seuils de détection (cahier des charges) ---------------
+thresholds:
+  new_position_min_weight_pct: 0.5   # nouvelle position : poids ≥ 0,5 %
+  exit_min_prev_weight_pct: 0.5      # sortie totale : pesait ≥ 0,5 %
+  share_change_pct: 20               # variation du nb de titres > 20 %
+  big_move_min_weight_pct: 1.0       # ... et poids ≥ 1 %
+  top_n: 5                           # surveiller le top 5
+  consensus_min_funds: 2             # même mouvement chez ≥ 2 fonds = consensus
+
+# --- Contexte de marché -------------------------------------
+market:
+  # Indices / matières premières / taux affichés dans le bandeau
+  snapshot_tickers:
+    "S&P 500": "^GSPC"
+    "Nasdaq": "^IXIC"
+    "Dow Jones": "^DJI"
+    "Russell 2000": "^RUT"
+    "VIX": "^VIX"
+    "Brent": "BZ=F"
+    "WTI": "CL=F"
+    "Or": "GC=F"
+    "10 ans US": "^TNX"
+    "Bitcoin": "BTC-USD"
+  # Flux RSS d'actualité (testés en priorité, avec repli automatique)
+  rss_feeds:
+    - "https://www.investing.com/rss/news_25.rss"      # Investing.com — actu marchés
+    - "https://www.investing.com/rss/news_285.rss"     # Investing.com — économie
+    - "https://www.financialjuice.com/feed.ashx?xy=rss" # FinancialJuice (peut nécessiter un flux perso)
+  # Repli si les flux ci-dessus échouent (Investing.com/FinancialJuice bloquent parfois les robots)
+  rss_fallback:
+    - "https://news.google.com/rss/search?q=stock+market+when:1d&hl=en-US&gl=US&ceid=US:en"
+  tradingeconomics:
+    # Clé gratuite limitée : "guest:guest" (quelques pays). Clé complète via secret TE_API_KEY.
+    calendar_days_ahead: 7
+    min_importance: 2          # 1=faible, 2=moyenne, 3=haute
+  llm_commentary: false        # true => lecture marché rédigée via l'API Anthropic (ANTHROPIC_API_KEY)
+
+# --- Email --------------------------------------------------
+email:
+  subject_prefix: "📈 Smart Money Radar"
+  # Adresses et identifiants SMTP fournis via secrets (voir README) :
+  #   MAIL_FROM, MAIL_TO, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+  send_when_no_alert: true     # envoyer un mail "rien de neuf" hors saison 13F
+
+# --- Site ---------------------------------------------------
+site:
+  # URL publique du tableau de bord (GitHub Pages) insérée dans l'email
+  dashboard_url: "https://VOTRE-UTILISATEUR.github.io/fund-tracker/"
