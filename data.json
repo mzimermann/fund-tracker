@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T15:19:21.539820Z",
+    "generated_at": "2026-06-05T17:33:50.155071Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -18,76 +18,76 @@
   },
   "market": {
     "as_of": "05/06/2026",
-    "regime_label": "Risque-on",
-    "regime_text": "Régime neutre (VIX 16.3). S&P 500 à 7 499. Brent 93.7 $. 10 ans US à 0.45 %.",
+    "regime_label": "Mitigé",
+    "regime_text": "Régime neutre (VIX 18.8). S&P 500 à 7 450. Brent 92.9 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
-        "value": "7 499",
-        "change": "-1,12 %",
+        "value": "7 450",
+        "change": "-1,77 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Nasdaq",
-        "value": "26 269",
-        "change": "-2,09 %",
+        "value": "26 032",
+        "change": "-2,98 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Dow Jones",
-        "value": "51 410",
-        "change": "-0,29 %",
+        "value": "51 134",
+        "change": "-0,83 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Russell 2000",
-        "value": "2 889",
-        "change": "-1,59 %",
+        "value": "2 851",
+        "change": "-2,88 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "VIX",
-        "value": "16.3",
-        "change": "+5,91 %",
+        "value": "18.8",
+        "change": "+21,95 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "93.7 $",
-        "change": "-1,40 %",
+        "value": "92.9 $",
+        "change": "-2,26 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "91.2 $",
-        "change": "-1,98 %",
+        "value": "90.1 $",
+        "change": "-3,17 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 388.9 $",
-        "change": "-1,94 %",
+        "value": "4 363.9 $",
+        "change": "-2,50 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.45 %",
-        "change": "+1,32 %",
+        "change": "+1,23 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "60 759 $",
-        "change": "-4,77 %",
+        "value": "60 750 $",
+        "change": "-4,78 %",
         "dir": "down",
         "sub": ""
       }
@@ -98,32 +98,32 @@
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Why is Intel stock sliding today?"
+        "title": "Goldman Sachs names top Canadian oil stocks for free cash flow growth"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Why is Strategy stock sliding today?"
+        "title": "Why is GoPro stock sliding 10% today?"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Norway stocks higher at close of trade; Oslo OBX up 0.04%"
+        "title": "Why is Hang Feng Technology Innovation stock crashing 35% today?"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Israel stocks higher at close of trade; TA 35 up 0.40%"
+        "title": "Why is HeartCore Enterprises stock selling off 20% today?"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Mega-cap and large-cap stock movers on Friday"
+        "title": "Law firm Morgan & Morgan explores stake sale, eyes long-term IPO, sources say"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Why is SanDisk stock sliding today?"
+        "title": "Why is Nyxoah stock plummeting today?"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
@@ -544,15 +544,6 @@
       "name": "JPMorgan Chase",
       "date": "2026-06-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.40%"
-    },
-    {
-      "source": "Conglomérat",
-      "entity": "SoftBank (PR Newswire)",
-      "type": "buy",
-      "ticker": "",
-      "name": "Cellebrite annonce des événements destinés aux investisseurs prévus pour le 10 juin 2026",
-      "date": "Fri, 5 Jun",
-      "note": "Cellebrite annonce des événements destinés aux investisseurs prévus pour le 10 juin 2026"
     }
   ]
 }
