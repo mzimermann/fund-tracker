@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T13:17:39.693854Z",
+    "generated_at": "2026-06-05T13:36:31.813299Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -19,27 +19,27 @@
   "market": {
     "as_of": "05/06/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime calme (VIX 15.9). S&P 500 à 7 584. Brent 94.4 $. 10 ans US à 0.45 %.",
+    "regime_text": "Régime calme (VIX 15.9). S&P 500 à 7 533. Brent 94.5 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
-        "value": "7 584",
-        "change": "+0,41 %",
-        "dir": "up",
+        "value": "7 533",
+        "change": "-0,67 %",
+        "dir": "down",
         "sub": ""
       },
       {
         "label": "Nasdaq",
-        "value": "26 831",
-        "change": "-0,09 %",
+        "value": "26 506",
+        "change": "-1,21 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Dow Jones",
-        "value": "51 562",
-        "change": "+1,73 %",
-        "dir": "up",
+        "value": "51 530",
+        "change": "-0,06 %",
+        "dir": "down",
         "sub": ""
       },
       {
@@ -52,42 +52,42 @@
       {
         "label": "VIX",
         "value": "15.9",
-        "change": "+3,51 %",
+        "change": "+3,44 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "94.4 $",
-        "change": "-0,64 %",
+        "value": "94.5 $",
+        "change": "-0,58 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "92.1 $",
-        "change": "-1,00 %",
+        "value": "92.0 $",
+        "change": "-1,11 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 437.9 $",
-        "change": "-0,85 %",
+        "value": "4 439.5 $",
+        "change": "-0,81 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.45 %",
-        "change": "+1,27 %",
+        "change": "+1,18 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "61 969 $",
-        "change": "-2,87 %",
+        "value": "62 027 $",
+        "change": "-2,78 %",
         "dir": "down",
         "sub": ""
       }
@@ -98,32 +98,32 @@
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Top insider buys and sells disclosed on Thursday"
+        "title": "JPMorgan upgrades chipotle, sees upside as growth slowdown priced in"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Nvidia certifies Samsung, SK Hynix and Micron for Vera Rubin HBM4 supply"
+        "title": "Huntsman stock rises on $50M sale of Italian auto unit"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Nuwellis stock plunges 65% on $6M offering at $0.30 per share"
+        "title": "Hillhouse nears stake purchase in Goldman-backed LRQA - Bloomberg"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Morgan Stanley tracks prescription trends for US neurology drugs"
+        "title": "All In FutureTech Alliance stock falls after reverse split approval"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "BioCardia stock surges on FDA trial pathway confirmation"
+        "title": "Best Copper Stocks: Goldman Sachs Names 2 Top Picks as Global Supply Tightens"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Western Asset Management settles SEC charges for $100 million"
+        "title": "Climb Bio stock dips despite initial CLYM116 safety data"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
