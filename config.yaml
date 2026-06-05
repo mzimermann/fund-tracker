@@ -156,3 +156,15 @@ email:
 site:
   # URL publique du tableau de bord (GitHub Pages) insérée dans l'email
   dashboard_url: "https://VOTRE-UTILISATEUR.github.io/fund-tracker/"
+
+# --- Achats insiders (Form 4 via OpenInsider) ----------------
+insiders:
+  enabled: true               # désactiver si OpenInsider est inaccessible
+  days: 7                     # remonter N jours
+  min_value_usd: 50000        # valeur minimale de la transaction
+
+# --- Analyse IA DeepSeek ------------------------------------
+deepseek:
+  enabled: false              # passer à true + ajouter DEEPSEEK_API_KEY en secret
+  model: "deepseek-chat"      # "deepseek-reasoner" pour l'analyse plus profonde
+  # Repli automatique sur OpenAI si DEEPSEEK_API_KEY absente et OPENAI_API_KEY présente

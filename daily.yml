@@ -48,6 +48,8 @@ jobs:
           # --- Notification push mobile optionnelle (app ntfy) ---
           NTFY_TOPIC:        ${{ secrets.NTFY_TOPIC }}
           NTFY_SERVER:       ${{ secrets.NTFY_SERVER }}
+          # --- Analyse IA DeepSeek (optionnel) ---
+          DEEPSEEK_API_KEY:  ${{ secrets.DEEPSEEK_API_KEY }}
         run: cd $GITHUB_WORKSPACE && python agent.py
 
       - name: Committer data.json (si modifié)

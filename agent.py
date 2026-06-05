@@ -550,6 +550,48 @@ def run(force=False):
     save_state(state)
     print(f"✓ data.json écrit ({len(all_alerts)} alertes).")
 
+    # ---- signaux insiders (Form 4 — optionnel, ne bloque pas) ----
+    global_signals = []
+    if cfg.get("insiders", {}).get("enabled", True):
+        print("→ Collecte des achats insiders (OpenInsider)…")
+        try:
+            from collector_insiders import fetch_insider_trades, to_global_signals
+            trades = fetch_insider_trades(
+                days=cfg.get("insiders", {}).get("days", 7),
+                min_value=cfg.get("insiders", {}).get("min_value_usd", 50_000),
+            )
+            global_signals = to_global_signals(trades)
+            if global_signals:
+                payload["global_signals"] = global_signals
+                print(f"   {len(global_signals)} achat(s) insiders trouvé(s).")
+            else:
+                print("   Aucun achat insider significatif ces 7 derniers jours.")
+        except Exception as e:
+            print(f"   ⚠️  Collecte insiders échouée : {e}")
+
+    # ---- analyse DeepSeek (optionnel — activé par deepseek.enabled: true) ----
+    if cfg.get("deepseek", {}).get("enabled", False):
+        print("→ Analyse IA DeepSeek…")
+        try:
+            from deepseek_analyse import analyser
+            ds_result = analyser(payload, cfg.get("deepseek", {}))
+            payload["ai_analysis"] = {
+                "rapport":                ds_result.get("rapport", ""),
+                "propositions_achat":     ds_result.get("propositions_achat", []),
+                "propositions_vente":     ds_result.get("propositions_vente", []),
+                "small_mid_caps":         ds_result.get("small_mid_caps", []),
+                "secteurs_a_privilegier": ds_result.get("secteurs_a_privilegier", []),
+                "secteurs_a_eviter":      ds_result.get("secteurs_a_eviter", []),
+                "avertissement":          ds_result.get("avertissement", ""),
+                "timestamp":              ds_result.get("timestamp", ""),
+            }
+            # Réécrire data.json avec l'analyse IA + les insiders
+            _save_json(os.path.join(ROOT, "data.json"),
+                       {k: v for k, v in payload.items() if not k.startswith("_")})
+            print("✓ Analyse IA intégrée à data.json.")
+        except Exception as e:
+            print(f"   ⚠️  Analyse DeepSeek échouée : {e}")
+
     if all_alerts or cfg.get("email", {}).get("send_when_no_alert", True):
         subj = f"{cfg['email']['subject_prefix']} — {quarter_label or today} · {len(all_alerts)} alerte(s)"
         send_email(subj, render_email_html(payload))
