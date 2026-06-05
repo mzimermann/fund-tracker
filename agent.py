@@ -253,11 +253,33 @@ def diff(cur: dict, prev: dict, th: dict, tier: str):
     return alerts
 
 
+def _cusip_to_isin(cusip: str) -> str:
+    """Calcule l'ISIN depuis un CUSIP américain (US + 9 chiffres + check digit Luhn)."""
+    if not cusip or len(cusip) != 9:
+        return ""
+    raw = "US" + cusip.upper()
+    digs = ""
+    for c in raw:
+        digs += c if c.isdigit() else str(ord(c) - ord("A") + 10)
+    total = 0
+    for i, d in enumerate(reversed(digs)):
+        n = int(d)
+        if i % 2 == 0:   # le chiffre le plus à droite est doublé (convention ISIN ISO 6166)
+            n *= 2
+            if n > 9:
+                n -= 9
+        total += n
+    return raw + str((10 - (total % 10)) % 10)
+
+
 def _mk(p, typ, pw, nw, shares_change, tier, top5=False):
     sev = _severity(typ, pw, nw)
+    isin = _cusip_to_isin(p.get("cusip", ""))
     return {
         "_cusip": p["cusip"], "_dir": "buy" if typ in ("new", "increase") else "sell",
         "ticker": p["ticker"], "name": p["name"], "type": typ,
+        "cusip": p["cusip"],   # conservé pour le calcul ISIN côté JS
+        "isin": isin,          # pré-calculé côté serveur aussi
         "prev_weight": f"{pw:.1f}%".replace(".", ","),
         "new_weight": f"{nw:.1f}%".replace(".", ",") if nw else "0 %",
         "shares_change": shares_change, "weight": f"{nw:.1f}%".replace(".", ","),
