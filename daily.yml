@@ -17,6 +17,8 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # évite l'avertissement Node.js 20 deprecated
     steps:
       - name: Checkout
         uses: actions/checkout@v4
