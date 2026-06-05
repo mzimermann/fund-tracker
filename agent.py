@@ -106,7 +106,11 @@ def fetch_info_table(cik: str, accession: str):
     for name in candidates:
         xml = sec_get(f"{base}/{name}")
         if xml and ("infoTable" in xml or "informationTable" in xml):
-            return parse_info_table(xml)
+            try:
+                return parse_info_table(xml)
+            except ET.ParseError as e:
+                print(f"   ⚠️  XML mal formé ({name}) : {e} — tentative suivante.")
+                continue
     return []
 
 
@@ -150,8 +154,12 @@ def parse_info_table(xml_text: str):
 
 def _strip_ns(xml_text: str) -> str:
     import re
-    xml_text = re.sub(r'xmlns(:\w+)?="[^"]+"', "", xml_text)   # déclarations ns
-    xml_text = re.sub(r"<(/?)\w+:", r"<\1", xml_text)            # préfixes sur balises
+    # Retirer les déclarations de namespace (xmlns et xmlns:prefix)
+    xml_text = re.sub(r'\s+xmlns(?::\w+)?="[^"]*"', '', xml_text)
+    # Retirer les préfixes des noms d'éléments (<ns1:tag> → <tag>)
+    xml_text = re.sub(r'<(/?)[\w.\-]+:', r'<\1', xml_text)
+    # Retirer les préfixes des noms d'attributs (xsi:type="..." → type="...")
+    xml_text = re.sub(r'(?<![:/"\w])([\w]+):([\w]+)(\s*=)', r'\2\3', xml_text)
     return xml_text
 
 
@@ -458,37 +466,41 @@ def run(force=False):
     for f in cfg["funds"]:
         slug, cik, tier = f["slug"], f["cik"], f.get("tier", "contexte")
         print(f"→ {f['name']} (CIK {cik})")
-        filings = latest_13f_filings(cik, n=2)
-        if not filings:
-            print("   pas de 13F trouvé."); fund_blocks.append(_passive_block(f)); continue
+        try:
+            filings = latest_13f_filings(cik, n=2)
+            if not filings:
+                print("   pas de 13F trouvé."); fund_blocks.append(_passive_block(f)); continue
 
-        cur_f = filings[0]
-        prev_f = filings[1] if len(filings) > 1 else None
-        if not quarter_label:
-            portfolio_date = cur_f["report_date"]; filing_deadline = cur_f["filing_date"]
-            quarter_label = _quarter(portfolio_date)
+            cur_f = filings[0]
+            prev_f = filings[1] if len(filings) > 1 else None
+            if not quarter_label:
+                portfolio_date = cur_f["report_date"]; filing_deadline = cur_f["filing_date"]
+                quarter_label = _quarter(portfolio_date)
 
-        new_filing = state.get(slug, {}).get("last_accession") != cur_f["accession"]
-        if not (new_filing or force):
-            print("   pas de nouveau dépôt."); fund_blocks.append(_passive_block(f)); continue
+            new_filing = state.get(slug, {}).get("last_accession") != cur_f["accession"]
+            if not (new_filing or force):
+                print("   pas de nouveau dépôt."); fund_blocks.append(_passive_block(f)); continue
 
-        cur_h = fetch_info_table(cik, cur_f["accession"])
-        prev_h = fetch_info_table(cik, prev_f["accession"]) if prev_f else []
-        if not cur_h:
-            print("   table d'information illisible."); fund_blocks.append(_passive_block(f)); continue
+            cur_h = fetch_info_table(cik, cur_f["accession"])
+            prev_h = fetch_info_table(cik, prev_f["accession"]) if prev_f else []
+            if not cur_h:
+                print("   table d'information illisible."); fund_blocks.append(_passive_block(f)); continue
 
-        tmap = cusip_to_ticker([h["cusip"] for h in cur_h + prev_h])
-        cur_p = build_portfolio(cur_h, tmap)
-        prev_p = build_portfolio(prev_h, tmap) if prev_h else {}
+            tmap = cusip_to_ticker([h["cusip"] for h in cur_h + prev_h])
+            cur_p = build_portfolio(cur_h, tmap)
+            prev_p = build_portfolio(prev_h, tmap) if prev_h else {}
 
-        a = diff(cur_p, prev_p, th, tier)
-        for x in a:
-            x["fund"] = f["name"]; x["fund_slug"] = slug
-            all_tickers.add(x["ticker"])
-        all_alerts += a
-        fund_blocks.append(_active_block(f, cur_p, a))
-        state[slug] = {"last_accession": cur_f["accession"], "report_date": cur_f["report_date"]}
-        print(f"   {len(a)} alerte(s).")
+            a = diff(cur_p, prev_p, th, tier)
+            for x in a:
+                x["fund"] = f["name"]; x["fund_slug"] = slug
+                all_tickers.add(x["ticker"])
+            all_alerts += a
+            fund_blocks.append(_active_block(f, cur_p, a))
+            state[slug] = {"last_accession": cur_f["accession"], "report_date": cur_f["report_date"]}
+            print(f"   {len(a)} alerte(s).")
+        except Exception as e:
+            print(f"   ⚠️  Erreur pour {f['name']} : {e} — ignoré, on continue.")
+            fund_blocks.append(_passive_block(f))
 
     # ---- contexte de marché (tous les jours) ----
     print("→ Contexte de marché…")
