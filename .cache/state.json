@@ -1,0 +1,42 @@
+{
+  "berkshire": {
+    "last_accession": "0001193125-26-226661",
+    "report_date": "2026-03-31"
+  },
+  "pershing": {
+    "last_accession": "0001172661-26-002336",
+    "report_date": "2026-03-31"
+  },
+  "appaloosa": {
+    "last_accession": "0001656456-26-000002",
+    "report_date": "2026-03-31"
+  },
+  "bridgewater": {
+    "last_accession": "0001350694-26-000002",
+    "report_date": "2026-03-31"
+  },
+  "blackrock": {
+    "last_accession": "0001086364-24-008417",
+    "report_date": "2024-06-30"
+  },
+  "vanguard": {
+    "last_accession": "0000102909-26-000031",
+    "report_date": "2025-12-31"
+  },
+  "statestreet": {
+    "last_accession": "0000093751-26-000315",
+    "report_date": "2026-03-31"
+  },
+  "fidelity": {
+    "last_accession": "0000315066-26-001390",
+    "report_date": "2026-03-31"
+  },
+  "goldman": {
+    "last_accession": "0000886982-26-000274",
+    "report_date": "2026-03-31"
+  },
+  "morganstanley": {
+    "last_accession": "0000895421-26-000187",
+    "report_date": "2025-12-31"
+  }
+}
