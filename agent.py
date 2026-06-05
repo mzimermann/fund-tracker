@@ -582,14 +582,76 @@ def run(force=False):
                 days=cfg.get("insiders", {}).get("days", 7),
                 min_value=cfg.get("insiders", {}).get("min_value_usd", 50_000),
             )
-            global_signals = to_global_signals(trades)
-            if global_signals:
-                payload["global_signals"] = global_signals
-                print(f"   {len(global_signals)} achat(s) insiders trouvé(s).")
-            else:
-                print("   Aucun achat insider significatif ces 7 derniers jours.")
+            gs = to_global_signals(trades)
+            global_signals.extend(gs)
+            print(f"   {len(gs)} achat(s) insiders trouvé(s)." if gs else "   Aucun achat insider significatif.")
         except Exception as e:
             print(f"   ⚠️  Collecte insiders échouée : {e}")
+
+    # ---- 13D/G : activistes et franchissements de seuil >5 % ----
+    coll = cfg.get("collectors", {})
+    if coll.get("dg13", True):
+        print("→ Collecte des 13D/G (activistes >5 %)…")
+        try:
+            from collector_13dg import fetch_recent_13dg
+            dg = fetch_recent_13dg(days=coll.get("dg13_days", 10))
+            global_signals.extend(dg)
+        except Exception as e:
+            print(f"   ⚠️  13D/G échoué : {e}")
+
+    # ---- Signaux complémentaires sur les tickers déjà en alerte ----
+    tickers_alerte = sorted(set(a["ticker"] for a in all_alerts if a.get("ticker")))
+    if not tickers_alerte:
+        # Si pas d'alerte 13F (run quotidien), utiliser les tickers du dernier data.json
+        try:
+            last = _load_json(os.path.join(ROOT, "data.json"), {})
+            tickers_alerte = list(set(a.get("ticker", "") for a in last.get("alerts", []) if a.get("ticker")))[:30]
+        except Exception:
+            pass
+
+    if tickers_alerte:
+        if coll.get("short_interest", True):
+            print(f"→ Short interest ({len(tickers_alerte)} tickers)…")
+            try:
+                from collector_short_interest import fetch_short_interest
+                shorts = fetch_short_interest(
+                    tickers_alerte,
+                    min_short_pct=coll.get("short_interest_min_pct", 15.0),
+                )
+                global_signals.extend(shorts)
+                if shorts:
+                    print(f"   {len(shorts)} signal(s) de short interest élevé.")
+            except Exception as e:
+                print(f"   ⚠️  Short interest échoué : {e}")
+
+        if coll.get("earnings", True):
+            print(f"→ Calendrier résultats ({len(tickers_alerte)} tickers)…")
+            try:
+                from collector_earnings import fetch_upcoming_earnings
+                earn = fetch_upcoming_earnings(
+                    tickers_alerte,
+                    within_days=coll.get("earnings_days_ahead", 7),
+                )
+                global_signals.extend(earn)
+                if earn:
+                    print(f"   {len(earn)} publication(s) de résultats imminente(s).")
+            except Exception as e:
+                print(f"   ⚠️  Earnings échoué : {e}")
+
+        if coll.get("options_flow", False):   # désactivé par défaut (lent)
+            print(f"→ Options flow ({len(tickers_alerte)} tickers)…")
+            try:
+                from collector_options_flow import fetch_options_flow
+                opts = fetch_options_flow(tickers_alerte)
+                global_signals.extend(opts)
+                if opts:
+                    print(f"   {len(opts)} signal(s) options inhabituels.")
+            except Exception as e:
+                print(f"   ⚠️  Options flow échoué : {e}")
+
+    if global_signals:
+        payload["global_signals"] = global_signals
+        print(f"✓ {len(global_signals)} signal(s) complémentaire(s) au total.")
 
     # ---- analyse DeepSeek (optionnel — activé par deepseek.enabled: true) ----
     if cfg.get("deepseek", {}).get("enabled", False):

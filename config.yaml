@@ -165,6 +165,23 @@ insiders:
 
 # --- Analyse IA DeepSeek ------------------------------------
 deepseek:
-  enabled: true              # passer à true + ajouter DEEPSEEK_API_KEY en secret
+  enabled: false              # passer à true + ajouter DEEPSEEK_API_KEY en secret
   model: "deepseek-chat"      # "deepseek-reasoner" pour l'analyse plus profonde
   # Repli automatique sur OpenAI si DEEPSEEK_API_KEY absente et OPENAI_API_KEY présente
+
+# --- Collecteurs additionnels (signaux quotidiens hors 13F) ----------
+collectors:
+  # 13D/G : déclarations d'activistes franchissant 5% (délai légal 10j)
+  dg13: true
+  dg13_days: 10
+
+  # Short interest élevé sur les tickers déjà en alerte
+  short_interest: true
+  short_interest_min_pct: 15    # en % du flottant
+
+  # Calendrier des résultats (publications imminentes)
+  earnings: true
+  earnings_days_ahead: 7
+
+  # Ratio put/call options (signal directionnel, désactivé car lent)
+  options_flow: false
