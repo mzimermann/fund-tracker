@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T14:57:13.924053Z",
+    "generated_at": "2026-06-05T15:19:21.539820Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -19,33 +19,33 @@
   "market": {
     "as_of": "05/06/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime neutre (VIX 16.3). S&P 500 à 7 510. Brent 93.7 $. 10 ans US à 0.45 %.",
+    "regime_text": "Régime neutre (VIX 16.3). S&P 500 à 7 499. Brent 93.7 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
-        "value": "7 510",
-        "change": "-0,97 %",
+        "value": "7 499",
+        "change": "-1,12 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Nasdaq",
-        "value": "26 346",
-        "change": "-1,81 %",
+        "value": "26 269",
+        "change": "-2,09 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Dow Jones",
-        "value": "51 431",
-        "change": "-0,25 %",
+        "value": "51 410",
+        "change": "-0,29 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Russell 2000",
         "value": "2 889",
-        "change": "-1,57 %",
+        "change": "-1,59 %",
         "dir": "down",
         "sub": ""
       },
@@ -59,35 +59,35 @@
       {
         "label": "Brent",
         "value": "93.7 $",
-        "change": "-1,39 %",
+        "change": "-1,40 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
         "value": "91.2 $",
-        "change": "-2,00 %",
+        "change": "-1,98 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 378.7 $",
-        "change": "-2,17 %",
+        "value": "4 388.9 $",
+        "change": "-1,94 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.45 %",
-        "change": "+1,54 %",
+        "change": "+1,32 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "60 735 $",
-        "change": "-4,81 %",
+        "value": "60 759 $",
+        "change": "-4,77 %",
         "dir": "down",
         "sub": ""
       }
@@ -98,32 +98,32 @@
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Merlin Inc. options trading surges to 11,355 contracts"
+        "title": "Why is Intel stock sliding today?"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Why is Planet Labs stock cratering today?"
+        "title": "Why is Strategy stock sliding today?"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Apex more than doubles valuation to $2.3 billion"
+        "title": "Norway stocks higher at close of trade; Oslo OBX up 0.04%"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Western Asset Management settles SEC case for $100 million"
+        "title": "Israel stocks higher at close of trade; TA 35 up 0.40%"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Private credit roundup: Private equity catches the cold"
+        "title": "Mega-cap and large-cap stock movers on Friday"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Anthropic urges AI labs to pause development, warns humans risk losing control"
+        "title": "Why is SanDisk stock sliding today?"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
@@ -295,48 +295,63 @@
   "global_signals": [
     {
       "source": "Insider (Form 4)",
-      "entity": "Mark Stevens (Director) (Director)",
+      "entity": "Mark Stevens (Director)",
       "type": "buy",
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
       "date": "2026-06-05",
-      "note": "Achat de 20 000 actions"
+      "note": "Achat de 20 000 actions",
+      "shares": 20000,
+      "price": 125.5,
+      "transaction_code": "P"
     },
     {
       "source": "Insider (Form 4)",
-      "entity": "Timothy D. Cook (CEO) (CEO)",
+      "entity": "Timothy D. Cook (CEO)",
       "type": "buy",
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "date": "2026-06-05",
-      "note": "Achat de 3 000 actions"
+      "note": "Achat de 3 000 actions",
+      "shares": 3000,
+      "price": 190.25,
+      "transaction_code": "P"
     },
     {
       "source": "Insider (Form 4)",
-      "entity": "Satya Nadella (CEO) (CEO)",
-      "type": "buy",
+      "entity": "Satya Nadella (CEO)",
+      "type": "sell",
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
       "date": "2026-06-03",
-      "note": "Achat de 2 000 actions"
+      "note": "Vente de 2 000 actions",
+      "shares": 2000,
+      "price": 420.0,
+      "transaction_code": "S"
     },
     {
       "source": "Insider (Form 4)",
-      "entity": "Andrew R. Jassy (CEO) (CEO)",
-      "type": "buy",
-      "ticker": "AMZN",
-      "name": "Amazon.com Inc.",
-      "date": "2026-06-02",
-      "note": "Achat de 5 000 actions"
+      "entity": "Elon Musk (CEO)",
+      "type": "sell",
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "date": "2026-05-31",
+      "note": "Vente de 20 000 actions",
+      "shares": 20000,
+      "price": 250.0,
+      "transaction_code": "S"
     },
     {
       "source": "Insider (Form 4)",
-      "entity": "Mark Zuckerberg (CEO) (CEO)",
-      "type": "buy",
+      "entity": "Mark Zuckerberg (CEO)",
+      "type": "event",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-05-31",
-      "note": "Achat de 2 000 actions"
+      "date": "2026-06-02",
+      "note": "Exercice d'options sur 2 000 actions",
+      "shares": 2000,
+      "price": 500.0,
+      "transaction_code": "A"
     },
     {
       "source": "SEC 13D/G",
@@ -535,9 +550,9 @@
       "entity": "SoftBank (PR Newswire)",
       "type": "buy",
       "ticker": "",
-      "name": "BOOKS BEAT BILLIONS -- SIMONS, KLARMAN, DALIO, DRUCKENMILLER, GRIFFIN TOP 5W AI HEDGE FUND",
+      "name": "Cellebrite annonce des événements destinés aux investisseurs prévus pour le 10 juin 2026",
       "date": "Fri, 5 Jun",
-      "note": "BOOKS BEAT BILLIONS -- SIMONS, KLARMAN, DALIO, DRUCKENMILLER, GRIFFIN TOP 5W AI HEDGE FUND INDEX"
+      "note": "Cellebrite annonce des événements destinés aux investisseurs prévus pour le 10 juin 2026"
     }
   ]
 }
