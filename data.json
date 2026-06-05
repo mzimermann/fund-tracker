@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T12:00:15.386898Z",
+    "generated_at": "2026-06-05T13:01:34.028604Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -19,7 +19,7 @@
   "market": {
     "as_of": "05/06/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime calme (VIX 15.6). S&P 500 à 7 584. Brent 94.5 $. 10 ans US à 0.45 %.",
+    "regime_text": "Régime calme (VIX 15.7). S&P 500 à 7 584. Brent 94.7 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
@@ -51,43 +51,43 @@
       },
       {
         "label": "VIX",
-        "value": "15.6",
-        "change": "+1,62 %",
+        "value": "15.7",
+        "change": "+2,14 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "94.5 $",
-        "change": "-0,54 %",
+        "value": "94.7 $",
+        "change": "-0,39 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "92.7 $",
-        "change": "-0,41 %",
+        "value": "92.6 $",
+        "change": "-0,47 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 494.5 $",
-        "change": "+0,42 %",
-        "dir": "up",
+        "value": "4 458.0 $",
+        "change": "-0,40 %",
+        "dir": "down",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.45 %",
-        "change": "-0,31 %",
-        "dir": "down",
+        "change": "+1,23 %",
+        "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "61 914 $",
-        "change": "-2,96 %",
+        "value": "61 986 $",
+        "change": "-2,85 %",
         "dir": "down",
         "sub": ""
       }
@@ -98,32 +98,32 @@
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Unity and AppLovin stocks jump on Edgewater upgrade & ad pivot"
+        "title": "Morgan Stanley expects SpaceX revenue to hit $3.4 trillion in 2040, WSJ reports"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "This is the most important area to watch for Apple’s WWDC this year: Citi"
+        "title": "BofA cuts India GDP forecast on West Asia conflict impact to 6.5% from 7%"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "China and Hong Kong users unable to access SpaceX website, IPO documents"
+        "title": "Allianz in talks to acquire Caravela Seguros for €150M - Bloomberg"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Lululemon slides as bleak outlook, product missteps cloud brand reset"
+        "title": "Point72 hires veteran to explore hedge fund trade ideas program - Bloomberg"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "U.S. equity fund inflows surge as tech rally boosts sentiment"
+        "title": "TeraWulf explores leveraged loans after bond success - Bloomberg"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Manchester United explores refinancing $425 million debt"
+        "title": "William Blair sees Blue Origin recovery benefiting ASTS and KRMN stock"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
