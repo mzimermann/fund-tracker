@@ -165,6 +165,6 @@ insiders:
 
 # --- Analyse IA DeepSeek ------------------------------------
 deepseek:
-  enabled: false              # passer à true + ajouter DEEPSEEK_API_KEY en secret
+  enabled: true              # passer à true + ajouter DEEPSEEK_API_KEY en secret
   model: "deepseek-chat"      # "deepseek-reasoner" pour l'analyse plus profonde
   # Repli automatique sur OpenAI si DEEPSEEK_API_KEY absente et OPENAI_API_KEY présente
