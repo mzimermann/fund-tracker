@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T13:01:34.028604Z",
+    "generated_at": "2026-06-05T13:17:39.693854Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -19,7 +19,7 @@
   "market": {
     "as_of": "05/06/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime calme (VIX 15.7). S&P 500 à 7 584. Brent 94.7 $. 10 ans US à 0.45 %.",
+    "regime_text": "Régime calme (VIX 15.9). S&P 500 à 7 584. Brent 94.4 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
@@ -51,43 +51,43 @@
       },
       {
         "label": "VIX",
-        "value": "15.7",
-        "change": "+2,14 %",
+        "value": "15.9",
+        "change": "+3,51 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "94.7 $",
-        "change": "-0,39 %",
+        "value": "94.4 $",
+        "change": "-0,64 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "92.6 $",
-        "change": "-0,47 %",
+        "value": "92.1 $",
+        "change": "-1,00 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 458.0 $",
-        "change": "-0,40 %",
+        "value": "4 437.9 $",
+        "change": "-0,85 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.45 %",
-        "change": "+1,23 %",
+        "change": "+1,27 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "61 986 $",
-        "change": "-2,85 %",
+        "value": "61 969 $",
+        "change": "-2,87 %",
         "dir": "down",
         "sub": ""
       }
@@ -98,32 +98,32 @@
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Morgan Stanley expects SpaceX revenue to hit $3.4 trillion in 2040, WSJ reports"
+        "title": "Top insider buys and sells disclosed on Thursday"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "BofA cuts India GDP forecast on West Asia conflict impact to 6.5% from 7%"
+        "title": "Nvidia certifies Samsung, SK Hynix and Micron for Vera Rubin HBM4 supply"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Allianz in talks to acquire Caravela Seguros for €150M - Bloomberg"
+        "title": "Nuwellis stock plunges 65% on $6M offering at $0.30 per share"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "Point72 hires veteran to explore hedge fund trade ideas program - Bloomberg"
+        "title": "Morgan Stanley tracks prescription trends for US neurology drugs"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "TeraWulf explores leveraged loans after bond success - Bloomberg"
+        "title": "BioCardia stock surges on FDA trial pathway confirmation"
       },
       {
         "src": "Stock Market News",
         "time": "05/06",
-        "title": "William Blair sees Blue Origin recovery benefiting ASTS and KRMN stock"
+        "title": "Western Asset Management settles SEC charges for $100 million"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
