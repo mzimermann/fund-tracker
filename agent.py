@@ -567,10 +567,10 @@ def run(force=False):
         "_dashboard_url": cfg.get("site", {}).get("dashboard_url", "#"),
     }
 
-    _save_json(os.path.join(ROOT, "data.json"),
-               {k: v for k, v in payload.items() if not k.startswith("_")})
+    # L'état de suivi est sauvegardé tôt pour ne pas retraiter si le run plante
     save_state(state)
-    print(f"✓ data.json écrit ({len(all_alerts)} alertes).")
+    # data.json sera écrit APRÈS les collecteurs (insiders, 13D/G, etc.)
+    # afin d'inclure TOUS les signaux dans le fichier final.
 
     # ---- signaux insiders (Form 4 — optionnel, ne bloque pas) ----
     global_signals = []
@@ -707,6 +707,11 @@ def run(force=False):
     if total_gs:
         print(f"✓ Total signaux complémentaires (toutes sources) : {total_gs}")
 
+    # ---- Sauvegarde data.json avec TOUS les signaux (13F + collecteurs) ----
+    _save_json(os.path.join(ROOT, "data.json"),
+               {k: v for k, v in payload.items() if not k.startswith("_")})
+    print(f"✓ data.json écrit — {len(all_alerts)} alerte(s) 13F + {total_gs} signal(s) complémentaire(s).")
+
     # ---- analyse DeepSeek (optionnel — activé par deepseek.enabled: true) ----
     if cfg.get("deepseek", {}).get("enabled", False):
         print("→ Analyse IA DeepSeek…")
@@ -723,7 +728,7 @@ def run(force=False):
                 "avertissement":          ds_result.get("avertissement", ""),
                 "timestamp":              ds_result.get("timestamp", ""),
             }
-            # Réécrire data.json avec l'analyse IA + les insiders
+            # Re-sauvegarde avec l'analyse IA
             _save_json(os.path.join(ROOT, "data.json"),
                        {k: v for k, v in payload.items() if not k.startswith("_")})
             print("✓ Analyse IA intégrée à data.json.")
