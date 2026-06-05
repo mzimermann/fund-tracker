@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T14:40:33.779511Z",
+    "generated_at": "2026-06-05T14:50:52.500755Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -19,61 +19,61 @@
   "market": {
     "as_of": "05/06/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime neutre (VIX 16.5). S&P 500 à 7 516. Brent 93.8 $. 10 ans US à 0.45 %.",
+    "regime_text": "Régime neutre (VIX 16.3). S&P 500 à 7 509. Brent 94.0 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
-        "value": "7 516",
-        "change": "-0,90 %",
+        "value": "7 509",
+        "change": "-0,99 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Nasdaq",
-        "value": "26 379",
-        "change": "-1,68 %",
+        "value": "26 329",
+        "change": "-1,87 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Dow Jones",
-        "value": "51 494",
-        "change": "-0,13 %",
+        "value": "51 438",
+        "change": "-0,24 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Russell 2000",
-        "value": "2 886",
-        "change": "-1,67 %",
+        "value": "2 889",
+        "change": "-1,58 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "VIX",
-        "value": "16.5",
-        "change": "+6,82 %",
+        "value": "16.3",
+        "change": "+5,65 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "93.8 $",
-        "change": "-1,26 %",
+        "value": "94.0 $",
+        "change": "-1,05 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "91.3 $",
-        "change": "-1,91 %",
+        "value": "91.4 $",
+        "change": "-1,73 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 387.3 $",
-        "change": "-1,98 %",
+        "value": "4 372.7 $",
+        "change": "-2,30 %",
         "dir": "down",
         "sub": ""
       },
@@ -86,8 +86,8 @@
       },
       {
         "label": "Bitcoin",
-        "value": "60 910 $",
-        "change": "-4,53 %",
+        "value": "60 849 $",
+        "change": "-4,63 %",
         "dir": "down",
         "sub": ""
       }
@@ -484,6 +484,15 @@
       "name": "JPMorgan Chase",
       "date": "2026-06-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.40%"
+    },
+    {
+      "source": "Conglomérat",
+      "entity": "SoftBank (PR Newswire)",
+      "type": "buy",
+      "ticker": "",
+      "name": "BOOKS BEAT BILLIONS -- SIMONS, KLARMAN, DALIO, DRUCKENMILLER, GRIFFIN TOP 5W AI HEDGE FUND",
+      "date": "Fri, 5 Jun",
+      "note": "BOOKS BEAT BILLIONS -- SIMONS, KLARMAN, DALIO, DRUCKENMILLER, GRIFFIN TOP 5W AI HEDGE FUND INDEX"
     }
   ]
 }
