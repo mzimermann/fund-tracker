@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T14:50:52.500755Z",
+    "generated_at": "2026-06-05T14:57:13.924053Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -19,75 +19,75 @@
   "market": {
     "as_of": "05/06/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime neutre (VIX 16.3). S&P 500 à 7 509. Brent 94.0 $. 10 ans US à 0.45 %.",
+    "regime_text": "Régime neutre (VIX 16.3). S&P 500 à 7 510. Brent 93.7 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
-        "value": "7 509",
-        "change": "-0,99 %",
+        "value": "7 510",
+        "change": "-0,97 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Nasdaq",
-        "value": "26 329",
-        "change": "-1,87 %",
+        "value": "26 346",
+        "change": "-1,81 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Dow Jones",
-        "value": "51 438",
-        "change": "-0,24 %",
+        "value": "51 431",
+        "change": "-0,25 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Russell 2000",
         "value": "2 889",
-        "change": "-1,58 %",
+        "change": "-1,57 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "VIX",
         "value": "16.3",
-        "change": "+5,65 %",
+        "change": "+5,91 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "94.0 $",
-        "change": "-1,05 %",
+        "value": "93.7 $",
+        "change": "-1,39 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "91.4 $",
-        "change": "-1,73 %",
+        "value": "91.2 $",
+        "change": "-2,00 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 372.7 $",
-        "change": "-2,30 %",
+        "value": "4 378.7 $",
+        "change": "-2,17 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.45 %",
-        "change": "+1,41 %",
+        "change": "+1,54 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "60 849 $",
-        "change": "-4,63 %",
+        "value": "60 735 $",
+        "change": "-4,81 %",
         "dir": "down",
         "sub": ""
       }
@@ -293,6 +293,51 @@
     }
   ],
   "global_signals": [
+    {
+      "source": "Insider (Form 4)",
+      "entity": "Mark Stevens (Director) (Director)",
+      "type": "buy",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "date": "2026-06-05",
+      "note": "Achat de 20 000 actions"
+    },
+    {
+      "source": "Insider (Form 4)",
+      "entity": "Timothy D. Cook (CEO) (CEO)",
+      "type": "buy",
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "date": "2026-06-05",
+      "note": "Achat de 3 000 actions"
+    },
+    {
+      "source": "Insider (Form 4)",
+      "entity": "Satya Nadella (CEO) (CEO)",
+      "type": "buy",
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "date": "2026-06-03",
+      "note": "Achat de 2 000 actions"
+    },
+    {
+      "source": "Insider (Form 4)",
+      "entity": "Andrew R. Jassy (CEO) (CEO)",
+      "type": "buy",
+      "ticker": "AMZN",
+      "name": "Amazon.com Inc.",
+      "date": "2026-06-02",
+      "note": "Achat de 5 000 actions"
+    },
+    {
+      "source": "Insider (Form 4)",
+      "entity": "Mark Zuckerberg (CEO) (CEO)",
+      "type": "buy",
+      "ticker": "META",
+      "name": "Meta Platforms Inc.",
+      "date": "2026-05-31",
+      "note": "Achat de 2 000 actions"
+    },
     {
       "source": "SEC 13D/G",
       "entity": "Inconnu",
