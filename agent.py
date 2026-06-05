@@ -653,6 +653,60 @@ def run(force=False):
         payload["global_signals"] = global_signals
         print(f"✓ {len(global_signals)} signal(s) complémentaire(s) au total.")
 
+    # ---- ETF UCITS (positions quotidiennes) ----
+    if coll.get("etf_ucits", True):
+        print("→ ETF UCITS (iShares, Vanguard)…")
+        try:
+            from collector_etf_ucits import fetch_etf_signals
+            etf = fetch_etf_signals(min_delta_pct=coll.get("etf_min_delta", 0.20))
+            payload.setdefault("global_signals", []).extend(etf)
+        except Exception as e:
+            print(f"   ⚠️  ETF UCITS échoué : {e}")
+
+    # ---- Fonds mutuels top 10 ----
+    if coll.get("fund_top10", True):
+        print("→ Fonds mutuels top 10 (Fundsmith, Baillie Gifford…)…")
+        try:
+            from collector_fund_top10 import fetch_fund_top10_signals
+            mf = fetch_fund_top10_signals()
+            payload.setdefault("global_signals", []).extend(mf)
+        except Exception as e:
+            print(f"   ⚠️  Fonds mutuels échoué : {e}")
+
+    # ---- Fonds souverain NBIM ----
+    if coll.get("nbim", True):
+        print("→ Fonds souverain NBIM (Norges Bank)…")
+        try:
+            from collector_nbim import fetch_nbim_signals
+            nb = fetch_nbim_signals()
+            payload.setdefault("global_signals", []).extend(nb)
+        except Exception as e:
+            print(f"   ⚠️  NBIM échoué : {e}")
+
+    # ---- SoftBank + grands conglomérats ----
+    if coll.get("conglomerates", True):
+        print("→ Conglomérats (SoftBank, Berkshire 8-K…)…")
+        try:
+            from collector_softbank import fetch_conglomerate_signals
+            sb = fetch_conglomerate_signals()
+            payload.setdefault("global_signals", []).extend(sb)
+        except Exception as e:
+            print(f"   ⚠️  Conglomérats échoué : {e}")
+
+    # ---- AMF / BaFin / Family offices ----
+    if coll.get("amf_bafin", True):
+        print("→ Régulateurs AMF / BaFin (franchissements de seuil)…")
+        try:
+            from collector_amf_familyoffices import fetch_threshold_signals
+            amf = fetch_threshold_signals()
+            payload.setdefault("global_signals", []).extend(amf)
+        except Exception as e:
+            print(f"   ⚠️  AMF/BaFin échoué : {e}")
+
+    total_gs = len(payload.get("global_signals", []))
+    if total_gs:
+        print(f"✓ Total signaux complémentaires (toutes sources) : {total_gs}")
+
     # ---- analyse DeepSeek (optionnel — activé par deepseek.enabled: true) ----
     if cfg.get("deepseek", {}).get("enabled", False):
         print("→ Analyse IA DeepSeek…")

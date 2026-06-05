@@ -185,3 +185,19 @@ collectors:
 
   # Ratio put/call options (signal directionnel, désactivé car lent)
   options_flow: false
+
+  # ETF UCITS (iShares, Vanguard) — variations quotidiennes de poids
+  etf_ucits: true
+  etf_min_delta: 0.20       # variation minimale en % pour remonter le signal
+
+  # Fonds mutuels top 10 (Fundsmith, Baillie Gifford, T. Rowe Price)
+  fund_top10: true
+
+  # Fonds souverain NBIM (Norges Bank Investment Management)
+  nbim: true
+
+  # Conglomérats (SoftBank, Berkshire 8-K, etc.)
+  conglomerates: true
+
+  # Régulateurs européens (AMF France, BaFin Allemagne)
+  amf_bafin: true
