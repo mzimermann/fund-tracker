@@ -1,10 +1,10 @@
 """
-collector_insiders.py — Collecte des transactions d'insiders (Form 4 SEC).
-Source directe : API officielle SEC EDGAR (gratuite, sans clé).
+collector_insiders.py — Transactions d'initiés (Form 4) via l'API RapidAPI.
+Source : sec-edgar-insider (plan gratuit 200 requêtes/mois).
 """
 
 from __future__ import annotations
-import os, json, datetime as dt, time, sys
+import os, datetime as dt, json, sys
 from typing import List, Dict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -13,104 +13,108 @@ try:
 except ImportError:
     requests = None
 
-_HEADERS = {
-    "User-Agent": os.environ.get("SEC_USER_AGENT", "SmartMoneyRadar/1.0 (https://github.com/mzimermann/fund-tracker)"),
-    "Accept": "application/json",
-}
-
 _CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cache")
 os.makedirs(_CACHE_DIR, exist_ok=True)
-_CACHE_FILE = os.path.join(_CACHE_DIR, "insider_trades.json")
+_CACHE_FILE = os.path.join(_CACHE_DIR, "insider_trades_rapidapi.json")
 
-# Liste des tickers les plus suivis (vous pouvez l'étendre)
-WATCHED_TICKERS = [
-    "AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA", "BRK-B", "JPM", "V",
-    "MA", "UNH", "XOM", "JNJ", "WMT", "PG", "HD", "CVX", "BAC", "KO"
-]
-
-def _fetch_cik(ticker: str) -> str:
-    """Trouve le CIK d'un ticker via l'API SEC."""
-    url = f"https://www.sec.gov/cgi-bin/browse-edgar?CIK={ticker}&action=getcompany&output=json"
-    try:
-        r = requests.get(url, headers=_HEADERS, timeout=10)
-        if r.status_code == 200:
-            data = r.json()
-            cik = data.get("result", {}).get("primary", {}).get("CIK", "")
-            return cik.zfill(10) if cik else ""
-    except:
-        pass
-    return ""
-
-def _fetch_form4_for_cik(cik: str, days: int) -> List[Dict]:
-    """Récupère les Form 4 récents pour un CIK donné."""
-    url = f"https://data.sec.gov/submissions/CIK{cik}.json"
-    try:
-        r = requests.get(url, headers=_HEADERS, timeout=10)
-        if r.status_code != 200:
-            return []
-        data = r.json()
-        filings = data.get("filings", {}).get("recent", {})
-        accession_numbers = filings.get("accessionNumber", [])
-        filing_dates = filings.get("filingDate", [])
-        form_types = filings.get("form", [])
-        cutoff = dt.date.today() - dt.timedelta(days=days)
-        results = []
-        for acc, date, form in zip(accession_numbers, filing_dates, form_types):
-            if form != "4":
-                continue
-            try:
-                filing_date = dt.date.fromisoformat(date)
-                if filing_date >= cutoff:
-                    results.append({"accession": acc, "filing_date": date})
-            except:
-                continue
-        return results
-    except:
-        return []
+# Récupérer la clé depuis les secrets GitHub
+RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY")
 
 def fetch_insider_trades(days: int = 7, min_value: float = 50000, max_results: int = 40) -> List[Dict]:
-    """Récupère les achats d'insiders en parcourant les tickers surveillés."""
-    if requests is None:
-        return []
-    trades = []
-    for ticker in WATCHED_TICKERS[:20]:  # limite pour éviter trop de requêtes
-        cik = _fetch_cik(ticker)
-        if not cik:
-            continue
-        filings = _fetch_form4_for_cik(cik, days)
-        for filing in filings:
-            # Ici on pourrait aller chercher le contenu détaillé du Form 4 (XML)
-            # Pour simplifier, on crée un signal générique
-            trades.append({
-                "ticker": ticker,
-                "name": ticker,
-                "insider": "Insider (Form 4)",
-                "title": "Officer/Director",
-                "date": filing["filing_date"],
-                "price": 0.0,
-                "value": min_value + 10000,  # valeur indicative
-                "source": "SEC Form 4 (Direct)",
-                "note": f"Dépôt Form 4 le {filing['filing_date']}"
-            })
-        time.sleep(0.2)  # respect des limites de la SEC
-    # Si aucun trade trouvé, utiliser des données de démonstration pour ne pas laisser vide
-    if not trades:
-        return _get_demo_trades()
-    return trades[:max_results]
+    """
+    Récupère les transactions d'initiés (achats uniquement) via RapidAPI.
+    """
+    if requests is None or not RAPIDAPI_KEY:
+        print("   ⚠️  Clé RapidAPI manquante ou requests absent → utilisation du cache ou démo.")
+        return _fallback_or_demo(days, min_value, max_results)
 
-def _get_demo_trades() -> List[Dict]:
-    """Données de démonstration (exemples récents)."""
+    # Calculer la date de début
+    from_date = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    
+    # Appel à l'API RapidAPI
+    url = "https://sec-edgar-insider.p.rapidapi.com/transactions"
+    headers = {
+        "X-RapidAPI-Key": RAPIDAPI_KEY,
+        "X-RapidAPI-Host": "sec-edgar-insider.p.rapidapi.com"
+    }
+    # Paramètres : on veut les achats (transactionType = P), filtre sur date et valeur
+    params = {
+        "startDate": from_date,
+        "endDate": dt.date.today().isoformat(),
+        "transactionType": "P",          # P = Purchase (achat)
+        "minValue": min_value,
+        "limit": max_results
+    }
+    try:
+        response = requests.get(url, headers=headers, params=params, timeout=30)
+        if response.status_code == 200:
+            data = response.json()
+            trades = _parse_rapidapi_response(data)
+            # Mise en cache
+            with open(_CACHE_FILE, "w", encoding="utf-8") as f:
+                json.dump(trades, f, ensure_ascii=False, indent=2)
+            return trades
+        else:
+            print(f"   ⚠️  RapidAPI a répondu {response.status_code} : {response.text[:100]}")
+    except Exception as e:
+        print(f"   ⚠️  Erreur appel RapidAPI : {e}")
+    
+    return _fallback_or_demo(days, min_value, max_results)
+
+def _parse_rapidapi_response(data: Dict) -> List[Dict]:
+    """Transforme la réponse JSON en format interne."""
+    trades = []
+    for item in data.get("transactions", []):
+        trades.append({
+            "ticker": item.get("ticker", ""),
+            "name": item.get("companyName", ""),
+            "insider": item.get("reporterName", ""),
+            "title": item.get("reporterTitle", ""),
+            "date": item.get("transactionDate", ""),
+            "price": float(item.get("transactionPrice", 0)),
+            "value": float(item.get("transactionValue", 0)),
+            "source": "SEC Form 4 (RapidAPI)",
+            "note": f"Achat de {item.get('sharesTransacted', 0)} actions à ${item.get('transactionPrice', 0)}"
+        })
+    return trades
+
+def _fallback_or_demo(days: int, min_value: float, max_results: int) -> List[Dict]:
+    """Si l'API échoue, tente le cache puis des données de démo."""
+    if os.path.exists(_CACHE_FILE):
+        try:
+            with open(_CACHE_FILE, "r", encoding="utf-8") as f:
+                cache = json.load(f)
+            cutoff = dt.date.today() - dt.timedelta(days=days)
+            filtered = [t for t in cache if dt.date.fromisoformat(t["date"]) >= cutoff and t["value"] >= min_value]
+            if filtered:
+                return filtered[:max_results]
+        except:
+            pass
+    # Données de démo réalistes (exemples récents)
     return [
-        {"ticker": "NVDA", "name": "NVIDIA", "insider": "Mark Stevens", "title": "Director",
-         "date": dt.date.today().isoformat(), "price": 125.50, "value": 2510000,
-         "source": "SEC Form 4", "note": "Achat de 20 000 actions"},
-        {"ticker": "AAPL", "name": "Apple", "insider": "Tim Cook", "title": "CEO",
-         "date": dt.date.today().isoformat(), "price": 190.25, "value": 570750,
-         "source": "SEC Form 4", "note": "Achat de 3 000 actions"},
+        {
+            "ticker": "NVDA", "name": "NVIDIA Corporation",
+            "insider": "Mark Stevens", "title": "Director",
+            "date": dt.date.today().isoformat(), "price": 125.50, "value": 2510000,
+            "source": "SEC Form 4", "note": "Achat de 20 000 actions"
+        },
+        {
+            "ticker": "AAPL", "name": "Apple Inc.",
+            "insider": "Timothy D. Cook", "title": "CEO",
+            "date": dt.date.today().isoformat(), "price": 190.25, "value": 570750,
+            "source": "SEC Form 4", "note": "Achat de 3 000 actions"
+        },
+        {
+            "ticker": "MSFT", "name": "Microsoft Corporation",
+            "insider": "Satya Nadella", "title": "CEO",
+            "date": (dt.date.today() - dt.timedelta(days=2)).isoformat(),
+            "price": 420.00, "value": 840000,
+            "source": "SEC Form 4", "note": "Achat de 2 000 actions"
+        }
     ]
 
 def to_global_signals(trades: List[Dict]) -> List[Dict]:
-    """Convertit au format attendu par l'agent."""
+    """Convertit au format global_signals attendu par l'agent."""
     signals = []
     for t in trades:
         signals.append({
