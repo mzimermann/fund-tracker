@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-05T17:33:50.155071Z",
+    "generated_at": "2026-06-06T15:54:07.721612Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -17,77 +17,77 @@
     "disclaimer": "Les 13F sont publiés ~45 jours après la fin du trimestre : les prix ont déjà évolué. Signaux à analyser, pas un conseil en investissement personnalisé."
   },
   "market": {
-    "as_of": "05/06/2026",
+    "as_of": "06/06/2026",
     "regime_label": "Mitigé",
-    "regime_text": "Régime neutre (VIX 18.8). S&P 500 à 7 450. Brent 92.9 $. 10 ans US à 0.45 %.",
+    "regime_text": "Régime neutre (VIX 21.5). S&P 500 à 7 384. Brent 93.1 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
-        "value": "7 450",
-        "change": "-1,77 %",
+        "value": "7 384",
+        "change": "-2,64 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Nasdaq",
-        "value": "26 032",
-        "change": "-2,98 %",
+        "value": "25 709",
+        "change": "-4,18 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Dow Jones",
-        "value": "51 134",
-        "change": "-0,83 %",
+        "value": "50 867",
+        "change": "-1,35 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Russell 2000",
-        "value": "2 851",
-        "change": "-2,88 %",
+        "value": "2 834",
+        "change": "-3,47 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "VIX",
-        "value": "18.8",
-        "change": "+21,95 %",
+        "value": "21.5",
+        "change": "+39,68 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "92.9 $",
-        "change": "-2,26 %",
+        "value": "93.1 $",
+        "change": "-2,04 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "90.1 $",
-        "change": "-3,17 %",
+        "value": "90.5 $",
+        "change": "-2,69 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 363.9 $",
-        "change": "-2,50 %",
+        "value": "4 337.1 $",
+        "change": "-3,10 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.45 %",
-        "change": "+1,23 %",
+        "change": "+1,32 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "60 750 $",
-        "change": "-4,78 %",
+        "value": "60 733 $",
+        "change": "-0,31 %",
         "dir": "down",
         "sub": ""
       }
@@ -97,33 +97,33 @@
     "news": [
       {
         "src": "Stock Market News",
-        "time": "05/06",
-        "title": "Goldman Sachs names top Canadian oil stocks for free cash flow growth"
+        "time": "07/06",
+        "title": "Street Calls of the Week"
       },
       {
         "src": "Stock Market News",
-        "time": "05/06",
-        "title": "Why is GoPro stock sliding 10% today?"
+        "time": "06/06",
+        "title": "FDA grants orphan drug status for Merck’s pembrolizumab in NEPC"
       },
       {
         "src": "Stock Market News",
-        "time": "05/06",
-        "title": "Why is Hang Feng Technology Innovation stock crashing 35% today?"
+        "time": "06/06",
+        "title": "Finnair explores Starlink, Amazon for inflight Wi-Fi upgrade - Bloomberg"
       },
       {
         "src": "Stock Market News",
-        "time": "05/06",
-        "title": "Why is HeartCore Enterprises stock selling off 20% today?"
+        "time": "06/06",
+        "title": "Elon Musk to attend ASML tech conference to talk Terafab - Bloomberg"
       },
       {
         "src": "Stock Market News",
-        "time": "05/06",
-        "title": "Law firm Morgan & Morgan explores stake sale, eyes long-term IPO, sources say"
+        "time": "06/06",
+        "title": "Air New Zealand plans for elevated fuel costs into 2027"
       },
       {
         "src": "Stock Market News",
-        "time": "05/06",
-        "title": "Why is Nyxoah stock plummeting today?"
+        "time": "06/06",
+        "title": "Citi lifts S&P 500 target to 8100 as AI boom fuels episodic earnings surge"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
@@ -299,7 +299,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Achat de 20 000 actions",
       "shares": 20000,
       "price": 125.5,
@@ -311,7 +311,7 @@
       "type": "buy",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Achat de 3 000 actions",
       "shares": 3000,
       "price": 190.25,
@@ -323,7 +323,7 @@
       "type": "sell",
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "note": "Vente de 2 000 actions",
       "shares": 2000,
       "price": 420.0,
@@ -335,7 +335,7 @@
       "type": "sell",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-05-31",
+      "date": "2026-06-01",
       "note": "Vente de 20 000 actions",
       "shares": 20000,
       "price": 250.0,
@@ -347,7 +347,7 @@
       "type": "event",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-06-02",
+      "date": "2026-06-03",
       "note": "Exercice d'options sur 2 000 actions",
       "shares": 2000,
       "price": 500.0,
@@ -371,7 +371,7 @@
       "type": "buy",
       "ticker": "MSFT",
       "name": "Microsoft",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Microsoft → 8.5% (+8.5%)"
     },
     {
@@ -380,7 +380,7 @@
       "type": "buy",
       "ticker": "ASML",
       "name": "ASML Holding",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : ASML Holding → 7.1% (+7.1%)"
     },
     {
@@ -389,7 +389,7 @@
       "type": "buy",
       "ticker": "NVO",
       "name": "Novo Nordisk",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Novo Nordisk → 6.4% (+6.4%)"
     },
     {
@@ -398,7 +398,7 @@
       "type": "buy",
       "ticker": "META",
       "name": "Meta Platforms",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Meta Platforms → 5.8% (+5.8%)"
     },
     {
@@ -407,7 +407,7 @@
       "type": "buy",
       "ticker": "PYPL",
       "name": "PayPal Holdings",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : PayPal Holdings → 5.2% (+5.2%)"
     },
     {
@@ -416,7 +416,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "Nvidia",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Nvidia → 4.9% (+4.9%)"
     },
     {
@@ -425,7 +425,7 @@
       "type": "buy",
       "ticker": "ACN",
       "name": "Accenture",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Accenture → 4.7% (+4.7%)"
     },
     {
@@ -434,7 +434,7 @@
       "type": "buy",
       "ticker": "GOOG",
       "name": "Alphabet",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Alphabet → 4.5% (+4.5%)"
     },
     {
@@ -443,7 +443,7 @@
       "type": "buy",
       "ticker": "BN",
       "name": "Danone",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Danone → 4.3% (+4.3%)"
     },
     {
@@ -452,7 +452,7 @@
       "type": "buy",
       "ticker": "IDEXY",
       "name": "Industria de Diseno",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Fundsmith Equity Fund : Industria de Diseno → 4.0% (+4.0%)"
     },
     {
@@ -461,7 +461,7 @@
       "type": "context",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.17%"
     },
     {
@@ -470,7 +470,7 @@
       "type": "context",
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.05%"
     },
     {
@@ -479,7 +479,7 @@
       "type": "context",
       "ticker": "NVDA",
       "name": "Nvidia Corp.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.91%"
     },
     {
@@ -488,7 +488,7 @@
       "type": "context",
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.88%"
     },
     {
@@ -497,7 +497,7 @@
       "type": "context",
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.72%"
     },
     {
@@ -506,7 +506,7 @@
       "type": "context",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.66%"
     },
     {
@@ -515,7 +515,7 @@
       "type": "context",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.55%"
     },
     {
@@ -524,7 +524,7 @@
       "type": "context",
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.43%"
     },
     {
@@ -533,7 +533,7 @@
       "type": "context",
       "ticker": "NOVO-B.CO",
       "name": "Novo Nordisk",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.42%"
     },
     {
@@ -542,8 +542,35 @@
       "type": "context",
       "ticker": "JPM",
       "name": "JPMorgan Chase",
-      "date": "2026-06-05",
+      "date": "2026-06-06",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.40%"
+    },
+    {
+      "source": "Conglomérat",
+      "entity": "SoftBank (PR Newswire)",
+      "type": "buy",
+      "ticker": "",
+      "name": "MONDAY INVESTOR DEADLINE: Medpace Holdings Inc. Investors with Substantial Losses Have Opp",
+      "date": "Sat, 6 Jun",
+      "note": "MONDAY INVESTOR DEADLINE: Medpace Holdings Inc. Investors with Substantial Losses Have Opportunity to Lead Class Action Lawsuit, Robbins Geller Rudman &amp; Dowd LLP Announces - MEDP"
+    },
+    {
+      "source": "Conglomérat",
+      "entity": "SoftBank (PR Newswire)",
+      "type": "buy",
+      "ticker": "",
+      "name": "MONDAY INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Stellantis N",
+      "date": "Sat, 6 Jun",
+      "note": "MONDAY INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Stellantis N.V. Investors with Substantial Losses Have Opportunity to Lead Investor Class Action Lawsuit - STLA"
+    },
+    {
+      "source": "Conglomérat",
+      "entity": "SoftBank (PR Newswire)",
+      "type": "buy",
+      "ticker": "",
+      "name": "INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Zoetis Inc. (ZTS) I",
+      "date": "Sat, 6 Jun",
+      "note": "INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Zoetis Inc. (ZTS) Investors with Substantial Losses Have Opportunity to Lead Class Action Lawsuit"
     }
   ]
 }
