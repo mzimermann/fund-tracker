@@ -155,7 +155,7 @@ email:
 # --- Site ---------------------------------------------------
 site:
   # URL publique du tableau de bord (GitHub Pages) insérée dans l'email
-  dashboard_url: "https://VOTRE-UTILISATEUR.github.io/fund-tracker/"
+  dashboard_url: "https://mzimermann.github.io/fund-tracker/"
 
 # --- Achats insiders (Form 4 via OpenInsider) ----------------
 insiders:
