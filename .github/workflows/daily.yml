@@ -49,7 +49,7 @@ jobs:
           # --- Notification push mobile optionnelle (app ntfy) ---
           NTFY_TOPIC:        ${{ secrets.NTFY_TOPIC }}
           NTFY_SERVER:       ${{ secrets.NTFY_SERVER }}
-        run: cd $GITHUB_WORKSPACE && python agent.py 
+        run: cd $GITHUB_WORKSPACE && python agent.py -- force
 
       - name: Committer data.json (si modifié)
         run: |
