@@ -364,6 +364,154 @@ def save_state(s):
 #  E-MAIL
 # ======================================================================
 def render_email_html(payload: dict) -> str:
+    """Génère un e-mail clair, lisible, sans jargon technique."""
+    m    = payload["meta"]
+    mkt  = payload["market"]
+    alerts = payload["alerts"]
+    ai   = payload.get("ai_analysis", {})
+    url  = payload.get("_dashboard_url", "#")
+    today = dt.date.today().strftime("%d %B %Y").lstrip("0")
+
+    # --- Résumé marché ---
+    snap  = mkt.get("snapshot", [])
+    def tile(lbl):
+        t = next((x for x in snap if x.get("label") == lbl), {})
+        return f"{t.get('value','—')} {t.get('change','')}"
+
+    # --- Signaux en langage humain ---
+    TYPE_FR = {
+        "new":       "a acheté pour la première fois",
+        "increase":  "a renforcé sa position sur",
+        "exit":      "a vendu TOUTES ses actions",
+        "reduction": "a réduit sa position sur",
+    }
+    BUY_COLOR  = "#00d68f"
+    SELL_COLOR = "#ff4757"
+
+    def sig_block(a):
+        action  = a.get("type", "")
+        is_buy  = action in ("new", "increase")
+        color   = BUY_COLOR if is_buy else SELL_COLOR
+        label   = "ACHETER" if is_buy else "VENDRE"
+        fund    = a.get("fund", "Un grand fonds")
+        name    = a.get("name", a.get("ticker", ""))
+        ticker  = a.get("ticker", "")
+        verb    = TYPE_FR.get(action, "a modifié sa position sur")
+        reason  = a.get("suggestion") or a.get("context") or ""
+        consensus = a.get("consensus", "—")
+        isin    = a.get("isin", "")
+        return f"""
+<div style="background:#111320;border-radius:12px;margin-bottom:12px;overflow:hidden;border-left:4px solid {color}">
+  <div style="padding:14px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div>
+        <span style="font-family:monospace;font-weight:700;font-size:1.1rem;color:#e8eaf2">{html.escape(ticker)}</span>
+        <span style="color:#6b7490;font-size:.85rem;margin-left:8px">{html.escape(name)}</span>
+      </div>
+      <span style="background:{color}22;color:{color};border:1px solid {color}44;padding:3px 10px;border-radius:5px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em">{label}</span>
+    </div>
+    <div style="color:#9aa0bc;font-size:.88rem;line-height:1.55;margin-bottom:8px">
+      <strong style="color:#e8eaf2">{html.escape(fund)}</strong> {verb} <strong style="color:#e8eaf2">{html.escape(name)}</strong>.
+      {f'<br>{html.escape(reason)}' if reason else ''}
+    </div>
+    {f'<div style="color:#6b7490;font-size:.78rem">👥 {html.escape(consensus)}</div>' if consensus != "—" else ""}
+    {f'<div style="margin-top:8px;background:#08090f;border-radius:5px;padding:7px 10px;font-family:monospace;font-size:.82rem;color:#e8eaf2">ISIN : {html.escape(isin)}</div>' if isin else ""}
+  </div>
+</div>"""
+
+    # Trier : achats d'abord
+    buys  = [a for a in alerts if a.get("type") in ("new", "increase")]
+    sells = [a for a in alerts if a.get("type") in ("exit", "reduction")]
+    top_signals = buys[:5] + sells[:3]
+
+    signals_html = "".join(sig_block(a) for a in top_signals) if top_signals else \
+        '<p style="color:#6b7490;padding:14px;background:#111320;border-radius:8px">Aucun mouvement au-dessus des seuils depuis le dernier rapport. Le contexte de marché est mis à jour.</p>'
+
+    # --- Analyse DeepSeek ---
+    ai_html = ""
+    if ai.get("rapport"):
+        ts = ai.get("timestamp", "")
+        ts_fmt = ""
+        try:
+            ts_fmt = f" · {dt.datetime.fromisoformat(ts.replace('Z','')):%d/%m %H:%M}"
+        except Exception:
+            pass
+        rapport_txt = ai["rapport"].replace("\n", "<br>")
+        ai_html = f"""
+<div style="margin-top:24px;background:rgba(61,123,255,.06);border:1px solid rgba(61,123,255,.2);border-radius:12px;overflow:hidden">
+  <div style="background:rgba(61,123,255,.1);padding:12px 18px;border-bottom:1px solid rgba(61,123,255,.15)">
+    <span style="color:#3d7bff;font-weight:700">🧠 Analyse DeepSeek{ts_fmt}</span>
+  </div>
+  <div style="padding:14px 18px;color:#9aa0bc;font-size:.88rem;line-height:1.65">
+    {rapport_txt}
+  </div>
+</div>"""
+
+    # --- Insiders & signaux additionnels ---
+    gs       = payload.get("global_signals", [])
+    insiders = [g for g in gs if "Insider" in g.get("source", "") or "Form 4" in g.get("source", "")]
+    gs_other = [g for g in gs if g not in insiders][:3]
+    insider_html = ""
+    if insiders:
+        rows = "".join(
+            f'<div style="padding:8px 0;border-bottom:1px solid #1e2235;color:#9aa0bc;font-size:.84rem">'
+            f'👤 <strong style="color:#e8eaf2">{html.escape(g.get("ticker","—"))}</strong> — '
+            f'{html.escape(g.get("note","Achat insider"))}</div>'
+            for g in insiders[:5]
+        )
+        insider_html = f"""
+<div style="margin-top:20px">
+  <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#00d68f;margin-bottom:8px">👤 Achats de dirigeants cette semaine</div>
+  <div style="background:#111320;border-radius:10px;padding:0 14px">{rows}</div>
+</div>"""
+
+    nb_total = len(alerts) + len(gs)
+
+    return f"""<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;background:#08090f;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+<div style="max-width:620px;margin:0 auto;padding:20px 14px 40px">
+
+  <!-- Header -->
+  <div style="text-align:center;padding:24px 0 20px;border-bottom:1px solid #1e2235;margin-bottom:20px">
+    <div style="font-weight:800;font-size:1.4rem;color:#e8eaf2">Smart<span style="color:#00d68f">Money</span> Radar</div>
+    <div style="color:#6b7490;font-size:.82rem;margin-top:4px">{today} · {nb_total} signal(s) disponible(s)</div>
+  </div>
+
+  <!-- Marché -->
+  <div style="background:#111320;border-radius:12px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b7490;margin-bottom:10px">📊 Marchés aujourd'hui</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center">
+      <div><div style="font-weight:700;color:#e8eaf2">{tile("S&P 500")}</div><div style="font-size:.68rem;color:#6b7490">S&P 500</div></div>
+      <div><div style="font-weight:700;color:#e8eaf2">{tile("VIX")}</div><div style="font-size:.68rem;color:#6b7490">VIX</div></div>
+      <div><div style="font-weight:700;color:#e8eaf2">{tile("Brent")}</div><div style="font-size:.68rem;color:#6b7490">Pétrole</div></div>
+    </div>
+  </div>
+
+  <!-- Signaux -->
+  <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b7490;margin-bottom:10px">
+    {f"🟢 {len(buys)} achat(s) · 🔴 {len(sells)} vente(s)" if top_signals else "📋 Signaux du jour"}
+  </div>
+  {signals_html}
+
+  {insider_html}
+  {ai_html}
+
+  <!-- CTA -->
+  <div style="text-align:center;margin:28px 0 20px">
+    <a href="{url}" style="display:inline-block;background:#00d68f;color:#00160c;text-decoration:none;padding:13px 28px;border-radius:10px;font-weight:700;font-size:.9rem">📱 Ouvrir l'application →</a>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid #1e2235;padding-top:14px;font-size:.72rem;color:#4a5568;line-height:1.7;text-align:center">
+    Portefeuilles 13F au {m.get("portfolio_date","?")} · Décalage ~45 jours<br>
+    Signaux à analyser — pas un conseil en investissement personnalisé.
+  </div>
+
+</div>
+</body>
+</html>"""
     m, mk = payload["meta"], payload["market"]
     alerts = payload["alerts"]
     url = payload.get("_dashboard_url", "#")
