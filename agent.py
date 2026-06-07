@@ -524,6 +524,23 @@ def run(force=False):
             print(f"   ⚠️  Erreur pour {f['name']} : {e} — ignoré, on continue.")
             fund_blocks.append(_passive_block(f))
 
+    # ---- Si aucune nouvelle alerte 13F : conserver les dernières connues ----
+    if not all_alerts:
+        try:
+            last = _load_json(os.path.join(ROOT, "data.json"), {})
+            kept = last.get("alerts", [])
+            if kept:
+                all_alerts = kept
+                if not quarter_label:
+                    quarter_label = last.get("meta", {}).get("quarter", "")
+                if not portfolio_date:
+                    portfolio_date = last.get("meta", {}).get("portfolio_date", "")
+                print(f"   Pas de nouveau 13F — {len(all_alerts)} alerte(s) conservées du dernier dépôt.")
+            if not fund_blocks:
+                fund_blocks = last.get("funds", [])
+        except Exception:
+            pass
+
     # ---- contexte de marché (tous les jours) ----
     print("→ Contexte de marché…")
     tiles = market.build_snapshot(cfg["market"]["snapshot_tickers"])

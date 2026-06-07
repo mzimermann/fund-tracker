@@ -3,244 +3,233 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Smart Money Radar · Trade Republic</title>
-<meta name="description" content="Signaux 13F, insiders et analyse IA — directement exploitables sur Trade Republic.">
+<title>Smart Money Radar</title>
+<meta name="description" content="Signaux d'achat/vente des plus grands fonds — Trade Republic ready.">
 <link rel="manifest" href="./manifest.webmanifest">
-<meta name="theme-color" content="#090b0f">
+<meta name="theme-color" content="#050810">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Smart Money">
+<meta name="apple-mobile-web-app-title" content="SMR">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,700&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Syne+Mono&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#090b0f;--s0:#0e1117;--s1:#13181f;--s2:#1a2029;
-  --bd:#1e2836;--bd2:#2a3547;
-  --tx:#dde2ea;--mu:#6b788a;--mu2:#8a96a6;
-  --gold:#e8b455;--gold2:rgba(232,180,85,.12);
-  --buy:#45d49a;--buy2:rgba(69,212,154,.12);
-  --sell:#e06060;--sell2:rgba(224,96,96,.12);
-  --info:#5a9fd4;
-  --ff:'Barlow',sans-serif;
-  --fc:'Barlow Condensed',sans-serif;
-  --fm:'JetBrains Mono',monospace;
-  --fd:'Fraunces',Georgia,serif;
+  --bg:#050810;--s1:#0d1117;--s2:#141c26;--s3:#1c2736;
+  --bd:#1e2c3d;--bd2:#2a3d55;
+  --tx:#c8d6e8;--mu:#5c7a99;--mu2:#8aa4c0;
+  --buy:#10d98c;--buy-bg:rgba(16,217,140,.1);--buy-border:rgba(16,217,140,.3);
+  --sell:#f04060;--sell-bg:rgba(240,64,96,.1);--sell-border:rgba(240,64,96,.3);
+  --watch:#f0a030;--watch-bg:rgba(240,160,48,.1);
+  --ev:#6080f0;--ev-bg:rgba(96,128,240,.1);
+  --gold:#d4a830;
+  --ff:'Syne',sans-serif;
+  --fm:'Syne Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{font-size:15px;-webkit-font-smoothing:antialiased}
+html{font-size:14px;-webkit-font-smoothing:antialiased}
 body{background:var(--bg);color:var(--tx);font-family:var(--ff);min-height:100vh;overflow-x:hidden}
-/* grain */
-body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
-/* layout */
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
-/* ===================== HEADER ===================== */
-header{border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;background:rgba(9,11,15,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.hdr{display:flex;align-items:center;gap:12px;padding:12px 16px;max-width:1040px;margin:0 auto}
-.logo{font-family:var(--fd);font-weight:900;font-size:1.3rem;color:var(--gold);letter-spacing:-.02em;flex-shrink:0}
-.logo b{color:var(--tx)}
-.regime-badge{font-family:var(--fm);font-size:.65rem;padding:3px 8px;border-radius:20px;border:1px solid var(--bd2);color:var(--mu2);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.hdr-right{margin-left:auto;display:flex;align-items:center;gap:8px}
-.updated{font-family:var(--fm);font-size:.65rem;color:var(--mu);white-space:nowrap}
-.btn-guide{background:var(--s1);border:1px solid var(--bd2);color:var(--tx);padding:6px 12px;border-radius:8px;cursor:pointer;font-family:var(--ff);font-size:.8rem;white-space:nowrap;transition:background .15s}
-.btn-guide:hover{background:var(--s2)}
-/* ===================== NEWS BAND ===================== */
-.news-band{background:var(--s0);border-bottom:1px solid var(--bd);padding:7px 0;overflow:hidden}
-.news-scroll{display:flex;gap:32px;animation:scroll-left 60s linear infinite;width:max-content;padding:0 16px}
-.news-scroll:hover{animation-play-state:paused}
-.news-item{font-family:var(--fm);font-size:.72rem;color:var(--mu2);white-space:nowrap;cursor:default}
-.news-item::before{content:'▸ ';color:var(--gold)}
-@keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-/* ===================== TILES ===================== */
-.tiles-band{padding:12px 0;border-bottom:1px solid var(--bd)}
-.tiles{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-.tiles::-webkit-scrollbar{display:none}
-.tile{background:var(--s1);border:1px solid var(--bd);border-radius:8px;padding:8px 12px;min-width:72px;flex-shrink:0;text-align:center}
-.tile-val{font-family:var(--fc);font-weight:700;font-size:1rem;line-height:1}
-.tile-lbl{font-family:var(--fm);font-size:.58rem;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
-.tile-chg{font-family:var(--fm);font-size:.65rem;margin-top:1px}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(16,130,217,.06),transparent);pointer-events:none;z-index:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 14px;position:relative;z-index:1}
+
+/* ── HEADER ─────────────────────────────────── */
+header{background:rgba(5,8,16,.92);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.hdr{display:flex;align-items:center;gap:10px;padding:10px 14px;max-width:1200px;margin:0 auto}
+.logo{font-family:var(--fm);font-size:1.05rem;font-weight:700;color:var(--buy);letter-spacing:.05em;flex-shrink:0}
+.logo span{color:var(--tx)}
+.vix-pill{font-family:var(--fm);font-size:.68rem;padding:3px 9px;border-radius:3px;letter-spacing:.06em;flex-shrink:0}
+.vix-ok{background:var(--buy-bg);color:var(--buy);border:1px solid var(--buy-border)}
+.vix-warn{background:var(--watch-bg);color:var(--watch);border:1px solid rgba(240,160,48,.3)}
+.vix-alert{background:var(--sell-bg);color:var(--sell);border:1px solid var(--sell-border)}
+.hdr-r{margin-left:auto;display:flex;align-items:center;gap:8px}
+.ts{font-family:var(--fm);font-size:.65rem;color:var(--mu)}
+.btn-sm{background:var(--s2);border:1px solid var(--bd2);color:var(--mu2);padding:5px 11px;border-radius:4px;cursor:pointer;font-family:var(--ff);font-size:.78rem;transition:all .15s}
+.btn-sm:hover{background:var(--s3);color:var(--tx)}
+
+/* ── MARKET STRIP ────────────────────────────── */
+.mkt{border-bottom:1px solid var(--bd);background:var(--s1)}
+.mkt-inner{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.mkt-inner::-webkit-scrollbar{display:none}
+.tile{padding:9px 16px;border-right:1px solid var(--bd);flex-shrink:0;min-width:90px}
+.tile-v{font-family:var(--fm);font-size:.95rem;font-weight:700;line-height:1}
+.tile-l{font-family:var(--fm);font-size:.58rem;color:var(--mu);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.tile-c{font-family:var(--fm);font-size:.65rem;margin-top:1px}
 .up{color:var(--buy)}.down{color:var(--sell)}.neu{color:var(--mu)}
-/* ===================== SECTIONS ===================== */
-.section{padding:24px 0}
-.sec-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap}
-.sec-title{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--tx)}
-.sec-count{font-family:var(--fm);font-size:.72rem;color:var(--mu);background:var(--s1);border:1px solid var(--bd);padding:2px 8px;border-radius:10px}
-/* ===================== CARDS ===================== */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
-.card{background:var(--s1);border:1px solid var(--bd);border-left:3px solid var(--buy);border-radius:10px;padding:14px;cursor:default;transition:transform .15s,border-color .15s}
-.card:hover{transform:translateY(-2px);border-color:var(--bd2)}
-.card.sell{border-left-color:var(--sell)}
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
-.card-id .ticker{font-family:var(--fc);font-weight:700;font-size:1.25rem;letter-spacing:.02em}
-.card-id .company{font-family:var(--ff);font-size:.78rem;color:var(--mu2);margin-top:2px;line-height:1.3}
-.score-circle{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fc);font-weight:700;font-size:.9rem;flex-shrink:0}
-.sc-high{background:var(--buy);color:#041a0f}
-.sc-mid{background:var(--gold);color:#1a1000}
-.sc-low{background:var(--sell2);color:var(--sell);border:1px solid var(--sell)}
-.card-reason{font-size:.8rem;color:var(--tx);line-height:1.5;margin:6px 0}
-.card-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:8px 0}
-.badge{font-family:var(--fm);font-size:.6rem;padding:2px 6px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-.badge-fresh{background:var(--buy2);color:var(--buy)}
-.badge-trim{background:rgba(232,180,85,.15);color:var(--gold)}
-.badge-old{background:var(--sell2);color:var(--sell)}
-.badge-source{background:var(--s2);color:var(--mu2);border:1px solid var(--bd)}
-.badge-drift-warn{background:rgba(232,180,85,.2);color:var(--gold)}
-.badge-consensus{background:rgba(90,159,212,.15);color:var(--info)}
-.card-isin{font-family:var(--fm);font-size:.7rem;color:var(--mu);margin:4px 0}
-.card-isin span{color:var(--mu2)}
-.card-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
-.btn{padding:6px 12px;border-radius:6px;border:none;cursor:pointer;font-family:var(--ff);font-size:.78rem;font-weight:600;transition:all .15s;white-space:nowrap}
-.btn-copy{background:var(--gold);color:#0c0700}
-.btn-copy:hover{filter:brightness(1.1)}
-.btn-watch{background:transparent;border:1px solid var(--bd2);color:var(--mu2)}
-.btn-watch:hover{border-color:var(--mu2);color:var(--tx)}
-.btn-watch.on{background:var(--gold2);border-color:var(--gold);color:var(--gold)}
-.btn-tr{background:var(--s2);border:1px solid var(--bd2);color:var(--mu2)}
-.btn-tr:hover{border-color:var(--info);color:var(--info)}
-/* ===================== FILTER / SEARCH ===================== */
-.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-.search-box{background:var(--s1);border:1px solid var(--bd);color:var(--tx);padding:7px 12px;border-radius:8px;font-family:var(--ff);font-size:.85rem;flex:1;min-width:140px;outline:none;transition:border-color .15s}
-.search-box:focus{border-color:var(--bd2)}
-.search-box::placeholder{color:var(--mu)}
-.pills{display:flex;gap:5px;flex-wrap:wrap}
-.pill{background:var(--s1);border:1px solid var(--bd);color:var(--mu);padding:5px 12px;border-radius:20px;font-size:.78rem;cursor:pointer;transition:all .15s;font-family:var(--ff)}
+
+/* ── SECTION ─────────────────────────────────── */
+.sec{padding:20px 0}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.sec-t{font-size:1rem;font-weight:700;color:#e8f0fc;letter-spacing:.02em}
+.badge{font-family:var(--fm);font-size:.62rem;padding:2px 7px;border-radius:3px;letter-spacing:.05em;font-weight:700}
+.badge-n{background:var(--s3);color:var(--mu2);border:1px solid var(--bd2)}
+
+/* ── FILTERS ─────────────────────────────────── */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.search{background:var(--s2);border:1px solid var(--bd);color:var(--tx);padding:6px 11px;border-radius:4px;font-family:var(--ff);font-size:.82rem;outline:none;min-width:160px;transition:border-color .15s}
+.search:focus{border-color:var(--bd2)}
+.search::placeholder{color:var(--mu)}
+.pill{background:var(--s2);border:1px solid var(--bd);color:var(--mu);padding:5px 11px;border-radius:4px;font-size:.75rem;cursor:pointer;transition:all .15s;font-family:var(--ff);white-space:nowrap}
 .pill:hover{border-color:var(--mu)}
-.pill.on{background:var(--tx);color:var(--bg);border-color:var(--tx);font-weight:600}
-/* ===================== TABLE ===================== */
-.tbl-wrap{border:1px solid var(--bd);border-radius:10px;overflow:hidden;overflow-x:auto}
+.pill.on{background:var(--tx);color:var(--bg);border-color:var(--tx);font-weight:700}
+
+/* ── SIGNAL TABLE ────────────────────────────── */
+.tbl-wrap{border:1px solid var(--bd);border-radius:6px;overflow:hidden;overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:.82rem}
-th{background:var(--s0);padding:9px 12px;text-align:left;font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);cursor:pointer;white-space:nowrap;user-select:none}
+thead tr{background:var(--s1)}
+th{padding:8px 12px;text-align:left;font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1px solid var(--bd)}
 th:hover{color:var(--mu2)}
-th.sorted{color:var(--gold)}
-td{padding:9px 12px;border-top:1px solid var(--bd);vertical-align:middle}
-tr:hover td{background:rgba(255,255,255,.015)}
-.td-ticker{font-family:var(--fc);font-weight:700;font-size:.95rem}
-.td-name{font-size:.8rem;color:var(--mu2);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.td-isin{font-family:var(--fm);font-size:.68rem;color:var(--mu)}
-.td-score{font-family:var(--fc);font-weight:700;font-size:1rem}
-.td-reason{font-size:.75rem;color:var(--mu2);max-width:180px;line-height:1.4}
-.td-actions{display:flex;gap:4px}
-.btn-sm{padding:3px 7px;font-size:.68rem;border-radius:5px}
-/* ===================== AI SECTION ===================== */
-.ai-card{background:var(--s1);border:1px solid var(--gold);border-radius:12px;padding:20px}
-.ai-text{font-size:.88rem;line-height:1.7;color:var(--tx);margin-bottom:16px}
-.ai-text p{margin-bottom:12px}
-.ai-props{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-bottom:16px}
-.ai-prop{background:var(--s0);border:1px solid var(--bd);border-radius:8px;padding:12px;border-left:3px solid var(--buy)}
-.ai-prop.sell{border-left-color:var(--sell)}
-.ai-prop-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.ai-prop-ticker{font-family:var(--fc);font-weight:700;font-size:1.05rem}
-.ai-prop-score{font-family:var(--fm);font-size:.75rem;padding:2px 7px;border-radius:10px;background:var(--buy2);color:var(--buy)}
-.ai-prop.sell .ai-prop-score{background:var(--sell2);color:var(--sell)}
-.ai-prop-reason{font-size:.78rem;color:var(--mu2);line-height:1.4}
-.ai-prop-risk{font-size:.72rem;color:var(--sell);margin-top:4px}
-.transparency{background:rgba(9,11,15,.7);border:1px solid var(--bd);border-radius:8px;padding:14px;margin-top:16px}
-.tr-title{font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.tr-grid{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:.78rem}
-.tr-key{color:var(--mu)}
-.tr-val{color:var(--mu2);font-family:var(--fm)}
-.tr-disclaimer{margin-top:10px;padding-top:10px;border-top:1px solid var(--bd);font-size:.73rem;font-style:italic;color:var(--mu)}
-/* ===================== CHECKLIST ===================== */
-.checklist{display:flex;flex-direction:column;gap:0}
-.check-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--bd);cursor:pointer}
-.check-item:last-child{border-bottom:none}
-.check-item input{width:16px;height:16px;accent-color:var(--buy);cursor:pointer;flex-shrink:0}
-.check-item label{font-size:.86rem;cursor:pointer;line-height:1.4}
-.check-item input:checked + label{color:var(--mu);text-decoration:line-through}
-/* ===================== WATCHLIST ===================== */
-.empty-state{text-align:center;padding:32px;color:var(--mu);font-size:.88rem}
-/* ===================== MODAL ===================== */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.modal-box{background:var(--s1);border:1px solid var(--bd2);border-radius:14px;padding:24px;max-width:560px;width:100%;max-height:85vh;overflow-y:auto}
-.modal-box h2{font-family:var(--fd);font-size:1.3rem;color:var(--gold);margin-bottom:16px}
-.guide-block{margin-bottom:14px}
-.guide-block h3{font-family:var(--fc);font-weight:700;font-size:.9rem;color:var(--tx);margin-bottom:5px;letter-spacing:.04em}
-.guide-block p{font-size:.82rem;color:var(--mu2);line-height:1.55}
-.modal-close{float:right;background:var(--s2);border:1px solid var(--bd);color:var(--mu2);padding:5px 14px;border-radius:7px;cursor:pointer;font-family:var(--ff);font-size:.82rem}
-/* ===================== TOAST ===================== */
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0c0700;padding:8px 18px;border-radius:8px;font-weight:700;font-size:.85rem;z-index:300;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--bd);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.buy-row:hover td{background:rgba(16,217,140,.04)}
+tr.sell-row:hover td{background:rgba(240,64,96,.04)}
+tr:hover td{background:rgba(255,255,255,.02)}
+tr.buy-row td:first-child{border-left:2px solid var(--buy)}
+tr.sell-row td:first-child{border-left:2px solid var(--sell)}
+tr.watch-row td:first-child{border-left:2px solid var(--watch)}
+tr.event-row td:first-child{border-left:2px solid var(--ev)}
+/* expandable row */
+tr.detail-row td{background:var(--s1);padding:12px 16px;font-size:.8rem;color:var(--mu2);border-bottom:1px solid var(--bd)}
+tr.detail-row{display:none}
+tr.detail-row.open{display:table-row}
+
+/* ── ACTION PILL ─────────────────────────────── */
+.act{font-family:var(--fm);font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;display:inline-block}
+.act-buy{background:var(--buy-bg);color:var(--buy);border:1px solid var(--buy-border)}
+.act-sell{background:var(--sell-bg);color:var(--sell);border:1px solid var(--sell-border)}
+.act-watch{background:var(--watch-bg);color:var(--watch);border:1px solid rgba(240,160,48,.3)}
+.act-event{background:var(--ev-bg);color:var(--ev);border:1px solid rgba(96,128,240,.3)}
+
+/* ── SCORE ───────────────────────────────────── */
+.score{font-family:var(--fm);font-size:.95rem;font-weight:700}
+.score-hi{color:var(--buy)} .score-mid{color:var(--watch)} .score-lo{color:var(--sell)}
+
+/* ── SOURCE ICON ─────────────────────────────── */
+.src{font-family:var(--fm);font-size:.68rem;color:var(--mu2);white-space:nowrap}
+
+/* ── TICKER ──────────────────────────────────── */
+.tkr{font-family:var(--fm);font-weight:700;font-size:1rem;color:#e8f0fc}
+.co{font-size:.75rem;color:var(--mu);margin-top:1px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ── WHY ─────────────────────────────────────── */
+.why{font-size:.78rem;color:var(--mu2);line-height:1.45;max-width:220px}
+
+/* ── FRESHNESS ───────────────────────────────── */
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:4px;flex-shrink:0}
+.dot-g{background:var(--buy)} .dot-a{background:var(--watch)} .dot-r{background:var(--sell)}
+.fresh{font-family:var(--fm);font-size:.64rem;color:var(--mu);white-space:nowrap;display:flex;align-items:center}
+
+/* ── ISIN / ACTIONS ──────────────────────────── */
+.isin-txt{font-family:var(--fm);font-size:.65rem;color:var(--mu);margin-top:2px}
+.btn-copy{background:var(--gold);color:#0a0700;border:none;padding:4px 9px;border-radius:3px;font-size:.68rem;font-weight:700;cursor:pointer;white-space:nowrap;font-family:var(--ff);transition:filter .15s}
+.btn-copy:hover{filter:brightness(1.1)}
+.btn-wl{background:transparent;border:1px solid var(--bd2);color:var(--mu);padding:4px 7px;border-radius:3px;font-size:.68rem;cursor:pointer;font-family:var(--ff);transition:all .15s;margin-left:3px}
+.btn-wl:hover{border-color:var(--gold);color:var(--gold)}
+.btn-wl.on{background:rgba(212,168,48,.15);border-color:var(--gold);color:var(--gold)}
+.btn-exp{background:transparent;border:none;color:var(--mu);font-size:.75rem;cursor:pointer;padding:0 4px}
+
+/* ── AI PANEL ────────────────────────────────── */
+.ai-wrap{background:var(--s1);border:1px solid var(--bd);border-radius:6px;overflow:hidden}
+.ai-hdr{background:var(--s2);padding:12px 16px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
+.ai-title{font-weight:700;font-size:.9rem;color:#e8f0fc}
+.ai-ts{font-family:var(--fm);font-size:.64rem;color:var(--mu)}
+.ai-body{padding:16px}
+.ai-narrative{font-size:.84rem;line-height:1.65;color:var(--mu2);margin-bottom:16px}
+.ai-narrative p{margin-bottom:10px}
+.prop-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+@media(max-width:680px){.prop-grid{grid-template-columns:1fr}}
+.prop{background:var(--s2);border:1px solid var(--bd);border-radius:4px;padding:10px;border-left:3px solid var(--buy)}
+.prop.sell{border-left-color:var(--sell)}
+.prop-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.prop-tkr{font-family:var(--fm);font-weight:700;font-size:.95rem}
+.prop-score{font-family:var(--fm);font-size:.7rem;padding:2px 6px;border-radius:2px;background:var(--buy-bg);color:var(--buy)}
+.prop.sell .prop-score{background:var(--sell-bg);color:var(--sell)}
+.prop-why{font-size:.76rem;color:var(--mu2);line-height:1.45;margin-bottom:5px}
+.prop-risk{font-size:.7rem;color:var(--sell);opacity:.8}
+.ai-meta{background:var(--s2);border-radius:4px;padding:10px 12px;margin-top:12px;font-size:.72rem}
+.ai-meta-title{font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.ai-meta-row{display:flex;gap:8px;margin-bottom:4px;color:var(--mu)}
+.ai-meta-row span{color:var(--mu2)}
+.ai-disc{margin-top:8px;padding-top:8px;border-top:1px solid var(--bd);font-style:italic;color:var(--mu);line-height:1.5}
+
+/* ── CHECKLIST ───────────────────────────────── */
+.cl-item{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--bd)}
+.cl-item:last-child{border-bottom:none}
+.cl-item input{accent-color:var(--buy);width:15px;height:15px;cursor:pointer;flex-shrink:0}
+.cl-item label{font-size:.84rem;cursor:pointer;line-height:1.4}
+.cl-item input:checked+label{text-decoration:line-through;color:var(--mu)}
+
+/* ── EMPTY STATE ─────────────────────────────── */
+.empty{text-align:center;padding:40px 20px;color:var(--mu)}
+.empty-icon{font-size:2rem;margin-bottom:10px}
+.empty-msg{font-size:.88rem;line-height:1.6}
+
+/* ── MODAL ───────────────────────────────────── */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;display:flex;align-items:center;justify-content:center;padding:14px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.modal-box{background:var(--s1);border:1px solid var(--bd2);border-radius:8px;padding:22px;max-width:520px;width:100%;max-height:82vh;overflow-y:auto}
+.modal-box h2{font-size:1.1rem;color:var(--gold);margin-bottom:14px}
+.modal-close{float:right;background:var(--s3);border:1px solid var(--bd);color:var(--mu2);padding:4px 12px;border-radius:4px;cursor:pointer;font-family:var(--ff);font-size:.78rem}
+.guide-entry{margin-bottom:12px}
+.guide-entry h3{font-family:var(--fm);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--buy);margin-bottom:4px}
+.guide-entry p{font-size:.8rem;color:var(--mu2);line-height:1.55}
+
+/* ── TOAST ───────────────────────────────────── */
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--buy);color:#030b07;padding:7px 16px;border-radius:4px;font-weight:700;font-size:.82rem;z-index:300;opacity:0;transition:opacity .22s;pointer-events:none;white-space:nowrap;font-family:var(--fm)}
 .toast.show{opacity:1}
-/* ===================== PWA INSTALL ===================== */
-.install-bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:150;display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px;border:1px solid var(--bd2);border-radius:12px;background:rgba(14,17,23,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:.82rem}
-/* ===================== DIVIDER ===================== */
-.divider{border:none;border-top:1px solid var(--bd);margin:0}
-/* ===================== RESPONSIVE ===================== */
-@media(max-width:680px){
+
+/* ── DIVIDER ─────────────────────────────────── */
+hr{border:none;border-top:1px solid var(--bd)}
+
+/* ── MOBILE ──────────────────────────────────── */
+@media(max-width:700px){
   .tbl-wrap{display:none}
-  .card-grid{grid-template-columns:1fr}
-  .card.desktop-only{display:none}
+  .mob-cards{display:flex;flex-direction:column;gap:8px}
+  .mob-card{background:var(--s1);border:1px solid var(--bd);border-radius:6px;padding:12px;border-left:3px solid var(--buy)}
+  .mob-card.sell{border-left-color:var(--sell)}
+  .mob-card.watch{border-left-color:var(--watch)}
+  .mob-card.event{border-left-color:var(--ev)}
+  .mob-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px}
+  .mob-card-btm{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
 }
-@media(min-width:681px){
-  .mobile-cards{display:none}
+@media(min-width:701px){
+  .mob-cards{display:none}
 }
-/* ===================== ANIMS ===================== */
-.fade-in{animation:fadeIn .3s ease both}
-@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.stagger:nth-child(1){animation-delay:.03s}
-.stagger:nth-child(2){animation-delay:.06s}
-.stagger:nth-child(3){animation-delay:.09s}
-.stagger:nth-child(4){animation-delay:.12s}
-.stagger:nth-child(5){animation-delay:.15s}
-.stagger:nth-child(6){animation-delay:.18s}
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <header>
   <div class="hdr">
-    <div class="logo">Smart<b>Money</b> Radar</div>
-    <div class="regime-badge" id="regimeBadge">— Chargement —</div>
-    <div class="hdr-right">
-      <div class="updated" id="updatedAt">—</div>
-      <button class="btn-guide" onclick="openGuide()">📘 Guide</button>
+    <div class="logo">SMR<span>·RADAR</span></div>
+    <div class="vix-pill vix-ok" id="vixPill">— VIX</div>
+    <div class="hdr-r">
+      <div class="ts" id="tsEl">—</div>
+      <button class="btn-sm" onclick="openGuide()">? Guide</button>
     </div>
   </div>
 </header>
 
-<!-- NEWS BAND -->
-<div class="news-band" id="newsBand" style="display:none">
-  <div class="news-scroll" id="newsScroll"></div>
-</div>
-
-<!-- TILES -->
-<div class="tiles-band wrap">
-  <div class="tiles" id="tiles"></div>
-</div>
+<!-- Market strip -->
+<div class="mkt"><div class="wrap"><div class="mkt-inner" id="mktStrip"></div></div></div>
 
 <div class="wrap">
 
-<!-- ===== TOP OPPORTUNITÉS ===== -->
-<div class="section">
-  <div class="sec-hdr">
-    <div class="sec-title">🔥 Top Opportunités</div>
-    <span class="sec-count" id="topCount">—</span>
+<!-- ── SIGNAL TABLE ─────────────────────────── -->
+<div class="sec">
+  <div class="sec-h">
+    <div class="sec-t">📋 Signaux — Que faire ?</div>
+    <span class="badge badge-n" id="sigCount">—</span>
   </div>
-  <div class="card-grid" id="topCards"></div>
-</div>
-
-<hr class="divider">
-
-<!-- ===== TOUS LES SIGNAUX ===== -->
-<div class="section">
-  <div class="sec-hdr">
-    <div class="sec-title">📊 Tous les Signaux</div>
-    <span class="sec-count" id="allCount">—</span>
-  </div>
-  <div class="controls">
-    <input class="search-box" id="searchBox" placeholder="🔍 Rechercher ticker ou société…" oninput="onSearch(this.value)">
-  </div>
-  <div class="controls">
-    <div class="pills" id="pills">
+  <div class="filters">
+    <input class="search" id="srch" placeholder="🔍 Ticker ou société…" oninput="onSearch(this.value)">
+    <div style="display:flex;gap:5px;flex-wrap:wrap" id="pills">
       <button class="pill on" data-f="all">Tous</button>
-      <button class="pill" data-f="buy">🟢 Achats</button>
-      <button class="pill" data-f="sell">🔴 Ventes</button>
+      <button class="pill" data-f="buy">🟢 ACHETER</button>
+      <button class="pill" data-f="sell">🔴 VENDRE</button>
       <button class="pill" data-f="score">Score ≥ 70</button>
-      <button class="pill" data-f="insider">🔍 Insiders</button>
+      <button class="pill" data-f="insider">👤 Insiders</button>
       <button class="pill" data-f="small">Small/Mid</button>
-      <button class="pill" data-f="watch">⭐ Watchlist</button>
+      <button class="pill" data-f="watch">⭐ Suivi</button>
     </div>
   </div>
   <!-- Desktop table -->
@@ -248,14 +237,14 @@ tr:hover td{background:rgba(255,255,255,.015)}
     <table>
       <thead>
         <tr>
-          <th onclick="sortBy('ticker')">Ticker</th>
+          <th>ACTION</th>
+          <th onclick="sortBy('ticker')">Ticker ↕</th>
           <th>Société</th>
-          <th>ISIN</th>
-          <th onclick="sortBy('type')">Signal</th>
           <th onclick="sortBy('score')">Score ↓</th>
           <th>Source</th>
           <th>Fraîcheur</th>
-          <th>Raison</th>
+          <th>Pourquoi</th>
+          <th>ISIN</th>
           <th></th>
         </tr>
       </thead>
@@ -263,137 +252,83 @@ tr:hover td{background:rgba(255,255,255,.015)}
     </table>
   </div>
   <!-- Mobile cards -->
-  <div class="mobile-cards card-grid" id="mobileCards"></div>
+  <div class="mob-cards" id="mobCards"></div>
 </div>
 
-<hr class="divider">
+<hr>
 
-<!-- ===== ANALYSE IA ===== -->
-<div class="section" id="aiSection" style="display:none">
-  <div class="sec-hdr">
-    <div class="sec-title">🧠 Analyse IA DeepSeek</div>
-  </div>
-  <div class="ai-card" id="aiCard"></div>
-</div>
-
-<!-- ===== WATCHLIST ===== -->
-<div class="section" id="wlSection" style="display:none">
-  <div class="sec-hdr">
-    <div class="sec-title">⭐ Ma Watchlist</div>
-    <span class="sec-count" id="wlCount">—</span>
-  </div>
-  <div class="card-grid" id="wlCards"></div>
-</div>
-
-<hr class="divider">
-
-<!-- ===== CHECKLIST ===== -->
-<div class="section">
-  <div class="sec-hdr">
-    <div class="sec-title">✅ Checklist avant d'agir</div>
-  </div>
-  <div style="background:var(--s1);border:1px solid var(--bd);border-radius:10px;overflow:hidden">
-    <div class="checklist" id="checklist"></div>
+<!-- ── DEEPSEEK ANALYSIS ─────────────────────── -->
+<div class="sec" id="aiSec" style="display:none">
+  <div class="sec-h"><div class="sec-t">🧠 Intelligence DeepSeek</div></div>
+  <div class="ai-wrap">
+    <div class="ai-hdr">
+      <div class="ai-title">Analyse IA — Synthèse & Recommandations</div>
+      <div class="ai-ts" id="aiTs">—</div>
+    </div>
+    <div class="ai-body" id="aiBody"></div>
   </div>
 </div>
 
-<!-- FOOTER -->
-<div style="padding:24px 0;text-align:center">
-  <div style="font-family:var(--fm);font-size:.65rem;color:var(--mu);line-height:2">
+<hr>
+
+<!-- ── CHECKLIST ──────────────────────────────── -->
+<div class="sec">
+  <div class="sec-h"><div class="sec-t">✅ Avant d'agir — Anti-biais</div></div>
+  <div style="background:var(--s1);border:1px solid var(--bd);border-radius:6px;overflow:hidden" id="cl"></div>
+</div>
+
+<!-- Footer -->
+<div style="padding:20px 0;text-align:center">
+  <div style="font-family:var(--fm);font-size:.6rem;color:var(--mu);line-height:2">
     Smart Money Radar · Signaux à analyser — pas un conseil en investissement<br>
-    13F : ~45 jours de décalage · Insiders : Form 4 SEC · IA : DeepSeek / Anthropic
+    13F SEC (~45 j décalage) · Insiders Form 4 · 13D/G · Short Interest · Earnings · ETF UCITS · AMF/BaFin
   </div>
 </div>
 
 </div><!-- /wrap -->
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- GUIDE MODAL -->
-<div class="modal" id="guideModal" style="display:none" onclick="if(event.target===this)closeGuide()">
+<!-- Guide modal -->
+<div class="modal" id="gModal" style="display:none" onclick="if(event.target===this)closeGuide()">
   <div class="modal-box">
     <button class="modal-close" onclick="closeGuide()">✕ Fermer</button>
-    <h2>📘 Guide du débutant</h2>
-    <div class="guide-block">
-      <h3>🔢 Le Score (0-100)</h3>
-      <p>Mesure la <strong>force du signal</strong>, pas une garantie de gain. Score basé sur : convergence entre plusieurs fonds, qualité de la source (fond concentré > fond indiciel), fraîcheur (insider récent > 13F 45j). <strong>≥ 70 = fort · 50-69 = modéré · < 50 = faible</strong>.</p>
-    </div>
-    <div class="guide-block">
-      <h3>📋 Copier l'ISIN pour Trade Republic</h3>
-      <p>Appuyez sur le bouton jaune "📋 ISIN" → l'ISIN est copié. Ouvrez Trade Republic → recherche → collez. Pour les actions US, l'ISIN commence par "US". Si aucun ISIN n'est disponible, copiez le Ticker.</p>
-    </div>
-    <div class="guide-block">
-      <h3>⏱ Drift (décalage 45 jours)</h3>
-      <p>Les 13F sont publiés 45 jours après la date du portefeuille. Le badge ⚠️ apparaît si le titre a déjà beaucoup bougé. Vérifiez toujours le prix actuel avant d'agir.</p>
-    </div>
-    <div class="guide-block">
-      <h3>🏷️ Fraîcheur des signaux</h3>
-      <p><span class="badge badge-fresh">RÉCENT</span> Insider (< 7 jours) · <span class="badge badge-trim">TRIM.</span> 13F du trimestre en cours · <span class="badge badge-old">45J</span> Données avec décalage maximal</p>
-    </div>
-    <div class="guide-block">
-      <h3>🟢 Achats vs 🔴 Ventes</h3>
-      <p>Achat = le fonds a ouvert ou renforcé une position. Vente = sortie totale ou réduction significative. Ces mouvements reflètent les décisions passées de tiers — pas une instruction pour vous.</p>
-    </div>
-    <div class="guide-block">
-      <h3>⭐ Watchlist</h3>
-      <p>Appuyez sur "☆ Suivre" pour sauvegarder un signal. Votre watchlist est sauvegardée dans votre navigateur. Retrouvez-la dans la section "Watchlist" ou via le filtre ⭐.</p>
-    </div>
-    <div class="guide-block">
-      <h3>⚠️ Rappel</h3>
-      <p>Ces signaux sont des pistes à analyser. Ce n'est pas un conseil en investissement. Faites vos propres recherches, consultez la checklist, et ne risquez que ce que vous pouvez vous permettre de perdre.</p>
-    </div>
+    <h2>Guide rapide</h2>
+    <div class="guide-entry"><h3>ACTION — Que faire ?</h3><p><strong style="color:var(--buy)">ACHETER</strong> = signal haussier (achat de fonds ou insider). <strong style="color:var(--sell)">VENDRE</strong> = signal baissier (sortie de fonds). <strong style="color:var(--watch)">WATCH</strong> = surveiller. Ce sont des signaux à analyser, pas des ordres.</p></div>
+    <div class="guide-entry"><h3>Score (0→100)</h3><p>Force du signal. 70+ = convergence multi-sources ou fond concentré à forte conviction. 50-69 = signal solide mais isolé. &lt;50 = signal faible.</p></div>
+    <div class="guide-entry"><h3>Copier ISIN</h3><p>Appuie sur le bouton jaune → l'ISIN est dans le presse-papier → colle dans la recherche Trade Republic.</p></div>
+    <div class="guide-entry"><h3>Pourquoi</h3><p>La raison pour laquelle ce signal est apparu. Pour DeepSeek : raisonnement complet avec sources et contexte macro.</p></div>
+    <div class="guide-entry"><h3>Fraîcheur</h3><p>🟢 Signal récent (&lt;7 jours) · 🟡 Ce trimestre · 🔴 Données 13F avec 45j de décalage</p></div>
+    <div class="guide-entry"><h3>⚠ Rappel</h3><p>Les 13F sont décalés de 45 jours. Vérifiez le prix actuel avant d'agir. Aucun signal n'est une garantie.</p></div>
   </div>
 </div>
 
 <script>
-// ================================================================
-//  DONNÉES — marqueur remplacé par agent.py à chaque run
-// ================================================================
-const EMBEDDED_DATA = null; // données chargées depuis data.json marché price une hausse d'ici 2027."}, {"k": "Inflation", "v": "Collante / réaccélère", "note": "Prix à la production de février au-dessus des attentes ; effet énergie de la guerre."}, {"k": "Emploi", "v": "Résilient", "note": "ADP +122k en mai. Rapport NFP (paie non agricole) vendredi 5 juin — événement clé de la semaine."}, {"k": "Géopolitique", "v": "Guerre Iran-USA", "note": "Frappes croisées, risque sur le détroit d'Ormuz, négociations de cessez-le-feu fragiles. Premier moteur du pétrole et des rendements."}], "events": [{"date": "Ven. 5 juin", "label": "Paie non agricole (NFP) — mai", "weight": "haute"}, {"date": "Juin", "label": "Réunion FOMC (1ère sous K. Warsh)", "weight": "haute"}, {"date": "En cours", "label": "Saison des résultats T1 (AVGO, CRWD ont publié)", "weight": "moyenne"}, {"date": "À venir", "label": "IPO SpaceX marketée à 135 $/action (~75 Md$, Goldman chef de file)", "weight": "moyenne"}], "news": [{"src": "TheStreet", "time": "4 juin", "title": "Les futures Nasdaq reculent sur les craintes liées à la guerre en Iran ; le pétrole se détend après des signaux diplomatiques contradictoires."}, {"src": "CNBC", "time": "31 mai", "title": "Le S&P 500 clôture à un record pour entamer juin — neuvième semaine de hausse d'affilée, +5,2 % en mai, le rallye tech l'emportant sur le choc pétrolier."}, {"src": "Yahoo Finance", "time": "3 juin", "title": "Les indices refluent de leurs records ; Wall Street arbitre entre des négociations Iran-USA fragiles et la promesse du trade IA."}, {"src": "Bloomberg (via Yahoo)", "time": "1 juin", "title": "La flambée des rendements depuis le début du conflit a déjà resserré les conditions financières ; les traders anticipent une hausse de la Fed d'ici 2027."}, {"src": "Investing.com / Reuters", "time": "25 mai", "title": "Les hedge funds achètent la tech au rythme le plus rapide en ~3 mois (note Goldman) ; les semis et l'IA largement épargnés par les craintes liées à l'Iran."}], "providers_note": "Sur l'instance déployée, ces tuiles, le calendrier macro et le fil d'actualité sont rafraîchis chaque jour via TradingEconomics (macro/calendrier), les flux RSS d'Investing.com et de FinancialJuice (actualité), et Yahoo Finance (prix en direct). Les valeurs ci-dessus sont la dernière photo connue (3–4 juin 2026)."}, "consensus": {"theme": "L'IA et les semis dominent les achats (6 des 10 noms les plus achetés). Côté ventes : dérating du logiciel SaaS (transition vers l'agentique), allègement de la Chine, et Microsoft en valeur de bataille (vendu par les Tiger Cubs, acheté par Ackman).", "top_buys": [{"ticker": "GOOGL", "name": "Alphabet", "funds": "Berkshire + nombreux HF", "note": "Achat le plus convergent du trimestre : pari sur le moat IA (Gemini, Cloud) à valorisation jugée raisonnable."}, {"ticker": "NVDA", "name": "Nvidia", "funds": "Large", "note": "Cœur du trade IA ; quelques allègements (Tepper) mais reste plébiscité."}, {"ticker": "AVGO", "name": "Broadcom", "funds": "Druckenmiller (nouv.), HF", "note": "Exposition IA/semis custom ; nouvelle position chez Duquesne."}, {"ticker": "META", "name": "Meta Platforms", "funds": "Large", "note": "Valorisation jugée attractive (~16x BPA 2027 selon Wolfe)."}, {"ticker": "AMZN", "name": "Amazon", "funds": "Druckenmiller, HF", "note": "E-commerce + cloud/IA. (Note : Berkshire en est sorti, lui.)"}, {"ticker": "MU", "name": "Micron", "funds": "Tepper, HF", "note": "Pari mémoire/IA ; Tepper renforce."}, {"ticker": "TSM", "name": "Taiwan Semiconductor", "funds": "Tepper, Light Street (14,4 %)", "note": "Pierre angulaire de la fabrication de puces IA."}], "top_sells": [{"ticker": "CRM", "name": "Salesforce", "funds": "Multiple", "note": "Dérating SaaS : crainte du passage du par-siège à l'agentique/usage."}, {"ticker": "NOW", "name": "ServiceNow", "funds": "Sands (quasi-sortie), Atreides", "note": "Même thèse logicielle ; HF ont gagné ~24 Md$ en shortant le secteur."}, {"ticker": "ADBE", "name": "Adobe", "funds": "Multiple", "note": "Allègements significatifs sur la liste suivie."}, {"ticker": "MSFT", "name": "Microsoft", "funds": "Tiger Cubs (vendent) vs Ackman (achète)", "note": "Valeur de bataille : doutes sur le moat Azure/Copilot et le rythme de monétisation IA."}, {"ticker": "BABA", "name": "Alibaba", "funds": "Tepper (5e trim. de baisse)", "note": "Réduction de l'exposition Chine (de 19,5 % à 9,8 % du portefeuille de Tepper)."}, {"ticker": "CRH", "name": "CRH plc", "funds": "Multiple", "note": "Nom dont les institutionnels veulent sortir ce trimestre."}]}, "alerts": [{"id": "brk-googl", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "GOOGL", "name": "Alphabet", "type": "increase", "prev_weight": "~1,5 %", "new_weight": "~5 %", "shares_change": "+204 %", "weight": "~5 %", "severity": "high", "context": "Berkshire triple sa position sur Alphabet — premier grand pari technologique de l'ère Greg Abel, sur le moat IA plutôt que sur la décote.", "consensus": "Achat le plus convergent du trimestre : de nombreux hedge funds accumulent aussi GOOGL.", "cross_read": "Aligné avec le régime de marché (leadership IA). Le moins contrarien des mouvements de Berkshire.", "suggestion": "Signal fort et consensuel. À analyser dans le cadre de votre exposition tech existante ; le titre a déjà monté depuis le 31/03."}, {"id": "brk-dal", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "DAL", "name": "Delta Air Lines", "type": "new", "prev_weight": "0 %", "new_weight": "~1 %", "shares_change": "Nouvelle (~2,65 Md$)", "weight": "~1 %", "severity": "high", "context": "Nouvelle position de ~2,65 Md$ sur Delta, probablement constituée quand le titre était massacré par la peur des coûts du carburant liés à la guerre en Iran.", "consensus": "Mouvement à contre-courant : peu suivi par les autres grands fonds.", "cross_read": "Pari contrarien classique « Buffett/Abel » : acheter la peur du pétrole alors que le marché fuit l'aérien. Risque = si le Brent reste >95 $.", "suggestion": "Signal contrarien à fort potentiel mais sensible au pétrole. À surveiller avant de copier ; comprendre la thèse carburant d'abord."}, {"id": "brk-v", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "V", "name": "Visa", "type": "exit", "prev_weight": "~1 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "high", "context": "Sortie totale de Visa, une entreprise de très grande qualité — le signal porte sur le prix, pas sur le business.", "consensus": "Paradoxe : V figure aussi parmi les titres les plus ACHETÉS par d'autres fonds ce trimestre.", "cross_read": "Berkshire allège des multiples riches dans un marché complaisant (VIX ~15). Divergence nette avec le consensus.", "suggestion": "Signal divergent — à ne pas copier mécaniquement. Le désaccord entre grands fonds invite à la prudence."}, {"id": "brk-ma", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "MA", "name": "Mastercard", "type": "exit", "prev_weight": "~0,5 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "medium", "context": "Sortie totale, en miroir de Visa : Berkshire quitte entièrement les réseaux de paiement.", "consensus": "Mouvement jumeau de la sortie de Visa — thème cohérent de rotation hors des paiements.", "cross_read": "Confirme la thèse « valorisations riches » plutôt qu'un problème d'activité.", "suggestion": "À lire avec la sortie de Visa comme un seul signal de rotation sectorielle."}, {"id": "brk-unh", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "UNH", "name": "UnitedHealth Group", "type": "exit", "prev_weight": "~1 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "medium", "context": "Sortie totale de UnitedHealth ; le titre a baissé en after-hours après la publication du 13F.", "consensus": "—", "cross_read": "Rotation hors de la santé gérée ; cohérent avec un nettoyage de portefeuille post-Buffett.", "suggestion": "Signal de sortie à analyser ; ne rien déduire d'un seul fonds sur un secteur réglementé."}, {"id": "brk-amzn", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "AMZN", "name": "Amazon", "type": "exit", "prev_weight": "~0,7 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "medium", "context": "Sortie totale d'Amazon par Berkshire — alors qu'Amazon est, ailleurs, un achat consensus (Druckenmiller, HF).", "consensus": "Divergence : populaire chez les hedge funds, abandonné par Berkshire.", "cross_read": "Encore une fois, désaccord net sur un nom de qualité — question de prix/conviction.", "suggestion": "Signaux opposés selon les fonds : à pondérer, pas à suivre aveuglément."}, {"id": "brk-khc", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "KHC", "name": "Kraft Heinz", "type": "reduction", "prev_weight": "~3 %", "new_weight": "en sortie", "shares_change": "Sortie de la participation de 28 % préparée", "weight": "en baisse", "severity": "high", "context": "Berkshire prépare la sortie de sa participation historique de 28 % dans Kraft Heinz — tournant la page d'une rare erreur de Buffett.", "consensus": "—", "cross_read": "Solde d'une position-symbole ; pas de lecture macro, plutôt discipline de capital sous Abel.", "suggestion": "Sortie structurelle de long terme ; n'a pas de valeur de timing pour un suiveur."}, {"id": "brk-cvx", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "CVX", "name": "Chevron", "type": "reduction", "prev_weight": "~7 %", "new_weight": "~6 %", "shares_change": "Réduction", "weight": "~6 %", "severity": "low", "context": "Allègement de Chevron, qui reste néanmoins dans le top 5 du portefeuille.", "consensus": "—", "cross_read": "Prise de profit partielle après la flambée du pétrole liée à la guerre — du bon sens, pas un retournement.", "suggestion": "Réduction modérée ; signal faible."}, {"id": "brk-value", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "M / LEN / NYT", "name": "Macy's, Lennar, New York Times", "type": "new", "prev_weight": "0 %", "new_weight": "petites lignes", "shares_change": "Nouvelles positions value", "weight": "<1 % chacune", "severity": "medium", "context": "Trois nouvelles lignes « value » : Macy's (~9x BPA), Lennar (promoteur immobilier décoté), New York Times.", "consensus": "—", "cross_read": "ADN value intact sous Abel : acheter la décote (consommation, immobilier malmené par les taux).", "suggestion": "Petites positions exploratoires ; à surveiller si elles grossissent au T2."}, {"id": "psc-msft", "fund": "Pershing Square (Bill Ackman)", "fund_slug": "pershing", "ticker": "MSFT", "name": "Microsoft", "type": "new", "prev_weight": "0 %", "new_weight": "nouvelle ligne", "shares_change": "Nouvelle position pendant la baisse du T1", "weight": "significative (portef. concentré, 11-13 lignes)", "severity": "high", "context": "Ackman construit une position Microsoft pendant la correction du T1, pariant sur l'IA et le cloud — le titre même que les Tiger Cubs ont vendu de concert.", "consensus": "Valeur de BATAILLE : Ackman achète ce que d'autres grands fonds vendent.", "cross_read": "Désaccord de haute conviction sur le rythme de monétisation IA d'Azure/Copilot. Marché partagé.", "suggestion": "Signal contrarien d'un fonds concentré ; intéressant mais controversé — à creuser avant toute décision."}, {"id": "appa-baba", "fund": "Appaloosa (David Tepper)", "fund_slug": "appaloosa", "ticker": "BABA", "name": "Alibaba", "type": "reduction", "prev_weight": "élevée", "new_weight": "réduite", "shares_change": "Top vente, 5e trimestre de baisse", "weight": "exposition Chine 9,8 % (vs 19,5 % au T4)", "severity": "medium", "context": "Tepper, ex-grand taureau de la Chine, réduit Alibaba pour le 5e trimestre d'affilée et fait passer son exposition Chine de 19,5 % à 9,8 %.", "consensus": "Tendance lourde de désengagement de la Chine au profit de l'IA/mémoire (Micron, TSM, Vistra).", "cross_read": "Rotation Chine → IA américaine ; cohérent avec le leadership des semis.", "suggestion": "Signal de rotation géographique ; pertinent si vous portez de l'exposition Chine."}, {"id": "duq-tech", "fund": "Duquesne (Stan Druckenmiller)", "fund_slug": "duquesne", "ticker": "AVGO +", "name": "Broadcom & tech", "type": "increase", "prev_weight": "9,4 % (tech)", "new_weight": "18,4 % (tech)", "shares_change": "Exposition tech ~doublée", "weight": "18,4 % du portefeuille", "severity": "medium", "context": "Druckenmiller double son exposition tech (de 9,4 % à 18,4 %) avec de nouvelles positions Broadcom, SanDisk, Twilio, Cloudflare, Intel.", "consensus": "Renforce le thème IA/semis dominant du trimestre.", "cross_read": "Un macro-trader revient sur la tech au moment où le marché fait des records — momentum.", "suggestion": "Confirme le consensus IA. Rappel : Druckenmiller tourne vite (durée de détention ~2,7 trimestres)."}], "funds": [{"name": "Berkshire Hathaway", "slug": "berkshire", "manager": "Greg Abel (depuis 01/01/2026) — ère post-Buffett", "style": "Value concentré / long terme", "tier": "actionnable", "equity": "263,1 Md$", "cash": "380 Md$ (record)", "positions": "≈29 (vs 40 fin 2025)", "top5_weight": "≈68 %", "is_passive": false, "featured": true, "top_holdings": [{"ticker": "AAPL", "name": "Apple", "weight": 22}, {"ticker": "AXP", "name": "American Express", "weight": 16}, {"ticker": "KO", "name": "Coca-Cola", "weight": 11}, {"ticker": "BAC", "name": "Bank of America", "weight": 10}, {"ticker": "CVX", "name": "Chevron", "weight": 9}], "holdings_note": "Apple ~22 % (sourcé) ; les poids des autres lignes du top 5 sont approximatifs — l'agent les recalcule exactement depuis le 13F brut.", "new_buys": ["GOOGL (+204 %)", "DAL (nouv. ~2,65 Md$)", "LEN", "M", "NYT"], "exits": ["V", "MA", "UNH", "AMZN", "DPZ", "AON", "POOL", "HEI", "CHTR", "+ autres (16 sorties au total)"], "notable": "Plus gros nettoyage de portefeuille en années : 40 → ~29 lignes, premier trimestre complet sous Greg Abel. Cash record de 380 Md$."}, {"name": "Pershing Square", "slug": "pershing", "manager": "Bill Ackman", "style": "Activiste concentré (~11-13 lignes)", "tier": "actionnable", "equity": "≈13,7 Md$", "positions": "11", "is_passive": false, "top_holdings": [], "new_buys": ["MSFT (nouvelle, achetée dans la baisse)"], "exits": [], "notable": "Portefeuille très concentré : chaque mouvement compte. Nouvelle position Microsoft à contre-courant des Tiger Cubs."}, {"name": "Appaloosa", "slug": "appaloosa", "manager": "David Tepper", "style": "Macro / opportuniste", "tier": "actionnable", "equity": "≈8,6 Md$", "positions": "12", "is_passive": false, "top_holdings": [], "new_buys": ["SNDK (seule nouvelle position)", "+MU", "+TSM", "+VST", "++EWY (Corée/mémoire)"], "exits": ["Réduction BABA (top vente)", "-NVDA", "-ASML"], "notable": "Rotation Chine → IA/mémoire. Exposition Chine ramenée de 19,5 % à 9,8 %."}, {"name": "Duquesne Family Office", "slug": "duquesne", "manager": "Stan Druckenmiller", "style": "Macro multi-actifs (rotation rapide)", "tier": "actionnable", "equity": "—", "positions": "70", "is_passive": false, "top_holdings": [{"ticker": "NTRA", "name": "Natera (1ère pos. 7 trim.)", "weight": 0}], "new_buys": ["AVGO", "SNDK", "TWLO", "NET", "INTC", "RVMD", "YPF (Argentine)"], "exits": ["XLF", "RSP", "-94 % MELI", "-60 % CPNG"], "notable": "Exposition tech doublée à 18,4 %. Durée de détention moyenne ~2,7 trimestres — le portefeuille bouge vite."}, {"name": "Bridgewater Associates", "slug": "bridgewater", "manager": "Ray Dalio (fondateur) / direction actuelle", "style": "Macro systématique / très diversifié", "tier": "contexte", "equity": "—", "positions": "souvent >500 (ETF + actions)", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "13F dominé par des ETF et des paniers macro. Utile pour lire les grands thèmes (régions, secteurs), peu pour copier des titres précis."}, {"name": "BlackRock", "slug": "blackrock", "manager": "Larry Fink (gérant d'actifs)", "style": "Indiciel / multi-stratégies", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">5000", "is_passive": true, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Surveillé par l'agent, mais ses variations 13F reflètent surtout le rééquilibrage d'indices et les flux d'ETF — signal faible pour un suiveur."}, {"name": "Vanguard Group", "slug": "vanguard", "manager": "Gérant d'actifs (mutualiste)", "style": "Indiciel", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">5000", "is_passive": true, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Quasi-réplication d'indices. Variations ≈ mécaniques."}, {"name": "State Street (SSGA / SPDR)", "slug": "statestreet", "manager": "Gérant d'actifs", "style": "Indiciel / ETF", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">4000", "is_passive": true, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Émetteur des SPDR. Mouvements pilotés par les indices et les flux."}, {"name": "Fidelity (FMR)", "slug": "fidelity", "manager": "Gestion active + indicielle", "style": "Diversifié, très grand", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">3000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Trop large et trop diversifié pour des signaux nets au niveau du conglomérat ; certains fonds phares isolés seraient plus parlants."}, {"name": "Capital Group / Capital World", "slug": "capital", "manager": "Gestion active (American Funds)", "style": "Diversifié, conviction longue", "tier": "contexte", "equity": "très important", "positions": ">1000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Plus actif que les indiciels purs, mais positions diluées dans un très grand portefeuille."}, {"name": "T. Rowe Price", "slug": "trowe", "manager": "Gestion active", "style": "Croissance / diversifié", "tier": "faible-signal", "equity": "très important", "positions": ">2000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Signal dilué au niveau global ; intéressant fonds par fonds."}, {"name": "Goldman Sachs (AM)", "slug": "goldman", "manager": "Banque / gestion d'actifs", "style": "Multi-stratégies + market making", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">3000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Le 13F mêle gestion, market making et couvertures — difficile d'y lire une conviction directionnelle."}, {"name": "Morgan Stanley (IM)", "slug": "morganstanley", "manager": "Banque / gestion d'actifs", "style": "Multi-stratégies", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">3000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Même limite que Goldman : portefeuille composite, signal directionnel faible."}]}; marché price une hausse d'ici 2027."}, {"k": "Inflation", "v": "Collante / réaccélère", "note": "Prix à la production de février au-dessus des attentes ; effet énergie de la guerre."}, {"k": "Emploi", "v": "Résilient", "note": "ADP +122k en mai. Rapport NFP (paie non agricole) vendredi 5 juin — événement clé de la semaine."}, {"k": "Géopolitique", "v": "Guerre Iran-USA", "note": "Frappes croisées, risque sur le détroit d'Ormuz, négociations de cessez-le-feu fragiles. Premier moteur du pétrole et des rendements."}], "events": [{"date": "Ven. 5 juin", "label": "Paie non agricole (NFP) — mai", "weight": "haute"}, {"date": "Juin", "label": "Réunion FOMC (1ère sous K. Warsh)", "weight": "haute"}, {"date": "En cours", "label": "Saison des résultats T1 (AVGO, CRWD ont publié)", "weight": "moyenne"}, {"date": "À venir", "label": "IPO SpaceX marketée à 135 $/action (~75 Md$, Goldman chef de file)", "weight": "moyenne"}], "news": [{"src": "TheStreet", "time": "4 juin", "title": "Les futures Nasdaq reculent sur les craintes liées à la guerre en Iran ; le pétrole se détend après des signaux diplomatiques contradictoires."}, {"src": "CNBC", "time": "31 mai", "title": "Le S&P 500 clôture à un record pour entamer juin — neuvième semaine de hausse d'affilée, +5,2 % en mai, le rallye tech l'emportant sur le choc pétrolier."}, {"src": "Yahoo Finance", "time": "3 juin", "title": "Les indices refluent de leurs records ; Wall Street arbitre entre des négociations Iran-USA fragiles et la promesse du trade IA."}, {"src": "Bloomberg (via Yahoo)", "time": "1 juin", "title": "La flambée des rendements depuis le début du conflit a déjà resserré les conditions financières ; les traders anticipent une hausse de la Fed d'ici 2027."}, {"src": "Investing.com / Reuters", "time": "25 mai", "title": "Les hedge funds achètent la tech au rythme le plus rapide en ~3 mois (note Goldman) ; les semis et l'IA largement épargnés par les craintes liées à l'Iran."}], "providers_note": "Sur l'instance déployée, ces tuiles, le calendrier macro et le fil d'actualité sont rafraîchis chaque jour via TradingEconomics (macro/calendrier), les flux RSS d'Investing.com et de FinancialJuice (actualité), et Yahoo Finance (prix en direct). Les valeurs ci-dessus sont la dernière photo connue (3–4 juin 2026)."}, "consensus": {"theme": "L'IA et les semis dominent les achats (6 des 10 noms les plus achetés). Côté ventes : dérating du logiciel SaaS (transition vers l'agentique), allègement de la Chine, et Microsoft en valeur de bataille (vendu par les Tiger Cubs, acheté par Ackman).", "top_buys": [{"ticker": "GOOGL", "name": "Alphabet", "funds": "Berkshire + nombreux HF", "note": "Achat le plus convergent du trimestre : pari sur le moat IA (Gemini, Cloud) à valorisation jugée raisonnable."}, {"ticker": "NVDA", "name": "Nvidia", "funds": "Large", "note": "Cœur du trade IA ; quelques allègements (Tepper) mais reste plébiscité."}, {"ticker": "AVGO", "name": "Broadcom", "funds": "Druckenmiller (nouv.), HF", "note": "Exposition IA/semis custom ; nouvelle position chez Duquesne."}, {"ticker": "META", "name": "Meta Platforms", "funds": "Large", "note": "Valorisation jugée attractive (~16x BPA 2027 selon Wolfe)."}, {"ticker": "AMZN", "name": "Amazon", "funds": "Druckenmiller, HF", "note": "E-commerce + cloud/IA. (Note : Berkshire en est sorti, lui.)"}, {"ticker": "MU", "name": "Micron", "funds": "Tepper, HF", "note": "Pari mémoire/IA ; Tepper renforce."}, {"ticker": "TSM", "name": "Taiwan Semiconductor", "funds": "Tepper, Light Street (14,4 %)", "note": "Pierre angulaire de la fabrication de puces IA."}], "top_sells": [{"ticker": "CRM", "name": "Salesforce", "funds": "Multiple", "note": "Dérating SaaS : crainte du passage du par-siège à l'agentique/usage."}, {"ticker": "NOW", "name": "ServiceNow", "funds": "Sands (quasi-sortie), Atreides", "note": "Même thèse logicielle ; HF ont gagné ~24 Md$ en shortant le secteur."}, {"ticker": "ADBE", "name": "Adobe", "funds": "Multiple", "note": "Allègements significatifs sur la liste suivie."}, {"ticker": "MSFT", "name": "Microsoft", "funds": "Tiger Cubs (vendent) vs Ackman (achète)", "note": "Valeur de bataille : doutes sur le moat Azure/Copilot et le rythme de monétisation IA."}, {"ticker": "BABA", "name": "Alibaba", "funds": "Tepper (5e trim. de baisse)", "note": "Réduction de l'exposition Chine (de 19,5 % à 9,8 % du portefeuille de Tepper)."}, {"ticker": "CRH", "name": "CRH plc", "funds": "Multiple", "note": "Nom dont les institutionnels veulent sortir ce trimestre."}]}, "alerts": [{"id": "brk-googl", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "GOOGL", "name": "Alphabet", "type": "increase", "prev_weight": "~1,5 %", "new_weight": "~5 %", "shares_change": "+204 %", "weight": "~5 %", "severity": "high", "context": "Berkshire triple sa position sur Alphabet — premier grand pari technologique de l'ère Greg Abel, sur le moat IA plutôt que sur la décote.", "consensus": "Achat le plus convergent du trimestre : de nombreux hedge funds accumulent aussi GOOGL.", "cross_read": "Aligné avec le régime de marché (leadership IA). Le moins contrarien des mouvements de Berkshire.", "suggestion": "Signal fort et consensuel. À analyser dans le cadre de votre exposition tech existante ; le titre a déjà monté depuis le 31/03."}, {"id": "brk-dal", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "DAL", "name": "Delta Air Lines", "type": "new", "prev_weight": "0 %", "new_weight": "~1 %", "shares_change": "Nouvelle (~2,65 Md$)", "weight": "~1 %", "severity": "high", "context": "Nouvelle position de ~2,65 Md$ sur Delta, probablement constituée quand le titre était massacré par la peur des coûts du carburant liés à la guerre en Iran.", "consensus": "Mouvement à contre-courant : peu suivi par les autres grands fonds.", "cross_read": "Pari contrarien classique « Buffett/Abel » : acheter la peur du pétrole alors que le marché fuit l'aérien. Risque = si le Brent reste >95 $.", "suggestion": "Signal contrarien à fort potentiel mais sensible au pétrole. À surveiller avant de copier ; comprendre la thèse carburant d'abord."}, {"id": "brk-v", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "V", "name": "Visa", "type": "exit", "prev_weight": "~1 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "high", "context": "Sortie totale de Visa, une entreprise de très grande qualité — le signal porte sur le prix, pas sur le business.", "consensus": "Paradoxe : V figure aussi parmi les titres les plus ACHETÉS par d'autres fonds ce trimestre.", "cross_read": "Berkshire allège des multiples riches dans un marché complaisant (VIX ~15). Divergence nette avec le consensus.", "suggestion": "Signal divergent — à ne pas copier mécaniquement. Le désaccord entre grands fonds invite à la prudence."}, {"id": "brk-ma", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "MA", "name": "Mastercard", "type": "exit", "prev_weight": "~0,5 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "medium", "context": "Sortie totale, en miroir de Visa : Berkshire quitte entièrement les réseaux de paiement.", "consensus": "Mouvement jumeau de la sortie de Visa — thème cohérent de rotation hors des paiements.", "cross_read": "Confirme la thèse « valorisations riches » plutôt qu'un problème d'activité.", "suggestion": "À lire avec la sortie de Visa comme un seul signal de rotation sectorielle."}, {"id": "brk-unh", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "UNH", "name": "UnitedHealth Group", "type": "exit", "prev_weight": "~1 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "medium", "context": "Sortie totale de UnitedHealth ; le titre a baissé en after-hours après la publication du 13F.", "consensus": "—", "cross_read": "Rotation hors de la santé gérée ; cohérent avec un nettoyage de portefeuille post-Buffett.", "suggestion": "Signal de sortie à analyser ; ne rien déduire d'un seul fonds sur un secteur réglementé."}, {"id": "brk-amzn", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "AMZN", "name": "Amazon", "type": "exit", "prev_weight": "~0,7 %", "new_weight": "0 %", "shares_change": "-100 %", "weight": "0 %", "severity": "medium", "context": "Sortie totale d'Amazon par Berkshire — alors qu'Amazon est, ailleurs, un achat consensus (Druckenmiller, HF).", "consensus": "Divergence : populaire chez les hedge funds, abandonné par Berkshire.", "cross_read": "Encore une fois, désaccord net sur un nom de qualité — question de prix/conviction.", "suggestion": "Signaux opposés selon les fonds : à pondérer, pas à suivre aveuglément."}, {"id": "brk-khc", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "KHC", "name": "Kraft Heinz", "type": "reduction", "prev_weight": "~3 %", "new_weight": "en sortie", "shares_change": "Sortie de la participation de 28 % préparée", "weight": "en baisse", "severity": "high", "context": "Berkshire prépare la sortie de sa participation historique de 28 % dans Kraft Heinz — tournant la page d'une rare erreur de Buffett.", "consensus": "—", "cross_read": "Solde d'une position-symbole ; pas de lecture macro, plutôt discipline de capital sous Abel.", "suggestion": "Sortie structurelle de long terme ; n'a pas de valeur de timing pour un suiveur."}, {"id": "brk-cvx", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "CVX", "name": "Chevron", "type": "reduction", "prev_weight": "~7 %", "new_weight": "~6 %", "shares_change": "Réduction", "weight": "~6 %", "severity": "low", "context": "Allègement de Chevron, qui reste néanmoins dans le top 5 du portefeuille.", "consensus": "—", "cross_read": "Prise de profit partielle après la flambée du pétrole liée à la guerre — du bon sens, pas un retournement.", "suggestion": "Réduction modérée ; signal faible."}, {"id": "brk-value", "fund": "Berkshire Hathaway", "fund_slug": "berkshire", "ticker": "M / LEN / NYT", "name": "Macy's, Lennar, New York Times", "type": "new", "prev_weight": "0 %", "new_weight": "petites lignes", "shares_change": "Nouvelles positions value", "weight": "<1 % chacune", "severity": "medium", "context": "Trois nouvelles lignes « value » : Macy's (~9x BPA), Lennar (promoteur immobilier décoté), New York Times.", "consensus": "—", "cross_read": "ADN value intact sous Abel : acheter la décote (consommation, immobilier malmené par les taux).", "suggestion": "Petites positions exploratoires ; à surveiller si elles grossissent au T2."}, {"id": "psc-msft", "fund": "Pershing Square (Bill Ackman)", "fund_slug": "pershing", "ticker": "MSFT", "name": "Microsoft", "type": "new", "prev_weight": "0 %", "new_weight": "nouvelle ligne", "shares_change": "Nouvelle position pendant la baisse du T1", "weight": "significative (portef. concentré, 11-13 lignes)", "severity": "high", "context": "Ackman construit une position Microsoft pendant la correction du T1, pariant sur l'IA et le cloud — le titre même que les Tiger Cubs ont vendu de concert.", "consensus": "Valeur de BATAILLE : Ackman achète ce que d'autres grands fonds vendent.", "cross_read": "Désaccord de haute conviction sur le rythme de monétisation IA d'Azure/Copilot. Marché partagé.", "suggestion": "Signal contrarien d'un fonds concentré ; intéressant mais controversé — à creuser avant toute décision."}, {"id": "appa-baba", "fund": "Appaloosa (David Tepper)", "fund_slug": "appaloosa", "ticker": "BABA", "name": "Alibaba", "type": "reduction", "prev_weight": "élevée", "new_weight": "réduite", "shares_change": "Top vente, 5e trimestre de baisse", "weight": "exposition Chine 9,8 % (vs 19,5 % au T4)", "severity": "medium", "context": "Tepper, ex-grand taureau de la Chine, réduit Alibaba pour le 5e trimestre d'affilée et fait passer son exposition Chine de 19,5 % à 9,8 %.", "consensus": "Tendance lourde de désengagement de la Chine au profit de l'IA/mémoire (Micron, TSM, Vistra).", "cross_read": "Rotation Chine → IA américaine ; cohérent avec le leadership des semis.", "suggestion": "Signal de rotation géographique ; pertinent si vous portez de l'exposition Chine."}, {"id": "duq-tech", "fund": "Duquesne (Stan Druckenmiller)", "fund_slug": "duquesne", "ticker": "AVGO +", "name": "Broadcom & tech", "type": "increase", "prev_weight": "9,4 % (tech)", "new_weight": "18,4 % (tech)", "shares_change": "Exposition tech ~doublée", "weight": "18,4 % du portefeuille", "severity": "medium", "context": "Druckenmiller double son exposition tech (de 9,4 % à 18,4 %) avec de nouvelles positions Broadcom, SanDisk, Twilio, Cloudflare, Intel.", "consensus": "Renforce le thème IA/semis dominant du trimestre.", "cross_read": "Un macro-trader revient sur la tech au moment où le marché fait des records — momentum.", "suggestion": "Confirme le consensus IA. Rappel : Druckenmiller tourne vite (durée de détention ~2,7 trimestres)."}], "funds": [{"name": "Berkshire Hathaway", "slug": "berkshire", "manager": "Greg Abel (depuis 01/01/2026) — ère post-Buffett", "style": "Value concentré / long terme", "tier": "actionnable", "equity": "263,1 Md$", "cash": "380 Md$ (record)", "positions": "≈29 (vs 40 fin 2025)", "top5_weight": "≈68 %", "is_passive": false, "featured": true, "top_holdings": [{"ticker": "AAPL", "name": "Apple", "weight": 22}, {"ticker": "AXP", "name": "American Express", "weight": 16}, {"ticker": "KO", "name": "Coca-Cola", "weight": 11}, {"ticker": "BAC", "name": "Bank of America", "weight": 10}, {"ticker": "CVX", "name": "Chevron", "weight": 9}], "holdings_note": "Apple ~22 % (sourcé) ; les poids des autres lignes du top 5 sont approximatifs — l'agent les recalcule exactement depuis le 13F brut.", "new_buys": ["GOOGL (+204 %)", "DAL (nouv. ~2,65 Md$)", "LEN", "M", "NYT"], "exits": ["V", "MA", "UNH", "AMZN", "DPZ", "AON", "POOL", "HEI", "CHTR", "+ autres (16 sorties au total)"], "notable": "Plus gros nettoyage de portefeuille en années : 40 → ~29 lignes, premier trimestre complet sous Greg Abel. Cash record de 380 Md$."}, {"name": "Pershing Square", "slug": "pershing", "manager": "Bill Ackman", "style": "Activiste concentré (~11-13 lignes)", "tier": "actionnable", "equity": "≈13,7 Md$", "positions": "11", "is_passive": false, "top_holdings": [], "new_buys": ["MSFT (nouvelle, achetée dans la baisse)"], "exits": [], "notable": "Portefeuille très concentré : chaque mouvement compte. Nouvelle position Microsoft à contre-courant des Tiger Cubs."}, {"name": "Appaloosa", "slug": "appaloosa", "manager": "David Tepper", "style": "Macro / opportuniste", "tier": "actionnable", "equity": "≈8,6 Md$", "positions": "12", "is_passive": false, "top_holdings": [], "new_buys": ["SNDK (seule nouvelle position)", "+MU", "+TSM", "+VST", "++EWY (Corée/mémoire)"], "exits": ["Réduction BABA (top vente)", "-NVDA", "-ASML"], "notable": "Rotation Chine → IA/mémoire. Exposition Chine ramenée de 19,5 % à 9,8 %."}, {"name": "Duquesne Family Office", "slug": "duquesne", "manager": "Stan Druckenmiller", "style": "Macro multi-actifs (rotation rapide)", "tier": "actionnable", "equity": "—", "positions": "70", "is_passive": false, "top_holdings": [{"ticker": "NTRA", "name": "Natera (1ère pos. 7 trim.)", "weight": 0}], "new_buys": ["AVGO", "SNDK", "TWLO", "NET", "INTC", "RVMD", "YPF (Argentine)"], "exits": ["XLF", "RSP", "-94 % MELI", "-60 % CPNG"], "notable": "Exposition tech doublée à 18,4 %. Durée de détention moyenne ~2,7 trimestres — le portefeuille bouge vite."}, {"name": "Bridgewater Associates", "slug": "bridgewater", "manager": "Ray Dalio (fondateur) / direction actuelle", "style": "Macro systématique / très diversifié", "tier": "contexte", "equity": "—", "positions": "souvent >500 (ETF + actions)", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "13F dominé par des ETF et des paniers macro. Utile pour lire les grands thèmes (régions, secteurs), peu pour copier des titres précis."}, {"name": "BlackRock", "slug": "blackrock", "manager": "Larry Fink (gérant d'actifs)", "style": "Indiciel / multi-stratégies", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">5000", "is_passive": true, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Surveillé par l'agent, mais ses variations 13F reflètent surtout le rééquilibrage d'indices et les flux d'ETF — signal faible pour un suiveur."}, {"name": "Vanguard Group", "slug": "vanguard", "manager": "Gérant d'actifs (mutualiste)", "style": "Indiciel", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">5000", "is_passive": true, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Quasi-réplication d'indices. Variations ≈ mécaniques."}, {"name": "State Street (SSGA / SPDR)", "slug": "statestreet", "manager": "Gérant d'actifs", "style": "Indiciel / ETF", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">4000", "is_passive": true, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Émetteur des SPDR. Mouvements pilotés par les indices et les flux."}, {"name": "Fidelity (FMR)", "slug": "fidelity", "manager": "Gestion active + indicielle", "style": "Diversifié, très grand", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">3000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Trop large et trop diversifié pour des signaux nets au niveau du conglomérat ; certains fonds phares isolés seraient plus parlants."}, {"name": "Capital Group / Capital World", "slug": "capital", "manager": "Gestion active (American Funds)", "style": "Diversifié, conviction longue", "tier": "contexte", "equity": "très important", "positions": ">1000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Plus actif que les indiciels purs, mais positions diluées dans un très grand portefeuille."}, {"name": "T. Rowe Price", "slug": "trowe", "manager": "Gestion active", "style": "Croissance / diversifié", "tier": "faible-signal", "equity": "très important", "positions": ">2000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Signal dilué au niveau global ; intéressant fonds par fonds."}, {"name": "Goldman Sachs (AM)", "slug": "goldman", "manager": "Banque / gestion d'actifs", "style": "Multi-stratégies + market making", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">3000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Le 13F mêle gestion, market making et couvertures — difficile d'y lire une conviction directionnelle."}, {"name": "Morgan Stanley (IM)", "slug": "morganstanley", "manager": "Banque / gestion d'actifs", "style": "Multi-stratégies", "tier": "faible-signal", "equity": "des milliers de lignes", "positions": ">3000", "is_passive": false, "top_holdings": [], "new_buys": [], "exits": [], "notable": "Même limite que Goldman : portefeuille composite, signal directionnel faible."}]}{"meta":{"quarter":"Démo","is_demo":true},"market":{"snapshot":[],"regime_label":"—","regime_text":""},"alerts":[],"consensus":{},"funds":[]};
-let DATA = {};
-let WL = JSON.parse(localStorage.getItem('smr_wl')||'[]');
-let FILTER = 'all';
-let SORT_COL = 'score';
-let SORT_ASC = false;
-let SEARCH = '';
+// ── DATA ────────────────────────────────────────
+const EMBEDDED_DATA = null; // données live depuis data.json
+let D = {}, WL = JSON.parse(localStorage.getItem('smr_wl')||'[]');
+let FLT='all', SORT='score', ASC=false, SRQ='';
 
-// ================================================================
-//  BOOT
-// ================================================================
 async function boot(){
-  if(EMBEDDED_DATA && EMBEDDED_DATA.alerts){DATA=EMBEDDED_DATA;renderAll();}
-  try{
-    const r=await fetch('./data.json',{cache:'no-store'});
-    if(r.ok){DATA=await r.json();renderAll();}
-  }catch(e){}
+  if(EMBEDDED_DATA&&EMBEDDED_DATA.meta)D=EMBEDDED_DATA,renderAll();
+  try{const r=await fetch('./data.json',{cache:'no-store'});if(r.ok){D=await r.json();renderAll();}}catch(e){}
 }
 boot();
 
-// ================================================================
-//  ISIN depuis CUSIP (US stocks, algo Luhn)
-// ================================================================
-function cusipToISIN(cusip){
-  if(!cusip||cusip.length!==9)return'';
-  const raw='US'+cusip.toUpperCase();
-  let digs='';
-  for(const c of raw){
-    if(c>='0'&&c<='9')digs+=c;
-    else digs+=String(c.charCodeAt(0)-65+10);
-  }
-  let sum=0;
-  for(let i=0;i<digs.length;i++){
-    let d=parseInt(digs[digs.length-1-i]);
-    if(i%2===0){d*=2;if(d>9)d-=9;}  // le chiffre le plus à droite est doublé (ISO 6166)
-    sum+=d;
-  }
-  return raw+((10-(sum%10))%10);
+// ── ISIN ─────────────────────────────────────────
+function cusipToISIN(c){
+  if(!c||c.length!==9)return'';
+  const raw='US'+c.toUpperCase();
+  let d='';
+  for(const x of raw)d+=x>='0'&&x<='9'?x:String(x.charCodeAt(0)-65+10);
+  let s=0;
+  for(let i=0;i<d.length;i++){let n=parseInt(d[d.length-1-i]);if(i%2===0){n*=2;if(n>9)n-=9;}s+=n;}
+  return raw+((10-(s%10))%10);
 }
 
-// ================================================================
-//  SCORE & SIGNAUX
-// ================================================================
-function computeScore(a){
+// ── SCORE / FRESHNESS ─────────────────────────────
+function score(a){
+  if(a.score)return a.score;
   let s=50;
   if(a.consensus&&a.consensus!=='—')s+=18;
   if(a.severity==='high')s+=14;
@@ -401,353 +336,297 @@ function computeScore(a){
   if((a.source||'').includes('Insider'))s+=16;
   const w=parseFloat(a.weight||a.new_weight||0);
   if(w>5)s+=10;else if(w>2)s+=5;
-  if(a.score)s=a.score; // override if AI-provided
-  return Math.min(100,Math.max(0,s));
+  return Math.min(100,s);
 }
-function freshness(a){
-  if((a.source||'').includes('Insider'))return{lbl:'RÉCENT',cls:'badge-fresh'};
-  if(a.type==='new'||a.type==='increase')return{lbl:'TRIM.',cls:'badge-trim'};
-  return{lbl:'45J',cls:'badge-old'};
+function fresh(a){
+  if((a.source||'').toLowerCase().includes('insider')||
+     (a.source||'').toLowerCase().includes('form 4')||
+     (a.source||'').toLowerCase().includes('13d'))
+    return{cls:'dot-g',lbl:'RÉCENT'};
+  if(a.type==='new'||a.type==='increase'||a.type==='buy')
+    return{cls:'dot-a',lbl:'TRIMESTRE'};
+  return{cls:'dot-r',lbl:'45 JOURS'};
 }
-function driftWarn(a){
-  const txt=a.cross_read||'';
-  const m=txt.match(/([\d,]+\.?\d*)\s*%/);
-  if(!m)return false;
-  return parseFloat(m[1].replace(',','.'))>20;
+function actType(a){
+  const t=a.type||'';
+  if(t==='new'||t==='increase'||t==='buy'||t==='options_bullish'||t==='squeeze_risk')return'buy';
+  if(t==='exit'||t==='reduction'||t==='sell'||t==='options_bearish')return'sell';
+  if(t==='event'||t==='earnings')return'event';
+  return'watch';
 }
-function buildSignals(){
-  let sigs=[];
-  // 13F alerts
-  for(const a of(DATA.alerts||[])){
-    sigs.push({
-      ticker:a.ticker,name:a.name,isin:cusipToISIN(a.cusip||''),cusip:a.cusip||'',
-      type:(a.type==='new'||a.type==='increase')?'buy':'sell',
-      score:computeScore(a),source:'13F',fund:a.fund||'',
-      reason:a.context||(a.type==='new'?'Nouvelle position':'Mouvement détecté'),
-      drift:a.cross_read||'',suggestion:a.suggestion||'',
-      consensus:a.consensus||'—',severity:a.severity||'medium',
-      freshness:freshness(a),driftWarn:driftWarn(a),
-      cap:'large',raw:a
-    });
+function srcIcon(s){
+  if(!s)return'🏛';
+  if(s.includes('Insider')||s.includes('Form 4'))return'👤';
+  if(s.includes('13D')||s.includes('13G'))return'⚡';
+  if(s.includes('ETF'))return'📊';
+  if(s.includes('Short'))return'📉';
+  if(s.includes('Earn'))return'📅';
+  if(s.includes('NBIM'))return'🏦';
+  if(s.includes('Soft')||s.includes('Cong'))return'🏢';
+  if(s.includes('AMF')||s.includes('BaFin'))return'🇪🇺';
+  if(s.includes('DeepSeek')||s.includes('IA'))return'🧠';
+  return'🏛';
+}
+
+// ── BUILD SIGNALS ─────────────────────────────────
+function buildSigs(){
+  let s=[];
+  for(const a of(D.alerts||[])){
+    const isin=a.isin||cusipToISIN(a.cusip||'');
+    s.push({ticker:a.ticker,name:a.name,isin,cusip:a.cusip||'',
+      type:actType(a),score:score(a),source:a.source||'13F SEC',fund:a.fund||'',
+      why:(a.suggestion||a.context||'Signal 13F').replace(/\n/g,' '),
+      drift:a.cross_read||'',consensus:a.consensus||'—',
+      freshness:fresh(a),cap:'large',raw:a});
   }
-  // Insiders
-  for(const s of(DATA.global_signals||[])){
-    sigs.push({
-      ticker:s.ticker,name:s.name||s.ticker,isin:cusipToISIN(s.cusip||''),cusip:s.cusip||'',
-      type:'buy',score:computeScore({...s,source:'Insider (Form 4)',severity:'high'}),
-      source:'Insider',fund:s.entity||'',
-      reason:s.note||'Achat insider',drift:'',suggestion:'Signal récent d\'un dirigeant.',
-      consensus:'—',severity:'high',freshness:{lbl:'RÉCENT',cls:'badge-fresh'},
-      driftWarn:false,cap:'small',raw:s
-    });
+  for(const g of(D.global_signals||[])){
+    const isin=g.isin||cusipToISIN(g.cusip||'');
+    const at=actType(g);
+    const cap=(g.source||'').includes('Short')||g.cap==='small'?'small':'large';
+    s.push({ticker:g.ticker||'—',name:g.name||g.entity||'',isin,cusip:g.cusip||'',
+      type:at,score:score({...g,severity:'high'}),
+      source:g.source||'Signal',fund:g.entity||'',
+      why:g.note||'',drift:'',consensus:'—',
+      freshness:fresh({source:g.source,type:at}),cap,raw:g});
   }
-  // DeepSeek proposals (achat)
-  for(const p of(DATA.ai_analysis?.propositions_achat||[])){
-    if(!sigs.find(x=>x.ticker===p.ticker&&x.type==='buy'))
-      sigs.push({
-        ticker:p.ticker,name:p.nom||p.ticker,isin:'',cusip:'',
+  for(const p of(D.ai_analysis?.propositions_achat||[])){
+    if(!s.find(x=>x.ticker===p.ticker&&x.type==='buy'))
+      s.push({ticker:p.ticker,name:p.nom||'',isin:p.isin||'',cusip:'',
         type:'buy',score:p.score||60,source:'IA DeepSeek',fund:'DeepSeek',
-        reason:p.raison||'',drift:p.drift_note||'',suggestion:p.risque||'',
-        consensus:'—',severity:'medium',freshness:{lbl:'RÉCENT',cls:'badge-fresh'},
-        driftWarn:false,cap:p.capitalisation||'large',raw:p
-      });
+        why:p.pourquoi_detaille||p.raison||'',drift:p.risque||'',consensus:'—',
+        freshness:{cls:'dot-g',lbl:'RÉCENT'},cap:p.capitalisation||'large',raw:p});
   }
-  // DeepSeek proposals (vente)
-  for(const p of(DATA.ai_analysis?.propositions_vente||[])){
-    if(!sigs.find(x=>x.ticker===p.ticker&&x.type==='sell'))
-      sigs.push({
-        ticker:p.ticker,name:p.nom||p.ticker,isin:'',cusip:'',
+  for(const p of(D.ai_analysis?.propositions_vente||[])){
+    if(!s.find(x=>x.ticker===p.ticker&&x.type==='sell'))
+      s.push({ticker:p.ticker,name:p.nom||'',isin:p.isin||'',cusip:'',
         type:'sell',score:p.score||60,source:'IA DeepSeek',fund:'DeepSeek',
-        reason:p.raison||'',drift:'',suggestion:p.risque||'',
-        consensus:'—',severity:'medium',freshness:{lbl:'RÉCENT',cls:'badge-fresh'},
-        driftWarn:false,cap:'large',raw:p
-      });
+        why:p.pourquoi_detaille||p.raison||'',drift:p.risque||'',consensus:'—',
+        freshness:{cls:'dot-g',lbl:'RÉCENT'},cap:'large',raw:p});
   }
-  // Dedup by ticker+type
+  // Dédup par ticker+type
   const seen=new Map();
-  sigs.forEach(s=>{const k=s.ticker+s.type;if(!seen.has(k)||s.score>seen.get(k).score)seen.set(k,s);});
+  s.forEach(x=>{const k=x.ticker+x.type;if(!seen.has(k)||x.score>seen.get(k).score)seen.set(k,x);});
   return Array.from(seen.values()).sort((a,b)=>b.score-a.score);
 }
 
-function applyFilter(sigs){
-  return sigs.filter(s=>{
-    const q=SEARCH.toLowerCase();
-    if(q&&!s.ticker.toLowerCase().includes(q)&&!s.name.toLowerCase().includes(q))return false;
-    if(FILTER==='buy')return s.type==='buy';
-    if(FILTER==='sell')return s.type==='sell';
-    if(FILTER==='score')return s.score>=70;
-    if(FILTER==='insider')return s.source==='Insider';
-    if(FILTER==='small')return s.cap==='small'||s.cap==='mid';
-    if(FILTER==='watch')return WL.includes(s.ticker);
+function filterSigs(s){
+  return s.filter(x=>{
+    const q=SRQ.toLowerCase();
+    if(q&&!x.ticker.toLowerCase().includes(q)&&!x.name.toLowerCase().includes(q))return false;
+    if(FLT==='buy')return x.type==='buy';
+    if(FLT==='sell')return x.type==='sell';
+    if(FLT==='score')return x.score>=70;
+    if(FLT==='insider')return x.source.toLowerCase().includes('insider')||x.source.includes('Form 4');
+    if(FLT==='small')return x.cap==='small'||x.cap==='mid';
+    if(FLT==='watch')return WL.includes(x.ticker);
     return true;
   });
 }
-
-function sortSignals(sigs){
-  return [...sigs].sort((a,b)=>{
-    const v=SORT_COL==='ticker'?a.ticker.localeCompare(b.ticker):
-             SORT_COL==='type'?a.type.localeCompare(b.type):
-             b.score-a.score;
-    return SORT_ASC?-v:v;
+function sortSigs(s){
+  return [...s].sort((a,b)=>{
+    const v=SORT==='ticker'?a.ticker.localeCompare(b.ticker):b.score-a.score;
+    return ASC?-v:v;
   });
 }
 
-// ================================================================
-//  RENDER
-// ================================================================
+// ── RENDER ────────────────────────────────────────
 function renderAll(){
   renderHeader();
-  renderNews();
-  renderTiles();
-  const sigs=buildSignals();
-  const filt=sortSignals(applyFilter(sigs));
-  renderTopCards(sigs);
+  renderMarket();
+  const sigs=buildSigs();
+  const filt=sortSigs(filterSigs(sigs));
   renderTable(filt);
-  renderMobileCards(filt);
+  renderMobile(filt);
   renderAI();
-  renderWatchlist(sigs);
-  renderChecklist();
-  document.getElementById('allCount').textContent=filt.length+' signal'+(filt.length>1?'s':'');
+  renderCL();
+  document.getElementById('sigCount').textContent=filt.length+' signal'+(filt.length>1?'s':'');
 }
 
 function renderHeader(){
-  const meta=DATA.meta||{};
-  const mkt=DATA.market||{};
-  const lbl=mkt.regime_label||'—';
-  document.getElementById('regimeBadge').textContent=
-    (meta.quarter&&meta.quarter!=='—'?meta.quarter+' · ':'')+lbl;
-  const gen=meta.generated_at;
-  if(gen){
-    const d=new Date(gen);
-    document.getElementById('updatedAt').textContent=
-      'MàJ '+d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short'})+' '+
-      d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+  const meta=D.meta||{},mkt=D.market||{};
+  const snap=mkt.snapshot||[];
+  const vix=parseFloat((snap.find(t=>t.label==='VIX')||{}).value||0);
+  const el=document.getElementById('vixPill');
+  el.textContent=vix?`VIX ${vix}`:'VIX —';
+  el.className='vix-pill '+(vix>30?'vix-alert':vix>20?'vix-warn':'vix-ok');
+  const g=meta.generated_at;
+  if(g){
+    const d=new Date(g);
+    document.getElementById('tsEl').textContent='MàJ '+d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
   }
 }
 
-function renderNews(){
-  const news=DATA.market?.news||[];
-  const band=document.getElementById('newsBand');
-  const scroll=document.getElementById('newsScroll');
-  if(!news.length){band.style.display='none';return;}
-  band.style.display='block';
-  const items=news.map(n=>`<span class="news-item">${esc(n.title||n)}</span>`);
-  // double for seamless loop
-  scroll.innerHTML=items.join('')+items.join('');
+function renderMarket(){
+  const snap=(D.market||{}).snapshot||[];
+  const want=['S&P 500','Nasdaq','VIX','Brent','Or','10 ans US'];
+  const el=document.getElementById('mktStrip');
+  el.innerHTML=snap.filter(t=>want.includes(t.label)).map(t=>`
+    <div class="tile">
+      <div class="tile-v ${t.dir}">${t.value}</div>
+      <div class="tile-l">${t.label}</div>
+      <div class="tile-c ${t.dir}">${t.change||''}</div>
+    </div>`).join('');
+  if(!el.innerHTML)el.innerHTML='<div class="tile" style="color:var(--mu);font-size:.75rem;padding:10px 16px">Données marché non chargées</div>';
 }
 
-function renderTiles(){
-  const snap=DATA.market?.snapshot||[];
-  const wanted=['S&P 500','Nasdaq','VIX','Brent','Or','10 ans US','BTC'];
-  const el=document.getElementById('tiles');
-  el.innerHTML='';
-  snap.filter(t=>wanted.includes(t.label)).forEach(t=>{
-    el.innerHTML+=`<div class="tile fade-in">
-      <div class="tile-val ${t.dir}">${t.value}</div>
-      <div class="tile-lbl">${t.label}</div>
-      <div class="tile-chg ${t.dir}">${t.change||''}</div>
-    </div>`;
-  });
-}
-
-// ===================== CARD =====================
-function scoreClass(s){return s>=70?'sc-high':s>=50?'sc-mid':'sc-low';}
-function createCard(sig,compact=false){
-  const isin=sig.isin||'';
-  const watched=WL.includes(sig.ticker);
-  const dw=sig.driftWarn?'<span class="badge badge-drift-warn">⚠️ +drift</span>':'';
-  const cons=sig.consensus&&sig.consensus!=='—'?
-    `<span class="badge badge-consensus">👥 ${sig.consensus.substring(0,30)}</span>`:'';
-  const copyVal=isin||sig.ticker;
-  const copyLbl=isin?'📋 ISIN':'📋 Ticker';
-  const tr_url=isin?`https://app.traderepublic.com/search?query=${isin}`:'';
-  const isinRow=isin?`<div class="card-isin">ISIN <span>${isin}</span></div>`:'';
-  return`<div class="card ${sig.type==='sell'?'sell':''} fade-in stagger">
-    <div class="card-top">
-      <div class="card-id">
-        <div class="ticker">${sig.ticker}</div>
-        <div class="company">${esc(sig.name)}</div>
-      </div>
-      <div class="score-circle ${scoreClass(sig.score)}">${sig.score}</div>
-    </div>
-    ${!compact?`<div class="card-reason">${esc(sig.reason)}</div>`:''}
-    <div class="card-meta">
-      <span class="badge ${sig.freshness.cls}">${sig.freshness.lbl}</span>
-      <span class="badge badge-source">${sig.source}</span>
-      ${dw}${cons}
-    </div>
-    ${isinRow}
-    <div class="card-actions">
-      <button class="btn btn-copy" onclick="copy('${copyVal}','${copyLbl}')">${copyLbl}</button>
-      ${tr_url?`<button class="btn btn-tr" onclick="window.open('${tr_url}','_blank')">→ TR</button>`:''}
-      <button class="btn btn-watch ${watched?'on':''}" onclick="toggleWatch('${sig.ticker}')">${watched?'⭐ Suivi':'☆ Suivre'}</button>
-    </div>
-  </div>`;
-}
-
-function renderTopCards(sigs){
-  const buys=sigs.filter(s=>s.type==='buy').slice(0,6);
-  const sells=sigs.filter(s=>s.type==='sell').slice(0,3);
-  const all=[...buys,...sells];
-  document.getElementById('topCards').innerHTML=all.map(s=>createCard(s)).join('');
-  document.getElementById('topCount').textContent=all.length+' opportunité'+(all.length>1?'s':'');
-}
+function scCls(s){return s>=70?'score-hi':s>=50?'score-mid':'score-lo';}
+function actCls(t){return t==='buy'?'act-buy':t==='sell'?'act-sell':t==='event'?'act-event':'act-watch';}
+function actLbl(t){return t==='buy'?'ACHETER':t==='sell'?'VENDRE':t==='event'?'ÉVÉNEMENT':'SURVEILLER';}
+function rowCls(t){return t==='buy'?'buy-row':t==='sell'?'sell-row':t==='event'?'event-row':'watch-row';}
 
 function renderTable(sigs){
-  const tbody=document.getElementById('tblBody');
-  tbody.innerHTML=sigs.map(s=>{
+  const tb=document.getElementById('tblBody');
+  if(!sigs.length){
+    tb.innerHTML=`<tr><td colspan="9"><div class="empty"><div class="empty-icon">📭</div><div class="empty-msg">Aucun signal pour ce filtre.<br>Lance le workflow pour charger les données.</div></div></td></tr>`;
+    return;
+  }
+  tb.innerHTML=sigs.map((s,i)=>{
     const isin=s.isin||'';
-    const watched=WL.includes(s.ticker);
-    const copyVal=isin||s.ticker;
-    return`<tr>
-      <td><span class="td-ticker">${s.ticker}</span></td>
-      <td><div class="td-name" title="${esc(s.name)}">${esc(s.name)}</div></td>
-      <td><span class="td-isin">${isin||'—'}</span></td>
-      <td>${s.type==='buy'?'<span style="color:var(--buy)">🟢 Achat</span>':'<span style="color:var(--sell)">🔴 Vente</span>'}</td>
-      <td><span class="td-score ${scoreClass(s.score)}" style="font-family:var(--fc);font-weight:700;font-size:1rem;color:${s.score>=70?'var(--buy)':s.score>=50?'var(--gold)':'var(--sell)'}">${s.score}</span></td>
-      <td><span class="badge badge-source">${s.source}</span></td>
-      <td><span class="badge ${s.freshness.cls}">${s.freshness.lbl}</span></td>
-      <td><div class="td-reason" title="${esc(s.reason)}">${esc(s.reason).substring(0,90)}${s.reason.length>90?'…':''}</div></td>
-      <td class="td-actions">
-        <button class="btn btn-copy btn-sm" onclick="copy('${copyVal}','${isin?'ISIN':'Ticker'}')">${isin?'ISIN':'Ticker'}</button>
-        <button class="btn btn-watch btn-sm ${watched?'on':''}" onclick="toggleWatch('${s.ticker}')">${watched?'★':'☆'}</button>
+    const wl=WL.includes(s.ticker);
+    const why=(s.why||'—').substring(0,90)+(s.why&&s.why.length>90?'…':'');
+    const hasDetail=s.why&&s.why.length>0||s.drift;
+    return`<tr class="${rowCls(s.type)}" onclick="toggleRow(${i})" style="cursor:pointer">
+      <td><span class="act ${actCls(s.type)}">${actLbl(s.type)}</span></td>
+      <td><div class="tkr">${s.ticker}</div></td>
+      <td><div class="co" title="${esc(s.name)}">${esc(s.name)||'—'}</div></td>
+      <td><span class="score ${scCls(s.score)}">${s.score}</span></td>
+      <td><div class="src">${srcIcon(s.source)} ${s.source}</div></td>
+      <td><div class="fresh"><span class="dot ${s.freshness.cls}"></span>${s.freshness.lbl}</div></td>
+      <td><div class="why">${esc(why)}</div></td>
+      <td><div style="font-family:var(--fm);font-size:.65rem;color:var(--mu)">${isin||'—'}</div></td>
+      <td>
+        <button class="btn-copy" onclick="event.stopPropagation();cp('${isin||s.ticker}','${isin?'ISIN':'Ticker'}')" title="Copier pour Trade Republic">📋 ${isin?'ISIN':'Ticker'}</button>
+        <button class="btn-wl ${wl?'on':''}" onclick="event.stopPropagation();toggleWL('${s.ticker}')">${wl?'★':'☆'}</button>
+      </td>
+    </tr>
+    <tr class="detail-row" id="detail-${i}">
+      <td colspan="9">
+        <strong style="color:var(--buy);font-family:var(--fm);font-size:.7rem">POURQUOI CE SIGNAL</strong><br>
+        <span>${esc(s.why||'Aucun détail disponible.')}</span>
+        ${s.drift?`<br><br><strong style="color:var(--watch);font-family:var(--fm);font-size:.7rem">DRIFT (décalage 45j)</strong><br><span>${esc(s.drift)}</span>`:''}
+        ${s.consensus&&s.consensus!=='—'?`<br><br><strong style="color:var(--ev);font-family:var(--fm);font-size:.7rem">CONSENSUS</strong><br><span>${esc(s.consensus)}</span>`:''}
+        ${isin?`<br><br><strong style="font-family:var(--fm);font-size:.7rem;color:var(--mu)">ISIN Trade Republic</strong><br><code style="font-family:var(--fm);color:var(--tx)">${isin}</code>`:''}
       </td>
     </tr>`;
   }).join('');
 }
+function toggleRow(i){
+  const r=document.getElementById(`detail-${i}`);
+  if(r)r.classList.toggle('open');
+}
 
-function renderMobileCards(sigs){
-  document.getElementById('mobileCards').innerHTML=sigs.map(s=>createCard(s,true)).join('');
+function renderMobile(sigs){
+  const c=document.getElementById('mobCards');
+  if(!sigs.length){c.innerHTML=`<div class="empty"><div class="empty-icon">📭</div><div class="empty-msg">Aucun signal — lance le workflow.</div></div>`;return;}
+  c.innerHTML=sigs.map(s=>{
+    const isin=s.isin||'';
+    const wl=WL.includes(s.ticker);
+    return`<div class="mob-card ${s.type==='sell'?'sell':s.type==='event'?'event':s.type==='watch'?'watch':''}">
+      <div class="mob-card-top">
+        <div>
+          <div style="font-family:var(--fm);font-weight:700;font-size:1.05rem">${s.ticker}</div>
+          <div style="font-size:.75rem;color:var(--mu);margin-top:2px">${esc(s.name)}</div>
+        </div>
+        <div>
+          <span class="act ${actCls(s.type)}">${actLbl(s.type)}</span>
+          <div style="font-family:var(--fm);font-size:.9rem;font-weight:700;margin-top:4px;text-align:right" class="${scCls(s.score)}">${s.score}</div>
+        </div>
+      </div>
+      <div style="font-size:.78rem;color:var(--mu2);line-height:1.45">${esc((s.why||'').substring(0,100))}</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap">
+        <div class="fresh"><span class="dot ${s.freshness.cls}"></span>${s.freshness.lbl}</div>
+        <div class="src">${srcIcon(s.source)} ${s.source}</div>
+      </div>
+      <div class="mob-card-btm">
+        <button class="btn-copy" onclick="cp('${isin||s.ticker}','${isin?'ISIN':'Ticker'}')">📋 Copier ${isin?'ISIN':'Ticker'}</button>
+        <button class="btn-wl ${wl?'on':''}" onclick="toggleWL('${s.ticker}')">${wl?'⭐ Suivi':'☆ Suivre'}</button>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 function renderAI(){
-  const ai=DATA.ai_analysis;
-  const sec=document.getElementById('aiSection');
+  const ai=D.ai_analysis;
+  const sec=document.getElementById('aiSec');
   if(!ai||!ai.rapport){sec.style.display='none';return;}
   sec.style.display='block';
-  const iaDate=ai.timestamp?new Date(ai.timestamp).toLocaleString('fr-FR',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}):'?';
-  const props_buy=(ai.propositions_achat||[]).map(p=>`
-    <div class="ai-prop fade-in">
-      <div class="ai-prop-top"><span class="ai-prop-ticker">${p.ticker}</span><span class="ai-prop-score">Score ${p.score}</span></div>
-      <div class="ai-prop-reason">${esc(p.raison||'')} <em style="color:var(--mu)">(${p.capitalisation||'large'} cap · ${esc(p.source||'')})</em></div>
-      ${p.risque?`<div class="ai-prop-risk">⚠️ ${esc(p.risque)}</div>`:''}
+  const ts=ai.timestamp?new Date(ai.timestamp).toLocaleString('fr-FR',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}):'—';
+  document.getElementById('aiTs').textContent='Généré le '+ts;
+  const rapHTML=esc(ai.rapport||'').replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>');
+  const buys=(ai.propositions_achat||[]).map(p=>`
+    <div class="prop">
+      <div class="prop-top"><span class="prop-tkr">${p.ticker} <span style="font-size:.75rem;color:var(--mu);font-weight:400">${esc(p.nom||'')}</span></span><span class="prop-score">Signal ${p.score}</span></div>
+      <div class="prop-why"><strong style="color:var(--mu2)">Pourquoi :</strong> ${esc(p.pourquoi_detaille||p.raison||'—')}</div>
+      ${p.risque?`<div class="prop-risk">⚠ Risque : ${esc(p.risque)}</div>`:''}
     </div>`).join('');
-  const props_sell=(ai.propositions_vente||[]).map(p=>`
-    <div class="ai-prop sell fade-in">
-      <div class="ai-prop-top"><span class="ai-prop-ticker">${p.ticker}</span><span class="ai-prop-score" style="background:var(--sell2);color:var(--sell)">Score ${p.score}</span></div>
-      <div class="ai-prop-reason">${esc(p.raison||'')}</div>
-      ${p.risque?`<div class="ai-prop-risk">⚠️ ${esc(p.risque)}</div>`:''}
+  const sells=(ai.propositions_vente||[]).map(p=>`
+    <div class="prop sell">
+      <div class="prop-top"><span class="prop-tkr">${p.ticker} <span style="font-size:.75rem;color:var(--mu);font-weight:400">${esc(p.nom||'')}</span></span><span class="prop-score">Signal ${p.score}</span></div>
+      <div class="prop-why"><strong style="color:var(--mu2)">Pourquoi :</strong> ${esc(p.pourquoi_detaille||p.raison||'—')}</div>
+      ${p.risque?`<div class="prop-risk">⚠ Risque : ${esc(p.risque)}</div>`:''}
     </div>`).join('');
-  const rapportHTML=esc(ai.rapport||'').replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>');
-  document.getElementById('aiCard').innerHTML=`
-    <div class="ai-text"><p>${rapportHTML}</p></div>
-    ${props_buy?`<div style="margin:12px 0 6px;font-family:var(--fc);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--buy)">Pistes d'achat identifiées</div><div class="ai-props">${props_buy}</div>`:''}
-    ${props_sell?`<div style="margin:12px 0 6px;font-family:var(--fc);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sell)">Pistes d'allègement identifiées</div><div class="ai-props">${props_sell}</div>`:''}
-    <div class="transparency">
-      <div class="tr-title">📋 Transparence de l'analyse</div>
-      <div class="tr-grid">
-        <span class="tr-key">🧠 Généré le</span><span class="tr-val">${iaDate}</span>
-        <span class="tr-key">📊 Données marché</span><span class="tr-val">${DATA.market?.as_of||'?'} (Yahoo Finance, TradingEconomics)</span>
-        <span class="tr-key">🗂 Portefeuilles 13F</span><span class="tr-val">${DATA.meta?.quarter||'?'} au ${DATA.meta?.portfolio_date||'?'} (SEC EDGAR)</span>
-        <span class="tr-key">🔎 Insiders</span><span class="tr-val">${(DATA.global_signals||[]).length>0?(DATA.global_signals.length+' achat(s) des 7 derniers jours'):'Aucun signal collecté'}</span>
-      </div>
-      <div class="tr-disclaimer">⚠️ Signaux avec ~45 jours de décalage. Les prix ont pu évoluer. Analyse automatisée — pas un conseil en investissement.</div>
+  const gs=D.global_signals||[];
+  document.getElementById('aiBody').innerHTML=`
+    <div class="ai-narrative"><p>${rapHTML}</p></div>
+    ${buys?`<div style="font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--buy);margin-bottom:8px">Pistes d'achat</div><div class="prop-grid">${buys}</div>`:''}
+    ${sells?`<div style="font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--sell);margin-bottom:8px;margin-top:12px">Pistes de vente/allègement</div><div class="prop-grid">${sells}</div>`:''}
+    <div class="ai-meta">
+      <div class="ai-meta-title">📋 Sources & Transparence</div>
+      <div class="ai-meta-row">🕐 Analyse générée le <span>${ts}</span></div>
+      <div class="ai-meta-row">📊 Marché <span>${D.market?.as_of||'?'} (Yahoo Finance, TradingEconomics)</span></div>
+      <div class="ai-meta-row">🏛 13F <span>${D.meta?.quarter||'?'} au ${D.meta?.portfolio_date||'?'} (SEC EDGAR, ~45j)</span></div>
+      <div class="ai-meta-row">👤 Insiders <span>${gs.filter(g=>(g.source||'').includes('Insider')).length} signal(s) collecté(s)</span></div>
+      <div class="ai-meta-row">📡 Autres sources <span>${gs.filter(g=>!(g.source||'').includes('Insider')).length} signal(s) (13D/G, ETF, AMF, NBIM…)</span></div>
+      <div class="ai-disc">⚠ Analyse automatisée basée sur des données avec décalage. Pas un conseil en investissement personnalisé.</div>
     </div>`;
 }
 
-function renderWatchlist(sigs){
-  const sec=document.getElementById('wlSection');
-  if(!WL.length){sec.style.display='none';return;}
-  sec.style.display='block';
-  const all=sigs||buildSignals();
-  const items=all.filter(s=>WL.includes(s.ticker));
-  document.getElementById('wlCount').textContent=WL.length+' suivi'+(WL.length>1?'s':'');
-  document.getElementById('wlCards').innerHTML=items.length
-    ?items.map(s=>createCard(s,true)).join('')
-    :`<div class="empty-state">Aucun signal actif pour vos tickers suivis.<br><small>${WL.join(', ')}</small></div>`;
-}
-
-const CHECKLIST_ITEMS=[
-  'Ai-je compris comment cette entreprise gagne de l\'argent ?',
-  'Le score de signal est-il ≥ 60 ?',
-  'Ai-je vérifié le drift (prix actuel vs date du signal 13F) ?',
-  'Le FCF yield est-il attractif par rapport aux taux sans risque ?',
-  'Ma taille de position est raisonnable (max 10% du capital) ?',
-  'Ai-je défini un stop-loss avant d\'entrer ?',
-  'Y a-t-il un consensus entre plusieurs fonds, ou signal isolé ?',
-  'Ai-je lu le meilleur argument CONTRE cette thèse ?',
+const CL_ITEMS=[
+  'J\'ai compris comment cette entreprise gagne de l\'argent.',
+  'Le score est ≥ 60 et la source est fiable (fond concentré, insider).',
+  'J\'ai vérifié le prix actuel — le drift depuis le signal est acceptable.',
+  'Le FCF yield est attractif par rapport aux taux sans risque (~4,3%).',
+  'Ma taille de position est raisonnable (max 10% de mon capital).',
+  'J\'ai défini un stop-loss avant d\'entrer.',
+  'Y a-t-il un consensus entre plusieurs sources indépendantes ?',
+  'J\'ai cherché le meilleur argument CONTRE cette thèse.',
 ];
-function renderChecklist(){
-  document.getElementById('checklist').innerHTML=CHECKLIST_ITEMS.map((item,i)=>`
-    <div class="check-item">
-      <input type="checkbox" id="chk${i}">
-      <label for="chk${i}">${item}</label>
-    </div>`).join('');
+function renderCL(){
+  document.getElementById('cl').innerHTML=CL_ITEMS.map((t,i)=>`
+    <div class="cl-item"><input type="checkbox" id="cl${i}"><label for="cl${i}">${t}</label></div>`).join('');
 }
 
-// ================================================================
-//  UTILITAIRES
-// ================================================================
-function esc(s){
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-function copy(val,type){
-  navigator.clipboard.writeText(val).then(()=>toast('✅ '+type+' copié : '+val));
-}
-function toast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2400);
-}
-function toggleWatch(ticker){
-  WL=WL.includes(ticker)?WL.filter(t=>t!==ticker):[...WL,ticker];
-  localStorage.setItem('smr_wl',JSON.stringify(WL));
-  renderAll();
-}
-function sortBy(col){
-  if(SORT_COL===col)SORT_ASC=!SORT_ASC;else{SORT_COL=col;SORT_ASC=false;}
-  document.querySelectorAll('th').forEach(th=>th.classList.remove('sorted'));
-  renderAll();
-}
-function onSearch(v){SEARCH=v;renderAll();}
-function openGuide(){document.getElementById('guideModal').style.display='flex';}
-function closeGuide(){document.getElementById('guideModal').style.display='none';}
+// ── UTILS ────────────────────────────────────────
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function cp(v,t){navigator.clipboard.writeText(v).then(()=>toast(`✓ ${t} copié : ${v}`));}
+function toast(m){const e=document.getElementById('toast');e.textContent=m;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200);}
+function toggleWL(t){WL=WL.includes(t)?WL.filter(x=>x!==t):[...WL,t];localStorage.setItem('smr_wl',JSON.stringify(WL));renderAll();}
+function sortBy(c){if(SORT===c)ASC=!ASC;else{SORT=c;ASC=false;}renderAll();}
+function onSearch(v){SRQ=v;renderAll();}
+function openGuide(){document.getElementById('gModal').style.display='flex';}
+function closeGuide(){document.getElementById('gModal').style.display='none';}
 
-// ================================================================
-//  FILTER PILLS
-// ================================================================
 document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('pills').addEventListener('click',e=>{
-    const p=e.target.closest('.pill');
-    if(!p)return;
+    const p=e.target.closest('.pill');if(!p)return;
     document.querySelectorAll('.pill').forEach(x=>x.classList.remove('on'));
-    p.classList.add('on');
-    FILTER=p.dataset.f;
-    renderAll();
+    p.classList.add('on');FLT=p.dataset.f;renderAll();
   });
 });
 
-// ================================================================
-//  PWA — service worker + invite Android
-// ================================================================
-if('serviceWorker' in navigator)
-  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+// PWA
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 (function(){
-  const standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
-  if(standalone)return;
-  const isAndroid=/android/i.test(navigator.userAgent);
-  if(!isAndroid)return;
-  let deferred=null;
+  const sa=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+  if(sa)return;
+  if(!/android/i.test(navigator.userAgent))return;
+  let d=null;
   window.addEventListener('beforeinstallprompt',e=>{
-    e.preventDefault();deferred=e;
-    const bar=document.createElement('div');
-    bar.className='install-bar';
-    bar.innerHTML=`<div style="font-size:.83rem">📲 <b>Installer Smart Money</b> sur l'écran d'accueil</div>
-      <div style="display:flex;gap:6px">
-        <button class="btn btn-copy" onclick="if(deferred){deferred.prompt();}this.closest('.install-bar').remove()">Installer</button>
-        <button class="btn" onclick="this.closest('.install-bar').remove()">✕</button>
-      </div>`;
-    setTimeout(()=>document.body.appendChild(bar),1200);
+    e.preventDefault();d=e;
+    const b=document.createElement('div');
+    b.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:150;display:flex;gap:10px;align-items:center;justify-content:space-between;padding:11px 14px;border:1px solid var(--bd2);border-radius:5px;background:rgba(13,17,23,.97);backdrop-filter:blur(8px);font-size:.82rem';
+    b.innerHTML=`<span>📲 Installer Smart Money Radar</span><div style="display:flex;gap:6px"><button class="btn-copy" onclick="if(d){d.prompt();}this.closest('div').parentNode.remove()">Installer</button><button class="btn-sm" onclick="this.closest('div').parentNode.remove()">✕</button></div>`;
+    setTimeout(()=>document.body.appendChild(b),1200);
   });
 })();
 </script>

@@ -55,6 +55,8 @@ Structure exacte :
       "source": "Consensus Berkshire + Druckenmiller + 4 hedge funds",
       "raison": "Positionnement IA convergent, valorisation raisonnée vs croissance cloud",
       "risque": "Antitrust Google Search, compression marges IA",
+      "pourquoi_detaille": "Explication 3-4 phrases : sources, contexte macro, thèse du fonds, depuis quand.",
+      "risque": "Principal risque en 1 phrase",
       "drift_note": "Vérifier drift depuis date 13F avant toute décision"
     }
   ],
@@ -66,7 +68,8 @@ Structure exacte :
       "capitalisation": "large",
       "source": "Réduction consensus HF T1 2026",
       "raison": "Dérating SaaS classique vers IA agentique, momentum en baisse",
-      "risque": "Rebond possible si intégration IA accélérée"
+      "pourquoi_detaille": "Explication 3-4 phrases : sources, contexte, thèse de sortie.",
+      "risque": "Risque si la thèse est fausse"
     }
   ],
   "small_mid_caps": [
