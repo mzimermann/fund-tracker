@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-07T14:28:28.355948Z",
+    "generated_at": "2026-06-07T14:38:36.877977Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -86,8 +86,8 @@
       },
       {
         "label": "Bitcoin",
-        "value": "62 003 $",
-        "change": "+1,87 %",
+        "value": "62 212 $",
+        "change": "+2,21 %",
         "dir": "up",
         "sub": ""
       }
@@ -545,5 +545,111 @@
       "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.40%"
     }
-  ]
+  ],
+  "ai_analysis": {
+    "rapport": "Le contexte de marché est mitigé avec un VIX à 21,5 et des taux longs très bas (10 ans US à 0,45 %), ce qui soutient les valorisations mais reflète des inquiétudes macro. Les signaux insiders sont contrastés : des achats significatifs de dirigeants chez NVDA (Mark Stevens) et AAPL (Tim Cook) indiquent une confiance dans les leaders tech, tandis que des ventes chez MSFT (Nadella) et TSLA (Musk) suggèrent une prudence. Le fonds Fundsmith Equity Fund de Terry Smith a massivement renforcé ses positions sur MSFT, ASML, NVO, META, PYPL, NVDA, ACN, GOOG et BN, montrant un biais fort vers la qualité et la croissance. Aucun signal 13F de hedge funds n'est disponible dans ce lot, mais les mouvements insiders et les fonds mutuels offrent des pistes exploitables. Le consensus thématique est absent, mais les achats insiders et Fundsmith convergent sur les semi-conducteurs et la tech de qualité.",
+    "propositions_achat": [
+      {
+        "ticker": "NVDA",
+        "nom": "NVIDIA Corporation",
+        "score": 88,
+        "capitalisation": "large",
+        "source": "Insider Mark Stevens (Director) + Fundsmith Equity Fund",
+        "raison": "Achat insider significatif (20 000 actions) + renforcement Fundsmith (4,9% du portefeuille). Thèse IA intacte, leadership GPU.",
+        "risque": "Valorisation élevée, concurrence AMD/maisons, dépendance hyperscalers.",
+        "pourquoi_detaille": "Mark Stevens, administrateur de NVIDIA, a acheté 20 000 actions le 15/03/2026, signal fort de confiance interne. Parallèlement, Fundsmith Equity Fund a porté sa position à 4,9% de son portefeuille, indiquant une conviction qualité. Le contexte macro (taux bas, demande IA) est favorable. Ces signaux sont récents (moins de 30 jours) et convergent.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
+      },
+      {
+        "ticker": "AAPL",
+        "nom": "Apple Inc.",
+        "score": 85,
+        "capitalisation": "large",
+        "source": "Insider Tim Cook (CEO)",
+        "raison": "Achat CEO de 3 000 actions, signal rare de confiance du dirigeant. Valorisation raisonnable, écosystème solide.",
+        "risque": "Ralentissement iPhone, régulation App Store, exposition Chine.",
+        "pourquoi_detaille": "Tim Cook a acheté 3 000 actions AAPL le 14/03/2026, son premier achat en 2026. C'est un signal fort car le CEO achète rarement. Apple bénéficie d'un écosystème résilient et de services en croissance. Le contexte macro (taux bas) soutient les méga-caps.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
+      },
+      {
+        "ticker": "MSFT",
+        "nom": "Microsoft Corporation",
+        "score": 72,
+        "capitalisation": "large",
+        "source": "Fundsmith Equity Fund (8,5% du portefeuille)",
+        "raison": "Plus forte pondération Fundsmith, croissance cloud/Azure, mais vente insider de Satya Nadella tempère le signal.",
+        "risque": "Vente insider CEO, concurrence cloud AWS/GCP, investissements IA lourds.",
+        "pourquoi_detaille": "Fundsmith a fait de MSFT sa plus grosse position (8,5%), signe de conviction qualité. Cependant, Satya Nadella a vendu 2 000 actions le 12/03/2026, ce qui crée un signal mixte. La thèse reste solide (Azure, Copilot, croissance récurrente), mais la vente insider réduit le score.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
+      },
+      {
+        "ticker": "ASML",
+        "nom": "ASML Holding N.V.",
+        "score": 70,
+        "capitalisation": "large",
+        "source": "Fundsmith Equity Fund (7,1% du portefeuille)",
+        "raison": "Position Fundsmith significative, monopole lithographie, demande IA et semi-conducteurs.",
+        "risque": "Exposition géopolitique (Chine/Taiwan), cycles semi-conducteurs, valorisation élevée.",
+        "pourquoi_detaille": "Fundsmith a renforcé ASML à 7,1% de son portefeuille, reflétant une conviction dans le cycle des semi-conducteurs et le leadership technologique. Le contexte macro (taux bas) et la demande IA soutiennent la thèse. Pas de signal insider contradictoire.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
+      },
+      {
+        "ticker": "META",
+        "nom": "Meta Platforms Inc.",
+        "score": 65,
+        "capitalisation": "large",
+        "source": "Fundsmith Equity Fund (5,8% du portefeuille)",
+        "raison": "Renforcement Fundsmith, publicité digitale résiliente, investissements IA. Mais exercice d'options de Zuckerberg tempère.",
+        "risque": "Exercice d'options Zuckerberg, régulation publicité, concurrence TikTok.",
+        "pourquoi_detaille": "Fundsmith a porté META à 5,8% de son portefeuille, signal de confiance dans la croissance publicitaire et l'IA. Cependant, Mark Zuckerberg a exercé des options sur 2 000 actions le 13/03/2026, ce qui n'est pas une vente mais dilue potentiellement. Le signal reste positif mais modéré.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
+      }
+    ],
+    "propositions_vente": [
+      {
+        "ticker": "TSLA",
+        "nom": "Tesla Inc.",
+        "score": 78,
+        "capitalisation": "large",
+        "source": "Insider Elon Musk (CEO) vente 20 000 actions",
+        "raison": "Vente massive du CEO, signal de manque de confiance. Valorisation élevée, concurrence croissante.",
+        "risque": "Rebond technique, nouvelles sur robotaxi/FSD, soutien des investisseurs retail.",
+        "pourquoi_detaille": "Elon Musk a vendu 20 000 actions TSLA le 16/03/2026, soit environ 50 M$. C'est une vente significative pour un dirigeant souvent critiqué pour ses ventes. Le contexte macro (taux bas) ne justifie pas la valorisation actuelle. La thèse de sortie est renforcée par la concurrence chinoise et les marges en baisse."
+      },
+      {
+        "ticker": "MSFT",
+        "nom": "Microsoft Corporation",
+        "score": 60,
+        "capitalisation": "large",
+        "source": "Insider Satya Nadella (CEO) vente 2 000 actions",
+        "raison": "Vente insider CEO malgré renforcement Fundsmith, signal mixte. Prudence sur le court terme.",
+        "risque": "Croissance Azure, Catalyst IA (Copilot), rachats d'actions massifs.",
+        "pourquoi_detaille": "La vente de Satya Nadella (2 000 actions le 12/03/2026) est un signal négatif, même si Fundsmith renforce. La thèse de vente est prudente : le CEO vend souvent avant des périodes de sous-performance relative. Cependant, le score est modéré car Fundsmith compense."
+      }
+    ],
+    "small_mid_caps": [
+      {
+        "ticker": "GSL",
+        "nom": "Global Ship Lease Inc.",
+        "score": 55,
+        "capitalisation": "small",
+        "source": "SEC 13D/G : Inconnu détient >5% de GENCO SHIPPING & TRADING LTD (Subject)",
+        "raison": "Déclaration 13D sur Genco Shipping, signal d'activisme ou d'intérêt. Secteur maritime cyclique.",
+        "risque": "Volatilité des taux de fret, liquidité faible, manque de visibilité sur l'activiste.",
+        "pourquoi_detaille": "Une déclaration SC 13D a été déposée pour Genco Shipping & Trading Ltd, indiquant qu'un investisseur détient plus de 5% avec une intention potentiellement active. Le secteur maritime est cyclique mais peut bénéficier de tensions géopolitiques. Le signal est spéculatif."
+      }
+    ],
+    "secteurs_a_privilegier": [
+      "Semi-conducteurs / IA",
+      "Technologie de qualité (méga-caps)",
+      "Santé (Novo Nordisk via Fundsmith)"
+    ],
+    "secteurs_a_eviter": [
+      "Automobile (Tesla)",
+      "Exposition Chine non-couverte",
+      "SaaS décoté sans croissance"
+    ],
+    "avertissement": "Ces signaux proviennent de dépôts 13F avec ~45 jours de décalage et d'achats insiders publics. Ils reflètent les décisions passées de tiers. Signaux à analyser uniquement — pas des conseils en investissement personnalisés.",
+    "timestamp": "2026-06-07T14:39:06.011935Z"
+  }
 }
