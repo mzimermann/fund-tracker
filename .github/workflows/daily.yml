@@ -45,6 +45,7 @@ jobs:
           OPENFIGI_API_KEY:  ${{ secrets.OPENFIGI_API_KEY }}
           TE_API_KEY:        ${{ secrets.TE_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY:  ${{ secrets.DEEPSEEK_API_KEY }}
           # --- Notification push mobile optionnelle (app ntfy) ---
           NTFY_TOPIC:        ${{ secrets.NTFY_TOPIC }}
           NTFY_SERVER:       ${{ secrets.NTFY_SERVER }}
