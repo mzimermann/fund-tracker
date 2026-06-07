@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-06T15:54:07.721612Z",
+    "generated_at": "2026-06-07T13:49:54.385248Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -17,7 +17,7 @@
     "disclaimer": "Les 13F sont publiés ~45 jours après la fin du trimestre : les prix ont déjà évolué. Signaux à analyser, pas un conseil en investissement personnalisé."
   },
   "market": {
-    "as_of": "06/06/2026",
+    "as_of": "07/06/2026",
     "regime_label": "Mitigé",
     "regime_text": "Régime neutre (VIX 21.5). S&P 500 à 7 384. Brent 93.1 $. 10 ans US à 0.45 %.",
     "snapshot": [
@@ -72,8 +72,8 @@
       },
       {
         "label": "Or",
-        "value": "4 337.1 $",
-        "change": "-3,10 %",
+        "value": "4 365.3 $",
+        "change": "-2,47 %",
         "dir": "down",
         "sub": ""
       },
@@ -86,9 +86,9 @@
       },
       {
         "label": "Bitcoin",
-        "value": "60 733 $",
-        "change": "-0,31 %",
-        "dir": "down",
+        "value": "61 674 $",
+        "change": "+1,32 %",
+        "dir": "up",
         "sub": ""
       }
     ],
@@ -98,32 +98,32 @@
       {
         "src": "Stock Market News",
         "time": "07/06",
-        "title": "Street Calls of the Week"
+        "title": "Italy’s ITA Airways weighs lawsuit over Pratt & Whitney engine faults"
       },
       {
         "src": "Stock Market News",
-        "time": "06/06",
-        "title": "FDA grants orphan drug status for Merck’s pembrolizumab in NEPC"
+        "time": "07/06",
+        "title": "Global airlines slash 2026 profit forecast on fuel shock from Iran war"
       },
       {
         "src": "Stock Market News",
-        "time": "06/06",
-        "title": "Finnair explores Starlink, Amazon for inflight Wi-Fi upgrade - Bloomberg"
+        "time": "07/06",
+        "title": "Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.56%"
       },
       {
         "src": "Stock Market News",
-        "time": "06/06",
-        "title": "Elon Musk to attend ASML tech conference to talk Terafab - Bloomberg"
+        "time": "07/06",
+        "title": "Banco BPM opens merger talks with Monte Paschi on €1.1 bln synergy plan"
       },
       {
         "src": "Stock Market News",
-        "time": "06/06",
-        "title": "Air New Zealand plans for elevated fuel costs into 2027"
+        "time": "07/06",
+        "title": "Why UBS remains bullish on the hyperscaler stocks despite capex concerns"
       },
       {
         "src": "Stock Market News",
-        "time": "06/06",
-        "title": "Citi lifts S&P 500 target to 8100 as AI boom fuels episodic earnings surge"
+        "time": "07/06",
+        "title": "Explainer-How can retail investors buy shares in SpaceX’s IPO?"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
@@ -299,7 +299,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Achat de 20 000 actions",
       "shares": 20000,
       "price": 125.5,
@@ -311,7 +311,7 @@
       "type": "buy",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Achat de 3 000 actions",
       "shares": 3000,
       "price": 190.25,
@@ -323,7 +323,7 @@
       "type": "sell",
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "note": "Vente de 2 000 actions",
       "shares": 2000,
       "price": 420.0,
@@ -335,7 +335,7 @@
       "type": "sell",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-06-01",
+      "date": "2026-06-02",
       "note": "Vente de 20 000 actions",
       "shares": 20000,
       "price": 250.0,
@@ -347,7 +347,7 @@
       "type": "event",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "note": "Exercice d'options sur 2 000 actions",
       "shares": 2000,
       "price": 500.0,
@@ -371,7 +371,7 @@
       "type": "buy",
       "ticker": "MSFT",
       "name": "Microsoft",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Microsoft → 8.5% (+8.5%)"
     },
     {
@@ -380,7 +380,7 @@
       "type": "buy",
       "ticker": "ASML",
       "name": "ASML Holding",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : ASML Holding → 7.1% (+7.1%)"
     },
     {
@@ -389,7 +389,7 @@
       "type": "buy",
       "ticker": "NVO",
       "name": "Novo Nordisk",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Novo Nordisk → 6.4% (+6.4%)"
     },
     {
@@ -398,7 +398,7 @@
       "type": "buy",
       "ticker": "META",
       "name": "Meta Platforms",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Meta Platforms → 5.8% (+5.8%)"
     },
     {
@@ -407,7 +407,7 @@
       "type": "buy",
       "ticker": "PYPL",
       "name": "PayPal Holdings",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : PayPal Holdings → 5.2% (+5.2%)"
     },
     {
@@ -416,7 +416,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "Nvidia",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Nvidia → 4.9% (+4.9%)"
     },
     {
@@ -425,7 +425,7 @@
       "type": "buy",
       "ticker": "ACN",
       "name": "Accenture",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Accenture → 4.7% (+4.7%)"
     },
     {
@@ -434,7 +434,7 @@
       "type": "buy",
       "ticker": "GOOG",
       "name": "Alphabet",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Alphabet → 4.5% (+4.5%)"
     },
     {
@@ -443,7 +443,7 @@
       "type": "buy",
       "ticker": "BN",
       "name": "Danone",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Danone → 4.3% (+4.3%)"
     },
     {
@@ -452,7 +452,7 @@
       "type": "buy",
       "ticker": "IDEXY",
       "name": "Industria de Diseno",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Fundsmith Equity Fund : Industria de Diseno → 4.0% (+4.0%)"
     },
     {
@@ -461,7 +461,7 @@
       "type": "context",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.17%"
     },
     {
@@ -470,7 +470,7 @@
       "type": "context",
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.05%"
     },
     {
@@ -479,7 +479,7 @@
       "type": "context",
       "ticker": "NVDA",
       "name": "Nvidia Corp.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.91%"
     },
     {
@@ -488,7 +488,7 @@
       "type": "context",
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.88%"
     },
     {
@@ -497,7 +497,7 @@
       "type": "context",
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.72%"
     },
     {
@@ -506,7 +506,7 @@
       "type": "context",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.66%"
     },
     {
@@ -515,7 +515,7 @@
       "type": "context",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.55%"
     },
     {
@@ -524,7 +524,7 @@
       "type": "context",
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.43%"
     },
     {
@@ -533,7 +533,7 @@
       "type": "context",
       "ticker": "NOVO-B.CO",
       "name": "Novo Nordisk",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.42%"
     },
     {
@@ -542,35 +542,8 @@
       "type": "context",
       "ticker": "JPM",
       "name": "JPMorgan Chase",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.40%"
-    },
-    {
-      "source": "Conglomérat",
-      "entity": "SoftBank (PR Newswire)",
-      "type": "buy",
-      "ticker": "",
-      "name": "MONDAY INVESTOR DEADLINE: Medpace Holdings Inc. Investors with Substantial Losses Have Opp",
-      "date": "Sat, 6 Jun",
-      "note": "MONDAY INVESTOR DEADLINE: Medpace Holdings Inc. Investors with Substantial Losses Have Opportunity to Lead Class Action Lawsuit, Robbins Geller Rudman &amp; Dowd LLP Announces - MEDP"
-    },
-    {
-      "source": "Conglomérat",
-      "entity": "SoftBank (PR Newswire)",
-      "type": "buy",
-      "ticker": "",
-      "name": "MONDAY INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Stellantis N",
-      "date": "Sat, 6 Jun",
-      "note": "MONDAY INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Stellantis N.V. Investors with Substantial Losses Have Opportunity to Lead Investor Class Action Lawsuit - STLA"
-    },
-    {
-      "source": "Conglomérat",
-      "entity": "SoftBank (PR Newswire)",
-      "type": "buy",
-      "ticker": "",
-      "name": "INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Zoetis Inc. (ZTS) I",
-      "date": "Sat, 6 Jun",
-      "note": "INVESTOR DEADLINE: Robbins Geller Rudman &amp; Dowd LLP Announces that Zoetis Inc. (ZTS) Investors with Substantial Losses Have Opportunity to Lead Class Action Lawsuit"
     }
   ]
 }
