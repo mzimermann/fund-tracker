@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-07T14:15:01.843716Z",
+    "generated_at": "2026-06-07T14:28:28.355948Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -86,8 +86,8 @@
       },
       {
         "label": "Bitcoin",
-        "value": "61 761 $",
-        "change": "+1,47 %",
+        "value": "62 003 $",
+        "change": "+1,87 %",
         "dir": "up",
         "sub": ""
       }
