@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-07T14:43:48.622571Z",
+    "generated_at": "2026-06-07T15:53:55.885822Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -86,8 +86,8 @@
       },
       {
         "label": "Bitcoin",
-        "value": "61 938 $",
-        "change": "+1,76 %",
+        "value": "62 150 $",
+        "change": "+2,11 %",
         "dir": "up",
         "sub": ""
       }
@@ -95,6 +95,11 @@
     "macro": [],
     "events": [],
     "news": [
+      {
+        "src": "Stock Market News",
+        "time": "07/06",
+        "title": "Cryptocurrency exchange Bybit to open SpaceX tokenized IPO access"
+      },
       {
         "src": "Stock Market News",
         "time": "07/06",
@@ -119,11 +124,6 @@
         "src": "Stock Market News",
         "time": "07/06",
         "title": "Why UBS remains bullish on the hyperscaler stocks despite capex concerns"
-      },
-      {
-        "src": "Stock Market News",
-        "time": "07/06",
-        "title": "Explainer-How can retail investors buy shares in SpaceX’s IPO?"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
@@ -1993,156 +1993,13 @@
     }
   ],
   "ai_analysis": {
-    "rapport": "Le contexte de marché est mitigé avec un VIX à 21,5 et des taux longs très bas (10 ans US à 0,45 %), ce qui favorise les actifs risqués malgré une volatilité résiduelle. Les dépôts 13F du T1 2026 montrent une forte convergence sur les valeurs technologiques liées à l'IA et au cloud, avec Berkshire qui augmente significativement sa position GOOGL (de 2 % à 5,9 %), tandis que Pershing Square réduit fortement GOOG pour entrer massivement sur MSFT (15,3 %). Appaloosa renforce AMZN et TSM, et initie une position sur SNDK, signalant un intérêt pour le cycle mémoire. Les ventes concernent principalement des valeurs exposées à la Chine (BABA, META) ou en perte de momentum (CHV, HLT). Les achats d'insiders sur NVDA et AAPL renforcent la confiance dans les leaders technologiques. Le consensus thématique est clair : privilégier l'IA, les semi-conducteurs et les plateformes cloud, tout en évitant les valeurs chinoises et les secteurs cycliques fragiles. Signal à analyser uniquement, pas un conseil en investissement.",
-    "propositions_achat": [
-      {
-        "ticker": "GOOGL",
-        "nom": "Alphabet Inc.",
-        "score": 82,
-        "capitalisation": "large",
-        "source": "Consensus Berkshire + Bridgewater + Fidelity + Goldman Sachs",
-        "raison": "Positionnement IA convergent, valorisation raisonnée vs croissance cloud",
-        "risque": "Antitrust Google Search, compression marges IA",
-        "pourquoi_detaille": "Berkshire a augmenté sa position de 2,0 % à 5,9 %, rejoint par Bridgewater, Fidelity et Goldman Sachs. Le contexte macro de taux bas favorise les valeurs de croissance. La thèse repose sur la monétisation de l'IA via Google Cloud et les services publicitaires. Le signal est renforcé par l'absence de vente d'insiders significative.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "MSFT",
-        "nom": "Microsoft Corp.",
-        "score": 78,
-        "capitalisation": "large",
-        "source": "Pershing Square (nouvelle position 15,3 %) + Fundsmith Equity Fund",
-        "raison": "Leader IA avec Copilot et Azure, achat massif par fonds concentré",
-        "risque": "Ralentissement croissance cloud, concurrence AWS",
-        "pourquoi_detaille": "Pershing Square a initié une position massive de 15,3 %, signalant une conviction forte. Fundsmith a également augmenté sa position. Le contexte macro est favorable avec des taux bas. La thèse mise sur l'intégration de l'IA dans la suite Office et Azure. Attention toutefois aux ventes d'insiders (Satya Nadella a vendu 2 000 actions).",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "AMZN",
-        "nom": "Amazon.com Inc.",
-        "score": 76,
-        "capitalisation": "large",
-        "source": "Appaloosa (7,3 % → 15,2 %) + Bridgewater (1,6 % → 4,1 %)",
-        "raison": "Croissance AWS et e-commerce, valorisation attractive après consolidation",
-        "risque": "Régulation antitrust, pression sur les marges retail",
-        "pourquoi_detaille": "Appaloosa a doublé sa position à 15,2 %, et Bridgewater l'a également renforcée. Le contexte macro de taux bas soutient les valeurs de croissance. La thèse repose sur la reprise du cloud AWS et l'optimisation logistique. Le signal est cohérent avec l'orientation IA du marché.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "TSM",
-        "nom": "Taiwan Semiconductor Manufacturing Co.",
-        "score": 72,
-        "capitalisation": "large",
-        "source": "Appaloosa (5,0 % → 7,6 %) + Bridgewater",
-        "raison": "Semi-conducteurs IA, monopole de fait sur les puces avancées",
-        "risque": "Tensions géopolitiques Taïwan/Chine, cycle semi-conducteurs",
-        "pourquoi_detaille": "Appaloosa a augmenté sa position de 5,0 % à 7,6 %, et Bridgewater est également présent. Le contexte macro est neutre, mais la demande IA soutient les semi-conducteurs. La thèse mise sur le leadership de TSM dans les nœuds avancés (3nm, 2nm) et la croissance des commandes IA.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "NVDA",
-        "nom": "Nvidia Corp.",
-        "score": 70,
-        "capitalisation": "large",
-        "source": "Bridgewater (2,6 % → 3,7 %) + Fundsmith (4,9 %) + Insider buy (Mark Stevens, 20 000 actions)",
-        "raison": "Leader incontesté des GPU IA, achat insider renforce la confiance",
-        "risque": "Valorisation élevée, concurrence AMD/startups, cycle de commandes",
-        "pourquoi_detaille": "Bridgewater a augmenté sa position, Fundsmith l'a ajoutée, et un insider (Mark Stevens) a acheté 20 000 actions. Le contexte macro est favorable aux valeurs de croissance. La thèse repose sur la demande explosive en GPU pour l'IA générative et les datacenters. Le signal est renforcé par l'achat insider.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      }
-    ],
-    "propositions_vente": [
-      {
-        "ticker": "GOOG",
-        "nom": "Alphabet Inc. (sans droit de vote)",
-        "score": 71,
-        "capitalisation": "large",
-        "source": "Pershing Square (12,5 % → 0,7 %)",
-        "raison": "Réduction massive par fonds concentré, switch vers MSFT",
-        "pourquoi_detaille": "Pershing Square a réduit sa position de 12,5 % à 0,7 %, indiquant une perte de conviction. Le contexte macro est neutre, mais le signal est fort car Pershing est un fonds concentré. La thèse de sortie pourrait être liée à une meilleure opportunité sur MSFT ou à des préoccupations antitrust.",
-        "risque": "Risque si GOOGL surperforme grâce à l'IA"
-      },
-      {
-        "ticker": "BABA",
-        "nom": "Alibaba Group Holding Ltd.",
-        "score": 68,
-        "capitalisation": "large",
-        "source": "Appaloosa (10,9 % → 7,3 %)",
-        "raison": "Réduction continue, exposition Chine risquée",
-        "pourquoi_detaille": "Appaloosa a réduit sa position de 10,9 % à 7,3 %, poursuivant une tendance de désengagement. Le contexte macro est défavorable pour la Chine (tensions géopolitiques, ralentissement économique). La thèse de sortie est liée aux risques réglementaires et à la faible visibilité.",
-        "risque": "Risque si la Chine se stabilise ou si BABA bénéficie de l'IA"
-      },
-      {
-        "ticker": "META",
-        "nom": "Meta Platforms Inc.",
-        "score": 65,
-        "capitalisation": "large",
-        "source": "Appaloosa (5,7 % → 4,2 %)",
-        "raison": "Réduction modérée, dépenses IA élevées, incertitude réglementaire",
-        "pourquoi_detaille": "Appaloosa a réduit sa position de 5,7 % à 4,2 %. Le contexte macro est neutre, mais les dépenses d'investissement massives dans l'IA et la réalité virtuelle pèsent sur les marges. La thèse de sortie pourrait être liée à une valorisation jugée trop élevée par rapport aux risques.",
-        "risque": "Risque si les investissements IA portent leurs fruits rapidement"
-      },
-      {
-        "ticker": "CHV",
-        "nom": "Chevron Corp.",
-        "score": 62,
-        "capitalisation": "large",
-        "source": "Berkshire Hathaway (7,2 % → 6,6 %)",
-        "raison": "Réduction légère mais significative de la part de Berkshire",
-        "pourquoi_detaille": "Berkshire a réduit sa position de 7,2 % à 6,6 %. Le contexte macro est mitigé avec un pétrole à 93 $, mais Berkshire semble privilégier d'autres secteurs. La thèse de sortie pourrait être liée à une rotation vers les valeurs technologiques.",
-        "risque": "Risque si les prix du pétrole augmentent fortement"
-      },
-      {
-        "ticker": "HLT",
-        "nom": "Hilton Worldwide Holdings Inc.",
-        "score": 60,
-        "capitalisation": "large",
-        "source": "Pershing Square (5,6 % → 0 %)",
-        "raison": "Sortie totale par fonds concentré, signal de désintérêt",
-        "pourquoi_detaille": "Pershing Square a vendu l'intégralité de sa position de 5,6 %. Le contexte macro est neutre, mais le secteur hôtelier est cyclique et sensible à la consommation. La thèse de sortie pourrait être liée à une meilleure allocation vers MSFT.",
-        "risque": "Risque si le tourisme repart fortement"
-      }
-    ],
-    "small_mid_caps": [
-      {
-        "ticker": "SNDK",
-        "nom": "SanDisk Corp.",
-        "score": 64,
-        "capitalisation": "mid",
-        "source": "Appaloosa (nouvelle position 3,0 %) + Druckenmiller (non listé mais signalé)",
-        "raison": "Cycle mémoire NAND en reprise, supercycle IA demande stockage",
-        "risque": "Liquidité plus faible, volatilité élevée"
-      },
-      {
-        "ticker": "QSR",
-        "nom": "Restaurant Brands International Inc.",
-        "score": 62,
-        "capitalisation": "mid",
-        "source": "Pershing Square (10,0 % → 12,2 %)",
-        "raison": "Augmentation de position par fonds concentré, valeur défensive",
-        "risque": "Sensibilité à la consommation, concurrence"
-      },
-      {
-        "ticker": "VST",
-        "nom": "Vistra Corp.",
-        "score": 60,
-        "capitalisation": "mid",
-        "source": "Appaloosa (2,2 % → 5,1 %)",
-        "raison": "Énergie électrique, bénéficie de la demande IA pour les datacenters",
-        "risque": "Régulation environnementale, volatilité des prix de l'énergie"
-      }
-    ],
-    "secteurs_a_privilegier": [
-      "IA / semi-conducteurs",
-      "Cloud computing",
-      "Énergie électrique (datacenters)"
-    ],
-    "secteurs_a_eviter": [
-      "Exposition Chine (BABA, META)",
-      "Hôtellerie (HLT)",
-      "Pétrole (CHV)"
-    ],
-    "avertissement": "Ces signaux proviennent de dépôts 13F avec ~45 jours de décalage et d'achats insiders publics. Ils reflètent les décisions passées de tiers. Signaux à analyser uniquement — pas des conseils en investissement personnalisés.",
-    "timestamp": "2026-06-07T14:44:33.785400Z"
+    "rapport": "{\n  \"rapport\": \"Le contexte de marché est mitigé avec un VIX à 21,5 et un S&P 500 à 7 384, indiquant une volatilité modérée mais une absence de tendance forte. Les signaux 13F montrent une convergence notable sur Alphabet (GOOGL) avec une augmentation significative de Berkshire Hathaway (de 2,0% à 5,9%), soutenue par Bridgewater Associates et Fidelity, tandis que Pershing Square réduit sa position. Cela suggère un consensus haussier sur la valeur, malgré le décalage de 45 jours. Parallèlement, Appaloosa et Bridgewater augmentent leurs positions sur Amazon (AMZN), renforçant l'intérêt pour les géants tech. Les ventes sont dominées par des réductions sur Chevron (CHV) par Berkshire, Alibaba (BABA) par Appaloosa, et des sorties de Hilton (HLT) par Pershing Square. Les achats d'insiders sur Nvidia (NVDA) et Apple (AAPL) ajoutent un signal positif, tandis que les ventes d'insiders sur Microsoft (MSFT) et Tesla (TSLA) tempèrent l'enthousiasme. Les secteurs à privilégier sont l'IA/semi-conducteurs et l'énergie, tandis que le SaaS décoté et l'exposition Chine non-couverte sont à éviter.\",\n  \"propositions_achat\": [\n    {\n      \"ticker\": \"GOOGL\",\n      \"nom\": \"Alphabet Inc.\",\n      \"score\": 82,\n      \"capitalisation\": \"large\",\n      \"source\": \"Consensus Berkshire + Bridgewater + Fidelity + Fundsmith\",\n      \"raison\": \"Positionnement IA convergent, valorisation raisonnée vs croissance cloud\",\n      \"risque\": \"Antitrust Google Search, compression marges IA\",\n      \"pourquoi_detaille\": \"Berkshire Hathaway a augmenté sa position de 2,0% à 5,9%, signalant une conviction forte. Bridgewater Associates et Fidelity sont également acheteurs, tandis que Fundsmith Equity Fund a ajouté 4,5% à son portefeuille. Le contexte macro est neutre, mais la thèse repose sur la croissance du cloud et de l'IA, avec une valorisation attractive par rapport aux pairs. Le signal est renforcé par l'achat d'insider sur NVDA, indiquant une confiance dans le secteur tech.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"AMZN\",\n      \"nom\": \"Amazon.com Inc.\",\n      \"score\": 78,\n      \"capitalisation\": \"large\",\n      \"source\": \"Consensus Appaloosa + Bridgewater\",\n      \"raison\": \"Croissance AWS et retail, valorisation attractive après correction\",\n      \"risque\": \"Régulation antitrust, ralentissement dépenses cloud\",\n      \"pourquoi_detaille\": \"Appaloosa a augmenté sa position de 7,3% à 15,2%, et Bridgewater de 1,6% à 4,1%. Ce consensus entre deux fonds majeurs indique une forte conviction sur la capacité d'Amazon à bénéficier de la croissance du cloud et de l'IA. Le contexte macro est neutre, mais la valorisation est jugée raisonnable après la récente correction.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"NVDA\",\n      \"nom\": \"Nvidia Corporation\",\n      \"score\": 76,\n      \"capitalisation\": \"large\",\n      \"source\": \"Bridgewater + Fundsmith + Insider (Mark Stevens)\",\n      \"raison\": \"Leader IA, achat insider renforce la confiance\",\n      \"risque\": \"Valorisation élevée, concurrence AMD/maisons conception\",\n      \"pourquoi_detaille\": \"Bridgewater a augmenté sa position de 2,6% à 3,7%, Fundsmith a ajouté 4,9%, et un insider (Mark Stevens) a acheté 20 000 actions. Ce triple signal est très positif, indiquant une confiance dans la demande soutenue pour les GPU IA. Le contexte macro est neutre, mais le secteur des semi-conducteurs est privilégié.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"TSM\",\n      \"nom\": \"Taiwan Semiconductor Manufacturing Co.\",\n      \"score\": 72,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa + Bridgewater\",\n      \"raison\": \"Bénéficiaire direct de la demande IA, monopole de fait\",\n      \"risque\": \"Risque géopolitique Taïwan, dépendance à un seul client\",\n      \"pourquoi_detaille\": \"Appaloosa a augmenté sa position de 5,0% à 7,6%, et Bridgewater est également acheteur. TSM est un bénéficiaire clé de la demande de semi-conducteurs pour l'IA, avec un avantage technologique. Le contexte macro est neutre, mais le risque géopolitique est à surveiller.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"QSR\",\n      \"nom\": \"Restaurant Brands International Inc.\",\n      \"score\": 65,\n      \"capitalisation\": \"large\",\n      \"source\": \"Pershing Square (increase 10,0%→12,2%)\",\n      \"raison\": \"Position concentrée de Pershing, modèle de franchise résilient\",\n      \"risque\": \"Inflation alimentaire, concurrence restauration rapide\",\n      \"pourquoi_detaille\": \"Pershing Square a augmenté sa position de 10,0% à 12,2%, indiquant une forte conviction. Le modèle de franchise de QSR (Burger King, Tim Hortons) est résilient en période d'inflation. Le signal est isolé mais solide, car Pershing est un fonds concentré.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    }\n  ],\n  \"propositions_vente\": [\n    {\n      \"ticker\": \"CHV\",\n      \"nom\": \"Chevron Corporation\",\n      \"score\": 71,\n      \"capitalisation\": \"large\",\n      \"source\": \"Berkshire Hathaway (réduction 7,2%→6,6%)\",\n      \"raison\": \"Réduction Berkshire, pression réglementaire énergie\",\n      \"risque\": \"Rebond des prix du pétrole, dividende élevé\",\n      \"pourquoi_detaille\": \"Berkshire a réduit sa position de 7,2% à 6,6%, signalant un désengagement progressif. Le contexte macro est neutre, mais les pressions réglementaires sur les énergies fossiles et la transition énergétique pourraient peser. Le signal est modéré car la réduction est faible.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"BABA\",\n      \"nom\": \"Alibaba Group Holding Ltd.\",\n      \"score\": 68,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa (réduction 10,9%→7,3%)\",\n      \"raison\": \"Risque réglementaire Chine, concurrence accrue\",\n      \"risque\": \"Rebond si détente géopolitique, valorisation basse\",\n      \"pourquoi_detaille\": \"Appaloosa a réduit sa position de 10,9% à 7,3%, signalant une prudence sur la Chine. Le contexte macro est défavorable pour les valeurs chinoises, avec des risques réglementaires et géopolitiques. Le signal est renforcé par l'absence d'autres acheteurs.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"HLT\",\n      \"nom\": \"Hilton Worldwide Holdings Inc.\",\n      \"score\": 66,\n      \"capitalisation\": \"large\",\n      \"source\": \"Pershing Square (exit 5,6%→0%)\",\n      \"raison\": \"Sortie complète de Pershing, secteur hôtelier sous pression\",\n      \"risque\": \"Rebond si reprise voyage, valorisation attractive\",\n      \"pourquoi_detaille\": \"Pershing Square a vendu l'intégralité de sa position de 5,6%, signalant un désengagement total. Le contexte macro est neutre, mais le secteur hôtelier pourrait souffrir d'un ralentissement économique. Le signal est fort car Pershing est un fonds concentré.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"META\",\n      \"nom\": \"Meta Platforms Inc.\",\n      \"score\": 62,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa (réduction 5,7%→4,2%) + Fundsmith (achat) + Insider (exercice options)\",\n      \"raison\": \"Réduction Appaloosa, signaux mitigés\",\n      \"risque\": \"Croissance publicitaire, investissements IA lourds\",\n      \"pourquoi_detaille\": \"Appaloosa a réduit sa position de 5,7% à 4,2%, tandis que Fundsmith a acheté 5,8% et Mark Zuckerberg a exercé des options. Les signaux sont mitigés, mais la réduction d'Appaloosa est un signal de vente modéré. Le contexte macro est neutre.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"MSFT\",\n      \"nom\": \"Microsoft Corporation\",\n      \"score\": 58,\n      \"capitalisation\": \"large\",\n      \"source\": \"Pershing Square (new 15,3%) vs Appaloosa (réduction 3,5%→0,6%) + Insider (vente)\",\n      \"raison\": \"Signaux contradictoires, vente insider Satya Nadella\",\n      \"risque\": \"Surperformance si IA monétise, valorisation élevée\",\n      \"pourquoi_detaille\": \"Pershing Square a initié une position de 15,3%, mais Appaloosa a réduit de 3,5% à 0,6% et le CEO Satya Nadella a vendu 2 000 actions. Les signaux sont contradictoires, mais la vente insider est un signal négatif. Le contexte macro est neutre.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    }\n  ],\n  \"small_mid_caps\": [\n    {\n      \"ticker\": \"SNDK\",\n      \"nom\": \"SanDisk Corp.\",\n      \"score\": 64,\n      \"capitalisation\": \"mid\",\n      \"source\": \"Appaloosa (new 3,0%)\",\n      \"raison\": \"Cycle mémoire NAND en reprise, supercycle IA demande stockage\",\n      \"risque\": \"Liquidité plus faible, volatilité élevée\",\n      \"pourquoi_detaille\": \"Appaloosa a initié une position de 3,0%, signalant une conviction dans le cycle de reprise des mémoires NAND. Le contexte macro est neutre, mais la demande de stockage pour l'IA est un catalyseur. Le signal est isolé mais intéressant pour une mid-cap.\"\n    },\n    {\n      \"ticker\": \"LYFT\",\n      \"nom\": \"Lyft Inc.\",\n      \"score\": 35,\n      \"capitalisation\": \"mid\",\n      \"source\": \"Short interest élevé (23,4% du flottant)\",\n      \"raison\": \"Short interest très élevé, risque de short squeeze\",\n      \"risque\": \"Fondamentaux faibles, concurrence Uber\",\n      \"pourquoi_detaille\": \"Le short interest de 23,4% est un signal de vente fort, indiquant que les vendeurs à découvert sont très positionnés. Cependant, cela peut aussi créer un risque de short squeeze. Le contexte macro est neutre, mais les fondamentaux de Lyft sont sous pression.\"\n    },\n    {\n      \"ticker\": \"GST\",\n      \"nom\": \"Genco Shipping & Trading Ltd.\",\n      \"score\": 45",
+    "propositions_achat": [],
+    "propositions_vente": [],
+    "small_mid_caps": [],
+    "secteurs_a_privilegier": [],
+    "secteurs_a_eviter": [],
+    "avertissement": "Signaux à analyser uniquement — pas des conseils en investissement.",
+    "timestamp": "2026-06-07T15:54:36.466559Z"
   }
 }
