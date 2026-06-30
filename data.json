@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-29T18:30:33.298222Z",
+    "generated_at": "2026-06-30T17:30:47.396698Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -17,78 +17,78 @@
     "disclaimer": "Les 13F sont publiés ~45 jours après la fin du trimestre : les prix ont déjà évolué. Signaux à analyser, pas un conseil en investissement personnalisé."
   },
   "market": {
-    "as_of": "29/06/2026",
+    "as_of": "30/06/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime neutre (VIX 17.7). S&P 500 à 7 432. Brent 73.7 $. 10 ans US à 0.44 %.",
+    "regime_text": "Régime neutre (VIX 16.7). S&P 500 à 7 493. Brent 73.3 $. 10 ans US à 0.44 %.",
     "snapshot": [
       {
         "label": "S&P 500",
-        "value": "7 432",
-        "change": "+1,05 %",
+        "value": "7 493",
+        "change": "+0,71 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Nasdaq",
-        "value": "25 751",
-        "change": "+1,79 %",
+        "value": "26 158",
+        "change": "+1,31 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Dow Jones",
-        "value": "52 226",
-        "change": "+0,68 %",
+        "value": "52 371",
+        "change": "+0,36 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "Russell 2000",
-        "value": "3 002",
-        "change": "-0,28 %",
-        "dir": "down",
+        "value": "3 024",
+        "change": "+0,46 %",
+        "dir": "up",
         "sub": ""
       },
       {
         "label": "VIX",
-        "value": "17.7",
-        "change": "-3,91 %",
+        "value": "16.7",
+        "change": "-5,61 %",
         "dir": "down",
         "sub": ""
       },
       {
         "label": "Brent",
-        "value": "73.7 $",
-        "change": "+2,40 %",
+        "value": "73.3 $",
+        "change": "+0,22 %",
         "dir": "up",
         "sub": ""
       },
       {
         "label": "WTI",
-        "value": "70.6 $",
-        "change": "+1,91 %",
-        "dir": "up",
+        "value": "69.8 $",
+        "change": "-1,37 %",
+        "dir": "down",
         "sub": ""
       },
       {
         "label": "Or",
-        "value": "4 039.4 $",
-        "change": "-0,96 %",
-        "dir": "down",
+        "value": "4 040.7 $",
+        "change": "+0,46 %",
+        "dir": "up",
         "sub": ""
       },
       {
         "label": "10 ans US",
         "value": "0.44 %",
-        "change": "+0,05 %",
-        "dir": "flat",
+        "change": "+0,87 %",
+        "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "60 191 $",
-        "change": "+1,11 %",
-        "dir": "up",
+        "value": "58 292 $",
+        "change": "-3,07 %",
+        "dir": "down",
         "sub": ""
       }
     ],
@@ -97,33 +97,33 @@
     "news": [
       {
         "src": "Stock Market News",
-        "time": "29/06",
-        "title": "S&P jumps and Nasdaq surges nearly 2% as communication services and tech rebound"
+        "time": "30/06",
+        "title": "Petrobras introduces price caps to limit natural gas volatility"
       },
       {
         "src": "Stock Market News",
-        "time": "29/06",
-        "title": "Why is Nano Nuclear Energy stock rallying today?"
+        "time": "30/06",
+        "title": "OpenAI introduces GeneBench-Pro to test AI research judgment"
       },
       {
         "src": "Stock Market News",
-        "time": "29/06",
-        "title": "TD Cowen names top SMIDCAP stock pick for 2026"
+        "time": "30/06",
+        "title": "UK may intervene in $110 billion Paramount-Warner Bros Discovery deal"
       },
       {
         "src": "Stock Market News",
-        "time": "29/06",
-        "title": "Taiwan raids Super Micro offices in expanding chip exports probe, shares fall"
+        "time": "30/06",
+        "title": "C1 Fund CEO defends NAV gap, says digital asset IPO pipeline most active in years"
       },
       {
         "src": "Stock Market News",
-        "time": "29/06",
-        "title": "Luigi Mangione’s federal trial over CEO killing moved to January as state murder trial looms"
+        "time": "30/06",
+        "title": "Wall Street regulator calls for public comment on ’novel’ exchange traded funds"
       },
       {
         "src": "Stock Market News",
-        "time": "29/06",
-        "title": "Applied Materials, Palo Alto Networks among market cap stock movers on Monday"
+        "time": "30/06",
+        "title": "Blue Origin shifts to hybrid launch system after rocket explosion"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
@@ -235,7 +235,7 @@
       "fund_slug": "berkshire",
       "consensus": "Aussi chez : Bridgewater Associates, FMR LLC (Fidelity), Goldman Sachs Group.",
       "context": "Berkshire Hathaway renforce Alphabet Inc (GOOGL).",
-      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 22.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 23.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -271,7 +271,7 @@
       "fund_slug": "pershing",
       "consensus": "—",
       "context": "Pershing Square allège Alphabet Inc (GOOG).",
-      "cross_read": "Depuis la date du portefeuille, GOOG a monté de 22.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GOOG a monté de 23.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -289,7 +289,7 @@
       "fund_slug": "pershing",
       "consensus": "—",
       "context": "Pershing Square ouvre une position sur Microsoft Corp (MSFT).",
-      "cross_read": "Depuis la date du portefeuille, MSFT a reculé de 0.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, MSFT a monté de 0.5 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -307,7 +307,7 @@
       "fund_slug": "pershing",
       "consensus": "—",
       "context": "Pershing Square sort totalement de Hilton Worldwide Hldgs Inc (HLT).",
-      "cross_read": "Depuis la date du portefeuille, HLT a monté de 10.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, HLT a monté de 9.0 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -325,7 +325,7 @@
       "fund_slug": "pershing",
       "consensus": "—",
       "context": "Pershing Square renforce Restaurant Brands Intl Inc (QSR).",
-      "cross_read": "Depuis la date du portefeuille, QSR a reculé de 0.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, QSR a reculé de 1.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -343,7 +343,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Alibaba Group Hldg Ltd (BABA).",
-      "cross_read": "Depuis la date du portefeuille, BABA a reculé de 23.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, BABA a reculé de 22.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -361,7 +361,7 @@
       "fund_slug": "appaloosa",
       "consensus": "Aussi chez : Bridgewater Associates.",
       "context": "Appaloosa renforce Amazon Com Inc (AMZN).",
-      "cross_read": "Depuis la date du portefeuille, AMZN a monté de 15.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, AMZN a monté de 14.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -379,7 +379,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa renforce Ishares Inc (EWY).",
-      "cross_read": "Depuis la date du portefeuille, EWY a monté de 59.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, EWY a monté de 64.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -397,7 +397,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Meta Platforms Inc (META).",
-      "cross_read": "Depuis la date du portefeuille, META a reculé de 1.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, META a reculé de 2.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -415,7 +415,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Microsoft Corp (MSFT).",
-      "cross_read": "Depuis la date du portefeuille, MSFT a reculé de 0.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, MSFT a monté de 0.5 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -433,7 +433,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa ouvre une position sur Sandisk Corp (SNDK).",
-      "cross_read": "Depuis la date du portefeuille, SNDK a monté de 215.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, SNDK a monté de 247.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -451,7 +451,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa renforce Uber Technologies Inc (UBER).",
-      "cross_read": "Depuis la date du portefeuille, UBER a monté de 3.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, UBER a monté de 1.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -469,7 +469,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa renforce Vistra Corp (VST).",
-      "cross_read": "Depuis la date du portefeuille, VST a monté de 9.5 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, VST a monté de 7.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -487,7 +487,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Whirlpool Corp (WHR).",
-      "cross_read": "Depuis la date du portefeuille, WHR a reculé de 29.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, WHR a reculé de 28.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -505,7 +505,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa sort totalement de American Airls Group Inc (AAL).",
-      "cross_read": "Depuis la date du portefeuille, AAL a monté de 65.5 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, AAL a monté de 67.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -523,7 +523,7 @@
       "fund_slug": "appaloosa",
       "consensus": "Aussi chez : Bridgewater Associates.",
       "context": "Appaloosa renforce Taiwan Semiconductor Manufac (TSM).",
-      "cross_read": "Depuis la date du portefeuille, TSM a monté de 33.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, TSM a monté de 39.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -541,7 +541,7 @@
       "fund_slug": "bridgewater",
       "consensus": "Aussi chez : Appaloosa.",
       "context": "Bridgewater Associates renforce Amazon Com Inc (AMZN).",
-      "cross_read": "Depuis la date du portefeuille, AMZN a monté de 15.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, AMZN a monté de 14.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -559,7 +559,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates allège Ishares Tr (IVV).",
-      "cross_read": "Depuis la date du portefeuille, IVV a monté de 14.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, IVV a monté de 15.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -577,7 +577,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates renforce Nvidia Corporation (NVDA).",
-      "cross_read": "Depuis la date du portefeuille, NVDA a monté de 11.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, NVDA a monté de 13.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -595,7 +595,7 @@
       "fund_slug": "fidelity",
       "consensus": "Aussi chez : Berkshire Hathaway, Bridgewater Associates, Goldman Sachs Group.",
       "context": "FMR LLC (Fidelity) renforce Alphabet Inc (GOOGL).",
-      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 22.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 23.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -613,7 +613,7 @@
       "fund_slug": "berkshire",
       "consensus": "—",
       "context": "Berkshire Hathaway ouvre une position sur Delta Air Lines Inc (DAL).",
-      "cross_read": "Depuis la date du portefeuille, DAL a monté de 39.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, DAL a monté de 41.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -631,7 +631,7 @@
       "fund_slug": "berkshire",
       "consensus": "—",
       "context": "Berkshire Hathaway sort totalement de Visa Inc (V).",
-      "cross_read": "Depuis la date du portefeuille, V a monté de 13.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, V a monté de 13.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -649,7 +649,7 @@
       "fund_slug": "pershing",
       "consensus": "—",
       "context": "Pershing Square allège Alphabet Inc (GOOGL).",
-      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 22.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 23.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -667,7 +667,7 @@
       "fund_slug": "appaloosa",
       "consensus": "Aussi chez : Bridgewater Associates.",
       "context": "Appaloosa allège Advanced Micro Devices Inc (AMD).",
-      "cross_read": "Depuis la date du portefeuille, AMD a monté de 164.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, AMD a monté de 185.0 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -703,7 +703,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Corning Inc (GLW).",
-      "cross_read": "Depuis la date du portefeuille, GLW a monté de 85.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GLW a monté de 86.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -739,7 +739,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Jd.Com Inc (JD).",
-      "cross_read": "Depuis la date du portefeuille, JD a reculé de 12.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, JD a reculé de 10.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -757,7 +757,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Kraneshares Trust (KWEB).",
-      "cross_read": "Depuis la date du portefeuille, KWEB a reculé de 14.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, KWEB a reculé de 13.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -775,7 +775,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège L3Harris Technologies Inc (LHX).",
-      "cross_read": "Depuis la date du portefeuille, LHX a reculé de 16.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, LHX a reculé de 15.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -793,7 +793,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Lyft Inc (LYFT).",
-      "cross_read": "Depuis la date du portefeuille, LYFT a monté de 11.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, LYFT a monté de 11.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -811,7 +811,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Pdd Holdings Inc (PDD).",
-      "cross_read": "Depuis la date du portefeuille, PDD a reculé de 25.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, PDD a reculé de 25.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -829,7 +829,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Qualcomm Inc (QCOM).",
-      "cross_read": "Depuis la date du portefeuille, QCOM a monté de 49.0 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, QCOM a monté de 44.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -847,7 +847,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa allège Rtx Corporation (RTX).",
-      "cross_read": "Depuis la date du portefeuille, RTX a reculé de 2.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, RTX a reculé de 1.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -865,7 +865,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa sort totalement de Mohawk Inds Inc (MHK).",
-      "cross_read": "Depuis la date du portefeuille, MHK a monté de 20.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, MHK a monté de 21.0 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -883,7 +883,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa sort totalement de Owens Corning New (OC).",
-      "cross_read": "Depuis la date du portefeuille, OC a monté de 42.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, OC a monté de 47.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -901,7 +901,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates allège Adobe Inc (ADBE).",
-      "cross_read": "Depuis la date du portefeuille, ADBE a reculé de 15.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, ADBE a reculé de 16.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -919,7 +919,7 @@
       "fund_slug": "bridgewater",
       "consensus": "Aussi chez : Appaloosa.",
       "context": "Bridgewater Associates allège Advanced Micro Devices Inc (AMD).",
-      "cross_read": "Depuis la date du portefeuille, AMD a monté de 164.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, AMD a monté de 185.0 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -937,7 +937,7 @@
       "fund_slug": "bridgewater",
       "consensus": "Aussi chez : Berkshire Hathaway, FMR LLC (Fidelity), Goldman Sachs Group.",
       "context": "Bridgewater Associates renforce Alphabet Inc (GOOGL).",
-      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 22.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 23.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -955,7 +955,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates allège Booking Holdings Inc (BKNG).",
-      "cross_read": "Depuis la date du portefeuille, BKNG a monté de 9.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, BKNG a monté de 6.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -973,7 +973,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates renforce Broadcom Inc (AVGO).",
-      "cross_read": "Depuis la date du portefeuille, AVGO a monté de 21.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, AVGO a monté de 21.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -991,7 +991,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates allège Ge Vernova Inc (GEV).",
-      "cross_read": "Depuis la date du portefeuille, GEV a monté de 27.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GEV a monté de 32.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1009,7 +1009,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates allège Lam Research Corp (LRCX).",
-      "cross_read": "Depuis la date du portefeuille, LRCX a monté de 92.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, LRCX a monté de 103.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1027,7 +1027,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates renforce Micron Technology Inc (MU).",
-      "cross_read": "Depuis la date du portefeuille, MU a monté de 231.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, MU a monté de 241.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal d'achat isolé — surveiller et comprendre la thèse avant d'envisager quoi que ce soit."
     },
     {
@@ -1045,7 +1045,7 @@
       "fund_slug": "bridgewater",
       "consensus": "Aussi chez : Appaloosa.",
       "context": "Bridgewater Associates ouvre une position sur Taiwan Semiconductor Manufac (TSM).",
-      "cross_read": "Depuis la date du portefeuille, TSM a monté de 33.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, TSM a monté de 39.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -1063,7 +1063,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates sort totalement de Salesforce Inc (CRM).",
-      "cross_read": "Depuis la date du portefeuille, CRM a reculé de 14.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, CRM a reculé de 16.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1081,7 +1081,7 @@
       "fund_slug": "goldman",
       "consensus": "Aussi chez : Berkshire Hathaway, Bridgewater Associates, FMR LLC (Fidelity).",
       "context": "Goldman Sachs Group renforce Alphabet Inc (GOOGL).",
-      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 22.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, GOOGL a monté de 23.9 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal convergent entre plusieurs fonds — à analyser au regard de votre stratégie. Pas un conseil."
     },
     {
@@ -1099,7 +1099,7 @@
       "fund_slug": "berkshire",
       "consensus": "—",
       "context": "Berkshire Hathaway sort totalement de Dominos Pizza Inc (DPZ).",
-      "cross_read": "Depuis la date du portefeuille, DPZ a reculé de 18.5 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, DPZ a reculé de 17.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1117,7 +1117,7 @@
       "fund_slug": "berkshire",
       "consensus": "—",
       "context": "Berkshire Hathaway sort totalement de Mastercard Incorporated (MA).",
-      "cross_read": "Depuis la date du portefeuille, MA a monté de 2.6 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, MA a monté de 2.5 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1135,7 +1135,7 @@
       "fund_slug": "berkshire",
       "consensus": "—",
       "context": "Berkshire Hathaway sort totalement de Unitedhealth Group Inc (UNH).",
-      "cross_read": "Depuis la date du portefeuille, UNH a monté de 55.5 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, UNH a monté de 54.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1153,7 +1153,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa sort totalement de Iqvia Hldgs Inc (IQV).",
-      "cross_read": "Depuis la date du portefeuille, IQV a monté de 12.4 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, IQV a monté de 12.3 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1171,7 +1171,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa sort totalement de Ishares Tr (FXI).",
-      "cross_read": "Depuis la date du portefeuille, FXI a reculé de 11.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, FXI a reculé de 11.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1189,7 +1189,7 @@
       "fund_slug": "appaloosa",
       "consensus": "—",
       "context": "Appaloosa sort totalement de United Airls Hldgs Inc (UAL).",
-      "cross_read": "Depuis la date du portefeuille, UAL a monté de 47.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, UAL a monté de 48.1 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1207,7 +1207,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates sort totalement de Servicenow Inc (NOW).",
-      "cross_read": "Depuis la date du portefeuille, NOW a reculé de 4.2 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, NOW a reculé de 6.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     },
     {
@@ -1225,7 +1225,7 @@
       "fund_slug": "bridgewater",
       "consensus": "—",
       "context": "Bridgewater Associates sort totalement de Workday Inc (WDAY).",
-      "cross_read": "Depuis la date du portefeuille, WDAY a reculé de 4.7 %. À intégrer avant toute décision (effet du décalage 45 j).",
+      "cross_read": "Depuis la date du portefeuille, WDAY a reculé de 5.8 %. À intégrer avant toute décision (effet du décalage 45 j).",
       "suggestion": "Signal de vente isolé — à pondérer, ne pas copier mécaniquement."
     }
   ],
@@ -1726,7 +1726,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Achat de 20 000 actions",
       "shares": 20000,
       "price": 125.5,
@@ -1738,7 +1738,7 @@
       "type": "buy",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Achat de 3 000 actions",
       "shares": 3000,
       "price": 190.25,
@@ -1750,7 +1750,7 @@
       "type": "sell",
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "date": "2026-06-27",
+      "date": "2026-06-28",
       "note": "Vente de 2 000 actions",
       "shares": 2000,
       "price": 420.0,
@@ -1762,7 +1762,7 @@
       "type": "sell",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-06-24",
+      "date": "2026-06-25",
       "note": "Vente de 20 000 actions",
       "shares": 20000,
       "price": 250.0,
@@ -1774,7 +1774,7 @@
       "type": "event",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-06-26",
+      "date": "2026-06-27",
       "note": "Exercice d'options sur 2 000 actions",
       "shares": 2000,
       "price": 500.0,
@@ -1798,7 +1798,7 @@
       "type": "short_elevated",
       "ticker": "LYFT",
       "name": "Lyft, Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Short interest : 24.6% du flottant · 6.5 jours pour couvrir",
       "short_pct": 24.6
     },
@@ -1808,7 +1808,7 @@
       "type": "short_elevated",
       "ticker": "MHK",
       "name": "Mohawk Industries, Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Short interest : 15.4% du flottant · 7.2 jours pour couvrir",
       "short_pct": 15.4
     },
@@ -1818,7 +1818,7 @@
       "type": "buy",
       "ticker": "MSFT",
       "name": "Microsoft",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Microsoft → 8.5% (+8.5%)"
     },
     {
@@ -1827,7 +1827,7 @@
       "type": "buy",
       "ticker": "ASML",
       "name": "ASML Holding",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : ASML Holding → 7.1% (+7.1%)"
     },
     {
@@ -1836,7 +1836,7 @@
       "type": "buy",
       "ticker": "NVO",
       "name": "Novo Nordisk",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Novo Nordisk → 6.4% (+6.4%)"
     },
     {
@@ -1845,7 +1845,7 @@
       "type": "buy",
       "ticker": "META",
       "name": "Meta Platforms",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Meta Platforms → 5.8% (+5.8%)"
     },
     {
@@ -1854,7 +1854,7 @@
       "type": "buy",
       "ticker": "PYPL",
       "name": "PayPal Holdings",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : PayPal Holdings → 5.2% (+5.2%)"
     },
     {
@@ -1863,7 +1863,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "Nvidia",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Nvidia → 4.9% (+4.9%)"
     },
     {
@@ -1872,7 +1872,7 @@
       "type": "buy",
       "ticker": "ACN",
       "name": "Accenture",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Accenture → 4.7% (+4.7%)"
     },
     {
@@ -1881,7 +1881,7 @@
       "type": "buy",
       "ticker": "GOOG",
       "name": "Alphabet",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Alphabet → 4.5% (+4.5%)"
     },
     {
@@ -1890,7 +1890,7 @@
       "type": "buy",
       "ticker": "BN",
       "name": "Danone",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Danone → 4.3% (+4.3%)"
     },
     {
@@ -1899,7 +1899,7 @@
       "type": "buy",
       "ticker": "IDEXY",
       "name": "Industria de Diseno",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Fundsmith Equity Fund : Industria de Diseno → 4.0% (+4.0%)"
     },
     {
@@ -1908,7 +1908,7 @@
       "type": "context",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.17%"
     },
     {
@@ -1917,7 +1917,7 @@
       "type": "context",
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.05%"
     },
     {
@@ -1926,7 +1926,7 @@
       "type": "context",
       "ticker": "NVDA",
       "name": "Nvidia Corp.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.91%"
     },
     {
@@ -1935,7 +1935,7 @@
       "type": "context",
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.88%"
     },
     {
@@ -1944,7 +1944,7 @@
       "type": "context",
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.72%"
     },
     {
@@ -1953,7 +1953,7 @@
       "type": "context",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.66%"
     },
     {
@@ -1962,7 +1962,7 @@
       "type": "context",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.55%"
     },
     {
@@ -1971,7 +1971,7 @@
       "type": "context",
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.43%"
     },
     {
@@ -1980,7 +1980,7 @@
       "type": "context",
       "ticker": "NOVO-B.CO",
       "name": "Novo Nordisk",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.42%"
     },
     {
@@ -1989,7 +1989,7 @@
       "type": "context",
       "ticker": "JPM",
       "name": "JPMorgan Chase",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.40%"
     },
     {
@@ -1997,23 +1997,32 @@
       "entity": "SoftBank (PR Newswire)",
       "type": "buy",
       "ticker": "",
-      "name": "Human Development Fund Launches \"Beyond the Pitch\" to Spotlight Families in Seven Competin",
-      "date": "Mon, 29 Ju",
-      "note": "Human Development Fund Launches \"Beyond the Pitch\" to Spotlight Families in Seven Competing Nations"
+      "name": "GREENWOOD INDUSTRIES ACQUIRES DIAMOND ROOFING, EXPANDING ITS FAMILY OF TRUSTED REGIONAL BR",
+      "date": "Tue, 30 Ju",
+      "note": "GREENWOOD INDUSTRIES ACQUIRES DIAMOND ROOFING, EXPANDING ITS FAMILY OF TRUSTED REGIONAL BRANDS IN NEW YORK"
+    },
+    {
+      "source": "Conglomérat",
+      "entity": "SoftBank (PR Newswire)",
+      "type": "buy",
+      "ticker": "",
+      "name": "MDT Showcases Full Portfolio of TMR and AMR Magnetic Sensors at Electronica Shanghai 2026",
+      "date": "Tue, 30 Ju",
+      "note": "MDT Showcases Full Portfolio of TMR and AMR Magnetic Sensors at Electronica Shanghai 2026"
     }
   ],
   "ai_analysis": {
-    "rapport": "Le contexte de marché est neutre avec un VIX à 17,7 et des taux longs très bas (10 ans US à 0,44 %), ce qui favorise les actifs risqués malgré une absence de catalyseur macro fort. Les dépôts 13F du T1 2026 montrent un consensus marqué autour des géants technologiques exposés à l'IA, avec des augmentations significatives de positions chez GOOGL (Berkshire, Bridgewater, Fidelity) et AMZN (Appaloosa, Bridgewater). En parallèle, Pershing Square a opéré un pivot radical en réduisant fortement GOOG et en entrant massivement sur MSFT, tandis que Fundsmith Equity Fund renforce également MSFT, ASML, NVO et NVDA. Les signaux insiders sont mitigés : achats de dirigeants chez NVDA et AAPL, mais ventes chez MSFT et TSLA. Le consensus thématique se concentre sur l'IA, les semi-conducteurs et l'énergie, avec un évitement du SaaS décoté et de l'exposition Chine non couverte. Attention au décalage de 45 jours des 13F : les positions reflètent les décisions fin mars 2026.",
+    "rapport": "Le contexte de marché est neutre avec un VIX à 16.7 et des taux longs très bas (10Y US à 0.44%), favorisant les actifs risqués. Les dépôts 13F du T1 2026 montrent une forte convergence sur les valeurs technologiques liées à l'IA et au cloud, avec Berkshire, Appaloosa et Bridgewater augmentant leurs positions sur GOOGL, AMZN et TSM. Pershing Square effectue un pivot majeur en réduisant GOOG et en initiant une position massive sur MSFT, tandis qu'Appaloosa réduit BABA et META. Les achats d'insiders sur NVDA et AAPL renforcent le signal. Les secteurs à privilégier sont l'IA/semi-conducteurs et l'énergie, tandis que le SaaS décoté et l'exposition Chine non-couverte sont à éviter. Signal à analyser uniquement, pas un conseil en investissement.",
     "propositions_achat": [
       {
         "ticker": "GOOGL",
         "nom": "Alphabet Inc.",
         "score": 82,
         "capitalisation": "large",
-        "source": "Consensus Berkshire + Bridgewater + Fidelity + 3 autres fonds",
-        "raison": "Positionnement IA convergent (Gemini, cloud GCP), valorisation raisonnée vs croissance cloud",
+        "source": "Consensus Berkshire + Bridgewater + Fidelity + Goldman Sachs",
+        "raison": "Positionnement IA convergent, valorisation raisonnée vs croissance cloud",
         "risque": "Antitrust Google Search, compression marges IA",
-        "pourquoi_detaille": "Berkshire a augmenté sa position de 2,0% à 5,9%, Bridgewater et Fidelity sont également acheteurs. La thèse repose sur la monétisation de l'IA via le cloud et la publicité, avec un P/E inférieur à celui de ses pairs. Le signal est renforcé par l'absence de vente d'insiders significative.",
+        "pourquoi_detaille": "Berkshire a augmenté sa position de 2,0% à 5,9%, rejoint par Bridgewater, Fidelity et Goldman Sachs. La thèse repose sur la croissance du cloud (Google Cloud) et les investissements en IA, avec une valorisation attractive par rapport aux pairs. Le signal est renforcé par l'absence de vente d'insiders significative.",
         "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
@@ -2021,10 +2030,10 @@
         "nom": "Amazon.com Inc.",
         "score": 78,
         "capitalisation": "large",
-        "source": "Appaloosa + Bridgewater + 2 autres fonds",
-        "raison": "AWS et IA générative (Bedrock, Trainium), croissance des marges retail",
-        "risque": "Régulation cloud, concurrence Microsoft Azure",
-        "pourquoi_detaille": "Appaloosa a augmenté sa position de 7,3% à 15,2%, Bridgewater de 1,6% à 4,1%. La thèse mise sur la reprise des dépenses cloud et le leadership d'AWS dans l'IA. Le signal est solide mais moins convergent que GOOGL.",
+        "source": "Appaloosa + Bridgewater",
+        "raison": "Croissance AWS et retail, valorisation attractive",
+        "risque": "Ralentissement consommation, concurrence cloud",
+        "pourquoi_detaille": "Appaloosa a augmenté sa position de 7,3% à 15,2% et Bridgewater de 1,6% à 4,1%. La thèse mise sur la croissance d'AWS (IA) et la reprise du retail. Le consensus est fort mais moins large que pour GOOGL.",
         "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
@@ -2032,21 +2041,21 @@
         "nom": "Microsoft Corp.",
         "score": 74,
         "capitalisation": "large",
-        "source": "Pershing Square (nouveau 15,3%) + Fundsmith (8,5%)",
-        "raison": "Pivot de Pershing Square vers MSFT, positionnement IA (Copilot, Azure)",
-        "risque": "Valorisation élevée, vente d'insider par Satya Nadella",
-        "pourquoi_detaille": "Pershing Square a vendu GOOG et acheté MSFT en position massive (15,3%), tandis que Fundsmith a ajouté 8,5%. Cependant, le CEO Satya Nadella a vendu 2 000 actions, ce qui tempère le signal. La thèse repose sur la domination d'Azure et l'intégration de l'IA dans Office.",
+        "source": "Pershing Square (new 15,3%) + Fundsmith",
+        "raison": "Pivot de Pershing Square, positionnement IA solide",
+        "risque": "Valorisation élevée, vente insider par Nadella",
+        "pourquoi_detaille": "Pershing Square a initié une position massive de 15,3%, et Fundsmith a augmenté sa position à 8,5%. Cependant, le CEO Satya Nadella a vendu 2 000 actions, ce qui tempère le signal. La thèse reste solide sur Azure et l'IA.",
         "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
         "ticker": "NVDA",
-        "nom": "Nvidia Corp.",
+        "nom": "Nvidia Corporation",
         "score": 71,
         "capitalisation": "large",
-        "source": "Bridgewater (3,7%) + Fundsmith (4,9%) + Insider achat (Mark Stevens)",
-        "raison": "Demande IA soutenue, achat d'insider (directeur) renforce la confiance",
-        "risque": "Valorisation extrême, concurrence AMD/maisons, cycle de produits",
-        "pourquoi_detaille": "Bridgewater a augmenté sa position de 2,6% à 3,7%, Fundsmith a initié une position à 4,9%, et le directeur Mark Stevens a acheté 20 000 actions. Le signal est diversifié mais la valorisation élevée et la cyclicité du marché des GPU limitent le score.",
+        "source": "Bridgewater + Fundsmith + Insider Mark Stevens",
+        "raison": "Leader IA, achat insider par un directeur",
+        "risque": "Valorisation élevée, concurrence AMD/maisons",
+        "pourquoi_detaille": "Bridgewater a augmenté sa position de 2,6% à 3,7%, Fundsmith a ajouté 4,9%, et le directeur Mark Stevens a acheté 20 000 actions. Le signal est diversifié mais la valorisation reste un risque.",
         "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
@@ -2054,23 +2063,24 @@
         "nom": "Taiwan Semiconductor Manufacturing Co.",
         "score": 68,
         "capitalisation": "large",
-        "source": "Appaloosa (7,6%) + Bridgewater (consensus)",
-        "raison": "Bénéficiaire direct de la demande IA, quasi-monopole fabrication avancée",
-        "risque": "Risque géopolitique Taïwan, dépendance à Apple/Nvidia",
-        "pourquoi_detaille": "Appaloosa a augmenté sa position de 5,0% à 7,6%, et Bridgewater est également acheteur. La thèse mise sur le super-cycle IA et la position incontournable de TSM. Le risque géopolitique est le principal frein.",
+        "source": "Appaloosa + Bridgewater",
+        "raison": "Bénéficiaire direct de la demande IA, exposition Taiwan",
+        "risque": "Risque géopolitique Taiwan, cycle semi-conducteurs",
+        "pourquoi_detaille": "Appaloosa a augmenté sa position de 5,0% à 7,6% et Bridgewater est également présent. La thèse repose sur la demande de puces IA, mais le risque géopolitique est élevé.",
         "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       }
     ],
     "propositions_vente": [
       {
         "ticker": "GOOG",
-        "nom": "Alphabet Inc. (Class C)",
+        "nom": "Alphabet Inc. (sans droit de vote)",
         "score": 72,
         "capitalisation": "large",
         "source": "Pershing Square (réduction de 12,5% à 0,7%)",
-        "raison": "Pivot massif de Pershing Square vers MSFT, signal de sous-performance relative",
-        "pourquoi_detaille": "Pershing Square a réduit sa position de 12,5% à 0,7%, indiquant une perte de confiance dans la structure de gouvernance (actions sans droit de vote) ou la dynamique concurrentielle face à Microsoft. Le signal est fort mais isolé.",
-        "risque": "Risque si GOOGL surperforme grâce à l'IA"
+        "raison": "Pivot vers MSFT, signal de sortie fort",
+        "risque": "GOOGL peut surperformer si le marché préfère la classe A",
+        "pourquoi_detaille": "Pershing Square a réduit massivement sa position, passant de 12,5% à 0,7%, tout en initiant MSFT. Cela suggère un changement de thèse. Cependant, Berkshire augmente GOOGL, ce qui crée une divergence.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
         "ticker": "BABA",
@@ -2078,29 +2088,32 @@
         "score": 65,
         "capitalisation": "large",
         "source": "Appaloosa (réduction de 10,9% à 7,3%)",
-        "raison": "Réduction de position malgré la reprise chinoise, signe de prudence",
-        "pourquoi_detaille": "Appaloosa a réduit sa position de 10,9% à 7,3%, suggérant une prise de profit ou une inquiétude sur la régulation chinoise. Le signal est modéré car d'autres fonds peuvent être acheteurs.",
-        "risque": "Risque si la reprise chinoise s'accélère"
+        "raison": "Réduction de position, risque réglementaire Chine",
+        "risque": "Rebond possible si la Chine stimule l'économie",
+        "pourquoi_detaille": "Appaloosa a réduit sa position de 10,9% à 7,3%, signalant une prudence sur la Chine. Le contexte macro est défavorable avec des tensions géopolitiques.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
         "ticker": "META",
         "nom": "Meta Platforms Inc.",
         "score": 62,
         "capitalisation": "large",
-        "source": "Appaloosa (réduction de 5,7% à 4,2%) + Fundsmith (achat 5,8%)",
-        "raison": "Signal mitigé : Appaloosa réduit, Fundsmith achète, mais insider exerce options",
-        "pourquoi_detaille": "Appaloosa a réduit sa position de 5,7% à 4,2%, tandis que Fundsmith a acheté 5,8%. L'exercice d'options par Zuckerberg n'est pas une vente mais dilue. Le signal est neutre à légèrement négatif.",
-        "risque": "Risque si les dépenses IA (Reality Labs) pèsent sur les marges"
+        "source": "Appaloosa (réduction de 5,7% à 4,2%) + Fundsmith (achat)",
+        "raison": "Réduction d'Appaloosa, divergence avec Fundsmith",
+        "risque": "Fundsmith achète, ce qui peut limiter la baisse",
+        "pourquoi_detaille": "Appaloosa a réduit sa position de 5,7% à 4,2%, mais Fundsmith a augmenté la sienne à 5,8%. Le signal est mitigé, mais la réduction d'un fonds concentré comme Appaloosa est notable.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
         "ticker": "CHV",
-        "nom": "Chevron Corp.",
+        "nom": "Chevron Corporation",
         "score": 58,
         "capitalisation": "large",
-        "source": "Berkshire Hathaway (réduction de 7,2% à 6,6%)",
-        "raison": "Réduction légère mais significative de Berkshire, signal de prudence sur le pétrole",
-        "pourquoi_detaille": "Berkshire a réduit sa position de 7,2% à 6,6%, peut-être pour réallouer vers GOOGL. Le signal est faible car la réduction est modeste et le pétrole reste soutenu par les tensions géopolitiques.",
-        "risque": "Risque si les prix du pétrole montent"
+        "source": "Berkshire (réduction de 7,2% à 6,6%)",
+        "raison": "Réduction légère mais significative de Berkshire",
+        "risque": "L'énergie peut bénéficier de tensions géopolitiques",
+        "pourquoi_detaille": "Berkshire a réduit sa position de 7,2% à 6,6%, signalant une prudence sur le secteur pétrolier malgré un Brent à 73,3 $.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       },
       {
         "ticker": "HLT",
@@ -2108,9 +2121,10 @@
         "score": 55,
         "capitalisation": "large",
         "source": "Pershing Square (exit de 5,6% à 0%)",
-        "raison": "Sortie totale de Pershing Square, signal de fin de thèse",
-        "pourquoi_detaille": "Pershing Square a vendu l'intégralité de sa position de 5,6%, indiquant une fin de thèse (peut-être valorisation ou ralentissement du voyage). Le signal est isolé mais net.",
-        "risque": "Risque si le secteur du voyage rebondit"
+        "raison": "Sortie totale de Pershing Square",
+        "risque": "Le secteur hôtelier peut rebondir avec la reprise économique",
+        "pourquoi_detaille": "Pershing Square a vendu l'intégralité de sa position de 5,6%, signalant une perte de confiance dans le secteur hôtelier.",
+        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
       }
     ],
     "small_mid_caps": [
@@ -2119,9 +2133,10 @@
         "nom": "SanDisk Corp.",
         "score": 64,
         "capitalisation": "mid",
-        "source": "Appaloosa (nouveau 3,0%) + Druckenmiller (consensus)",
+        "source": "Appaloosa (new 3,0%) + Druckenmiller",
         "raison": "Cycle mémoire NAND en reprise, supercycle IA demande stockage",
-        "risque": "Liquidité plus faible, volatilité élevée"
+        "risque": "Liquidité plus faible, volatilité élevée",
+        "pourquoi_detaille": "Appaloosa a initié une position de 3,0%, et Druckenmiller est également présent. La thèse repose sur la reprise du cycle NAND et la demande de stockage liée à l'IA."
       },
       {
         "ticker": "QSR",
@@ -2129,8 +2144,9 @@
         "score": 60,
         "capitalisation": "mid",
         "source": "Pershing Square (augmentation de 10,0% à 12,2%)",
-        "raison": "Position concentrée de Pershing Square, thèse de redressement (BK, Tim Hortons)",
-        "risque": "Concurrence dans la restauration rapide, inflation des coûts alimentaires"
+        "raison": "Augmentation de position par Pershing Square, valeur défensive",
+        "risque": "Consommation discrétionnaire sensible à l'inflation",
+        "pourquoi_detaille": "Pershing Square a augmenté sa position de 10,0% à 12,2%, signalant une conviction dans le secteur de la restauration rapide."
       },
       {
         "ticker": "VST",
@@ -2138,21 +2154,20 @@
         "score": 58,
         "capitalisation": "mid",
         "source": "Appaloosa (augmentation de 2,2% à 5,1%)",
-        "raison": "Exposition à l'énergie électrique, bénéficiaire de la demande IA (data centers)",
-        "risque": "Régulation environnementale, volatilité des prix de l'électricité"
+        "raison": "Exposition à l'énergie, bénéficiaire de la demande IA pour data centers",
+        "risque": "Régulation environnementale, volatilité des prix de l'énergie",
+        "pourquoi_detaille": "Appaloosa a augmenté sa position de 2,2% à 5,1%, misant sur la demande d'électricité pour les data centers IA."
       }
     ],
     "secteurs_a_privilegier": [
       "IA / semi-conducteurs",
-      "Cloud computing",
-      "Énergie électrique (data centers)"
+      "Énergie (géopolitique)"
     ],
     "secteurs_a_eviter": [
       "SaaS décoté",
-      "Exposition Chine non-couverte",
-      "Hôtellerie (voyage)"
+      "Exposition Chine non-couverte"
     ],
     "avertissement": "Ces signaux proviennent de dépôts 13F avec ~45 jours de décalage et d'achats insiders publics. Ils reflètent les décisions passées de tiers. Signaux à analyser uniquement — pas des conseils en investissement personnalisés.",
-    "timestamp": "2026-06-29T18:31:20.089483Z"
+    "timestamp": "2026-06-30T17:31:30.226199Z"
   }
 }
