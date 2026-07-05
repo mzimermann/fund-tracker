@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-04T14:54:24.690069Z",
+    "generated_at": "2026-07-05T15:46:40.290062Z",
     "is_demo": false,
     "quarter": "T1 2026",
     "portfolio_date": "2026-03-31",
@@ -17,9 +17,9 @@
     "disclaimer": "Les 13F sont publiés ~45 jours après la fin du trimestre : les prix ont déjà évolué. Signaux à analyser, pas un conseil en investissement personnalisé."
   },
   "market": {
-    "as_of": "04/07/2026",
+    "as_of": "05/07/2026",
     "regime_label": "Risque-on",
-    "regime_text": "Régime neutre (VIX 16.1). S&P 500 à 7 483. Brent 72.1 $. 10 ans US à 0.44 %.",
+    "regime_text": "Régime neutre (VIX 16.1). S&P 500 à 7 483. Brent 72.1 $. 10 ans US à 0.45 %.",
     "snapshot": [
       {
         "label": "S&P 500",
@@ -79,16 +79,16 @@
       },
       {
         "label": "10 ans US",
-        "value": "0.44 %",
-        "change": "+0,00 %",
-        "dir": "flat",
+        "value": "0.45 %",
+        "change": "+0,22 %",
+        "dir": "up",
         "sub": ""
       },
       {
         "label": "Bitcoin",
-        "value": "62 615 $",
-        "change": "+0,11 %",
-        "dir": "up",
+        "value": "62 660 $",
+        "change": "-0,68 %",
+        "dir": "down",
         "sub": ""
       }
     ],
@@ -97,33 +97,33 @@
     "news": [
       {
         "src": "Stock Market News",
-        "time": "04/07",
-        "title": "Is AI inflation transitory?"
+        "time": "05/07",
+        "title": "Saudi Arabia stocks lower at close of trade; Tadawul All Share down 0.26%"
+      },
+      {
+        "src": "Stock Market News",
+        "time": "05/07",
+        "title": "US Supreme Court to hear gun, LGBT, voting rights cases in next term"
+      },
+      {
+        "src": "Stock Market News",
+        "time": "05/07",
+        "title": "Foxconn second-quarter revenue jumps, company cautions on geopolitics"
+      },
+      {
+        "src": "Stock Market News",
+        "time": "05/07",
+        "title": "Uber pauses Europe food delivery expansion as it pursues Delivery Hero deal, FT reports"
+      },
+      {
+        "src": "Stock Market News",
+        "time": "05/07",
+        "title": "India regains favor as investors seek shelter from AI-driven market swings"
       },
       {
         "src": "Stock Market News",
         "time": "04/07",
-        "title": "Iran conflict strengthens case for power, metals over oil: strategist"
-      },
-      {
-        "src": "Stock Market News",
-        "time": "04/07",
-        "title": "UK’s Next plans takeover bid for Harvey Nichols, Sky News reports"
-      },
-      {
-        "src": "Stock Market News",
-        "time": "04/07",
-        "title": "Korea’s KOSPI P/E valuation falls to lowest since global financial crisis"
-      },
-      {
-        "src": "Stock Market News",
-        "time": "04/07",
-        "title": "Trump Accounts to debut as US kicks off 250th Independence Day celebrations"
-      },
-      {
-        "src": "Stock Market News",
-        "time": "04/07",
-        "title": "Continental sells ContiTech to Lone Star Funds for €4 bln"
+        "title": "Russia stocks lower at close of trade; MOEX Russia Index unchanged"
       }
     ],
     "providers_note": "Prix : Yahoo Finance · Macro : TradingEconomics · Actualité : RSS Investing.com/FinancialJuice (repli Google News)."
@@ -1726,7 +1726,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Achat de 20 000 actions",
       "shares": 20000,
       "price": 125.5,
@@ -1738,7 +1738,7 @@
       "type": "buy",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Achat de 3 000 actions",
       "shares": 3000,
       "price": 190.25,
@@ -1750,7 +1750,7 @@
       "type": "sell",
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "date": "2026-07-02",
+      "date": "2026-07-03",
       "note": "Vente de 2 000 actions",
       "shares": 2000,
       "price": 420.0,
@@ -1762,7 +1762,7 @@
       "type": "sell",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "note": "Vente de 20 000 actions",
       "shares": 20000,
       "price": 250.0,
@@ -1774,7 +1774,7 @@
       "type": "event",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-07-01",
+      "date": "2026-07-02",
       "note": "Exercice d'options sur 2 000 actions",
       "shares": 2000,
       "price": 500.0,
@@ -1786,7 +1786,7 @@
       "type": "short_elevated",
       "ticker": "LYFT",
       "name": "Lyft, Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Short interest : 24.6% du flottant · 6.5 jours pour couvrir",
       "short_pct": 24.6
     },
@@ -1796,7 +1796,7 @@
       "type": "short_elevated",
       "ticker": "MHK",
       "name": "Mohawk Industries, Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Short interest : 15.4% du flottant · 7.2 jours pour couvrir",
       "short_pct": 15.4
     },
@@ -1806,7 +1806,7 @@
       "type": "buy",
       "ticker": "MSFT",
       "name": "Microsoft",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Microsoft → 8.5% (+8.5%)"
     },
     {
@@ -1815,7 +1815,7 @@
       "type": "buy",
       "ticker": "ASML",
       "name": "ASML Holding",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : ASML Holding → 7.1% (+7.1%)"
     },
     {
@@ -1824,7 +1824,7 @@
       "type": "buy",
       "ticker": "NVO",
       "name": "Novo Nordisk",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Novo Nordisk → 6.4% (+6.4%)"
     },
     {
@@ -1833,7 +1833,7 @@
       "type": "buy",
       "ticker": "META",
       "name": "Meta Platforms",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Meta Platforms → 5.8% (+5.8%)"
     },
     {
@@ -1842,7 +1842,7 @@
       "type": "buy",
       "ticker": "PYPL",
       "name": "PayPal Holdings",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : PayPal Holdings → 5.2% (+5.2%)"
     },
     {
@@ -1851,7 +1851,7 @@
       "type": "buy",
       "ticker": "NVDA",
       "name": "Nvidia",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Nvidia → 4.9% (+4.9%)"
     },
     {
@@ -1860,7 +1860,7 @@
       "type": "buy",
       "ticker": "ACN",
       "name": "Accenture",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Accenture → 4.7% (+4.7%)"
     },
     {
@@ -1869,7 +1869,7 @@
       "type": "buy",
       "ticker": "GOOG",
       "name": "Alphabet",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Alphabet → 4.5% (+4.5%)"
     },
     {
@@ -1878,7 +1878,7 @@
       "type": "buy",
       "ticker": "BN",
       "name": "Danone",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Danone → 4.3% (+4.3%)"
     },
     {
@@ -1887,7 +1887,7 @@
       "type": "buy",
       "ticker": "IDEXY",
       "name": "Industria de Diseno",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Fundsmith Equity Fund : Industria de Diseno → 4.0% (+4.0%)"
     },
     {
@@ -1896,7 +1896,7 @@
       "type": "context",
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.17%"
     },
     {
@@ -1905,7 +1905,7 @@
       "type": "context",
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~1.05%"
     },
     {
@@ -1914,7 +1914,7 @@
       "type": "context",
       "ticker": "NVDA",
       "name": "Nvidia Corp.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.91%"
     },
     {
@@ -1923,7 +1923,7 @@
       "type": "context",
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.88%"
     },
     {
@@ -1932,7 +1932,7 @@
       "type": "context",
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.72%"
     },
     {
@@ -1941,7 +1941,7 @@
       "type": "context",
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.66%"
     },
     {
@@ -1950,7 +1950,7 @@
       "type": "context",
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.55%"
     },
     {
@@ -1959,7 +1959,7 @@
       "type": "context",
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.43%"
     },
     {
@@ -1968,7 +1968,7 @@
       "type": "context",
       "ticker": "NOVO-B.CO",
       "name": "Novo Nordisk",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.42%"
     },
     {
@@ -1977,7 +1977,7 @@
       "type": "context",
       "ticker": "JPM",
       "name": "JPMorgan Chase",
-      "date": "2026-07-04",
+      "date": "2026-07-05",
       "note": "Top 10 NBIM (staticque) — poids estimé ~0.40%"
     },
     {
@@ -1985,162 +1985,28 @@
       "entity": "SoftBank (PR Newswire)",
       "type": "buy",
       "ticker": "",
-      "name": "Z, ZG Investors Have Opportunity to Lead Zillow Group, Inc. Securities Fraud Lawsuit Filed",
+      "name": "PHR Deadline: PHR Investors with Losses in Excess of $100K Have Opportunity to Lead Phrees",
+      "date": "Sun, 5 Jul",
+      "note": "PHR Deadline: PHR Investors with Losses in Excess of $100K Have Opportunity to Lead Phreesia, Inc. Securities Fraud Lawsuit"
+    },
+    {
+      "source": "Conglomérat",
+      "entity": "SoftBank (PR Newswire)",
+      "type": "buy",
+      "ticker": "",
+      "name": "CALX Deadline: CALX Investors with Losses in Excess of $100K Have Opportunity to Lead Cali",
       "date": "Sat, 4 Jul",
-      "note": "Z, ZG Investors Have Opportunity to Lead Zillow Group, Inc. Securities Fraud Lawsuit Filed by The Rosen Law Firm"
+      "note": "CALX Deadline: CALX Investors with Losses in Excess of $100K Have Opportunity to Lead Calix, Inc. Securities Fraud Lawsuit"
     }
   ],
   "ai_analysis": {
-    "rapport": "Le contexte de marché est neutre avec un VIX à 16,1, un S&P 500 à 7 483 et un Nasdaq à 25 833. Les taux longs restent bas (10 ans US à 0,44 %), ce qui soutient les valorisations des grandes capitalisations technologiques. Les dépôts 13F du T1 2026 montrent un fort consensus d'achat sur Alphabet (GOOGL) avec Berkshire Hathaway augmentant sa position de 2,0 % à 5,9 %, rejoint par Bridgewater, Fidelity et Goldman Sachs. En parallèle, Pershing Square réduit fortement sa position GOOG (de 12,5 % à 0,7 %) mais initie une position massive sur Microsoft (MSFT) à 15,3 %, signalant un arbitrage entre les deux géants du cloud. Appaloosa renforce Amazon (AMZN) à 15,2 % et Uber (UBER) à 7,7 %, tout en réduisant Alibaba (BABA) et Microsoft (MSFT). Les achats d'insiders notables incluent Tim Cook (AAPL) et Mark Stevens (NVDA). Le consensus thématique privilégie l'IA (GOOGL, AMZN, TSM, NVDA) et l'énergie (VST), tandis que les ventes ciblent les valeurs exposées à la Chine (BABA) et les hôtels (HLT).",
-    "propositions_achat": [
-      {
-        "ticker": "GOOGL",
-        "nom": "Alphabet Inc.",
-        "score": 82,
-        "capitalisation": "large",
-        "source": "Consensus Berkshire + Bridgewater + Fidelity + Goldman Sachs",
-        "raison": "Positionnement IA convergent (Gemini, cloud GCP), valorisation raisonnée vs croissance cloud",
-        "risque": "Antitrust Google Search, compression marges IA",
-        "pourquoi_detaille": "Berkshire Hathaway a augmenté sa position de 2,0% à 5,9% au T1 2026, rejoint par Bridgewater, Fidelity et Goldman Sachs. Alphabet bénéficie d'une croissance accélérée de son cloud (GCP) et de l'IA générative (Gemini). La valorisation reste attractive par rapport à ses pairs technologiques. Le signal est renforcé par l'absence de vente d'insiders significative.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "AMZN",
-        "nom": "Amazon.com Inc.",
-        "score": 78,
-        "capitalisation": "large",
-        "source": "Appaloosa + Bridgewater",
-        "raison": "Croissance AWS et retail, valorisation attractive après correction",
-        "risque": "Régulation antitrust, concurrence cloud (Microsoft, Google)",
-        "pourquoi_detaille": "Appaloosa a augmenté sa position de 7,3% à 15,2% et Bridgewater de 1,6% à 4,1%. Amazon bénéficie de la reprise du retail et de la croissance d'AWS, soutenue par l'IA. La valorisation est raisonnable après le récent recul. Le consensus est fort entre deux grands fonds.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "MSFT",
-        "nom": "Microsoft Corp.",
-        "score": 76,
-        "capitalisation": "large",
-        "source": "Pershing Square (new 15,3%) + Fundsmith Equity Fund (8,5%)",
-        "raison": "Leader IA (Copilot, Azure), nouvelle position majeure de Pershing",
-        "risque": "Valorisation élevée, concurrence cloud, vente insider par Satya Nadella",
-        "pourquoi_detaille": "Pershing Square a initié une position massive de 15,3% au T1 2026, et Fundsmith Equity Fund a ajouté 8,5%. Microsoft est le leader de l'IA d'entreprise avec Copilot et Azure. Cependant, le CEO Satya Nadella a vendu 2 000 actions, ce qui tempère légèrement le signal. Le consensus reste très fort.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "NVDA",
-        "nom": "Nvidia Corporation",
-        "score": 74,
-        "capitalisation": "large",
-        "source": "Bridgewater (increase) + Fundsmith (4,9%) + Insider Mark Stevens (buy 20k actions)",
-        "raison": "Demande IA soutenue, achat insider significatif",
-        "risque": "Valorisation extrême, concurrence (AMD, in-house), cycle de commandes",
-        "pourquoi_detaille": "Bridgewater a augmenté sa position de 2,6% à 3,7%, Fundsmith a ajouté 4,9%, et le directeur Mark Stevens a acheté 20 000 actions. Nvidia reste le principal bénéficiaire de l'infrastructure IA. Le signal est renforcé par l'achat insider, mais la valorisation élevée et la concurrence d'AMD et des solutions in-house limitent le score.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      },
-      {
-        "ticker": "UBER",
-        "nom": "Uber Technologies Inc.",
-        "score": 68,
-        "capitalisation": "large",
-        "source": "Appaloosa (increase 2,2%→7,7%)",
-        "raison": "Amélioration des marges, diversification (livraison, fret)",
-        "risque": "Régulation des travailleurs, concurrence (Lyft), valorisation tendue",
-        "pourquoi_detaille": "Appaloosa a augmenté sa position de 2,2% à 7,7% au T1 2026. Uber améliore ses marges et diversifie ses activités (livraison, fret). Le signal est solide mais isolé (un seul fonds), et le short interest élevé de Lyft (24,6%) indique un risque sectoriel.",
-        "drift_note": "Vérifier drift depuis date 13F avant toute décision"
-      }
-    ],
-    "propositions_vente": [
-      {
-        "ticker": "GOOG",
-        "nom": "Alphabet Inc. (Class C)",
-        "score": 71,
-        "capitalisation": "large",
-        "source": "Pershing Square (réduction 12,5%→0,7%)",
-        "raison": "Arbitrage vers MSFT, perte de confiance d'un grand fonds",
-        "pourquoi_detaille": "Pershing Square a réduit sa position de 12,5% à 0,7% au T1 2026, tout en initiant une position massive sur MSFT. Cela suggère un arbitrage entre les deux géants du cloud. Le signal est fort mais isolé à un fonds.",
-        "risque": "Risque si Alphabet surperforme grâce à l'IA"
-      },
-      {
-        "ticker": "BABA",
-        "nom": "Alibaba Group Holding Ltd.",
-        "score": 65,
-        "capitalisation": "large",
-        "source": "Appaloosa (réduction 10,9%→7,3%)",
-        "raison": "Exposition Chine, régulation persistante, réduction de position",
-        "pourquoi_detaille": "Appaloosa a réduit sa position de 10,9% à 7,3% au T1 2026. Alibaba reste exposé aux risques réglementaires chinois et à une croissance ralentie. Le signal est modéré car la réduction n'est pas massive.",
-        "risque": "Risque si la Chine assouplit sa régulation ou si Alibaba rebondit"
-      },
-      {
-        "ticker": "HLT",
-        "nom": "Hilton Worldwide Holdings Inc.",
-        "score": 63,
-        "capitalisation": "large",
-        "source": "Pershing Square (exit 5,6%→0%)",
-        "raison": "Sortie totale d'un fonds value, possible ralentissement du tourisme",
-        "pourquoi_detaille": "Pershing Square a vendu l'intégralité de sa position de 5,6% au T1 2026. Cela peut indiquer une anticipation de ralentissement du secteur hôtelier. Le signal est fort mais isolé.",
-        "risque": "Risque si le tourisme reste robuste"
-      },
-      {
-        "ticker": "CHV",
-        "nom": "Chevron Corporation",
-        "score": 55,
-        "capitalisation": "large",
-        "source": "Berkshire Hathaway (réduction 7,2%→6,6%)",
-        "raison": "Réduction légère, possible rotation vers l'IA",
-        "pourquoi_detaille": "Berkshire a réduit sa position de 7,2% à 6,6% au T1 2026. La réduction est modeste, mais elle intervient alors que Berkshire augmente GOOGL. Le signal est faible car la position reste significative.",
-        "risque": "Risque si les prix du pétrole augmentent"
-      },
-      {
-        "ticker": "META",
-        "nom": "Meta Platforms Inc.",
-        "score": 52,
-        "capitalisation": "large",
-        "source": "Appaloosa (réduction 5,7%→4,2%) + Fundsmith (achat 5,8%)",
-        "raison": "Signal mitigé : réduction d'Appaloosa mais achat de Fundsmith",
-        "pourquoi_detaille": "Appaloosa a réduit sa position de 5,7% à 4,2% au T1 2026, tandis que Fundsmith a acheté 5,8%. Le signal est contradictoire, ce qui réduit la confiance. Le CEO Mark Zuckerberg a exercé des options, ce qui n'est pas un signal de vente direct.",
-        "risque": "Risque si Meta surperforme grâce à l'IA et aux Reels"
-      }
-    ],
-    "small_mid_caps": [
-      {
-        "ticker": "SNDK",
-        "nom": "SanDisk Corp.",
-        "score": 64,
-        "capitalisation": "mid",
-        "source": "Appaloosa (new 3,0%)",
-        "raison": "Cycle mémoire NAND en reprise, supercycle IA demande stockage",
-        "risque": "Liquidité plus faible, volatilité élevée"
-      },
-      {
-        "ticker": "VST",
-        "nom": "Vistra Corp.",
-        "score": 62,
-        "capitalisation": "mid",
-        "source": "Appaloosa (increase 2,2%→5,1%)",
-        "raison": "Demande d'électricité pour l'IA, énergie régulée",
-        "risque": "Régulation environnementale, dépendance aux prix du gaz"
-      },
-      {
-        "ticker": "QSR",
-        "nom": "Restaurant Brands International Inc.",
-        "score": 60,
-        "capitalisation": "mid",
-        "source": "Pershing Square (increase 10,0%→12,2%)",
-        "raison": "Position concentrée d'un fonds value, résilience du fast-food",
-        "risque": "Inflation des coûts alimentaires, concurrence"
-      }
-    ],
-    "secteurs_a_privilegier": [
-      "IA / semi-conducteurs",
-      "Cloud computing",
-      "Énergie (électricité pour IA)"
-    ],
-    "secteurs_a_eviter": [
-      "Exposition Chine (BABA)",
-      "Hôtellerie (HLT)",
-      "SaaS décoté"
-    ],
-    "avertissement": "Ces signaux proviennent de dépôts 13F avec ~45 jours de décalage et d'achats insiders publics. Ils reflètent les décisions passées de tiers. Signaux à analyser uniquement — pas des conseils en investissement personnalisés.",
-    "timestamp": "2026-07-04T14:55:01.135654Z"
+    "rapport": "{\n  \"rapport\": \"Le contexte de marché est neutre avec un VIX à 16,1 et des taux longs très bas (10 ans US à 0,45 %), favorisant les actifs risqués. Les dépôts 13F du T1 2026 montrent une forte convergence sur Alphabet (GOOGL) avec Berkshire Hathaway en tête (augmentation de 2,0 % à 5,9 %), suivi par Bridgewater, Fidelity et Goldman Sachs. Parallèlement, Pershing Square a réduit sa position GOOG de 12,5 % à 0,7 % tout en initiant une position massive sur Microsoft (15,3 %), créant un signal contradictoire. Appaloosa renforce Amazon (15,2 %), Uber (7,7 %) et TSM (7,6 %), tout en réduisant Alibaba et Microsoft. Les achats d'insiders sont notables sur NVDA (Mark Stevens, 20 000 actions) et AAPL (Tim Cook, 3 000 actions), tandis que les ventes de dirigeants chez MSFT et TSLA tempèrent l'enthousiasme. Le consensus thématique privilégie l'IA (GOOGL, AMZN, TSM, NVDA) et l'énergie (VST), au détriment du SaaS décoté et de l'exposition Chine non couverte. Signal à analyser uniquement, pas un conseil en investissement.\",\n  \"propositions_achat\": [\n    {\n      \"ticker\": \"GOOGL\",\n      \"nom\": \"Alphabet Inc.\",\n      \"score\": 82,\n      \"capitalisation\": \"large\",\n      \"source\": \"Consensus Berkshire + Bridgewater + Fidelity + Goldman Sachs\",\n      \"raison\": \"Positionnement IA convergent (Gemini, cloud GCP), valorisation raisonnée vs croissance cloud, achat insider indirect via fonds value.\",\n      \"risque\": \"Antitrust Google Search, compression marges IA, décalage 45 jours des 13F.\",\n      \"pourquoi_detaille\": \"Berkshire Hathaway a augmenté sa position de 2,0 % à 5,9 % au T1 2026, rejoint par Bridgewater, Fidelity et Goldman Sachs. La thèse repose sur la monétisation de l'IA via le cloud et la publicité, avec un P/E inférieur à 25x pour une croissance à deux chiffres. Le signal est renforcé par l'absence de vente d'insiders majeurs. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"AMZN\",\n      \"nom\": \"Amazon.com Inc.\",\n      \"score\": 78,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa + Bridgewater\",\n      \"raison\": \"Augmentation significative d'Appaloosa (7,3 %→15,2 %) et Bridgewater (1,6 %→4,1 %), AWS bénéficie de la demande IA.\",\n      \"risque\": \"Ralentissement e-commerce, régulation antitrust, décalage 45 jours.\",\n      \"pourquoi_detaille\": \"Appaloosa a doublé sa position à 15,2 % du portefeuille, et Bridgewater a augmenté à 4,1 %. La thèse mise sur AWS comme leader du cloud IA, avec une croissance des revenus cloud de 20 %+ attendue. Le signal est cohérent avec le consensus IA. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"TSM\",\n      \"nom\": \"Taiwan Semiconductor Manufacturing Co.\",\n      \"score\": 76,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa + Bridgewater\",\n      \"raison\": \"Augmentation d'Appaloosa (5,0 %→7,6 %) et Bridgewater (présent), bénéficie du supercycle IA et de la demande de semi-conducteurs.\",\n      \"risque\": \"Tensions géopolitiques Taïwan/Chine, cyclicité des semi-conducteurs, décalage 45 jours.\",\n      \"pourquoi_detaille\": \"Appaloosa a augmenté sa position à 7,6 % et Bridgewater est également présent. TSM est le fabricant exclusif des puces IA (Nvidia, AMD), avec une croissance des revenus de 30 %+ attendue. Le signal est renforcé par le consensus IA. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"NVDA\",\n      \"nom\": \"Nvidia Corporation\",\n      \"score\": 74,\n      \"capitalisation\": \"large\",\n      \"source\": \"Bridgewater + Fundsmith + Insider (Mark Stevens)\",\n      \"raison\": \"Bridgewater augmente (2,6 %→3,7 %), Fundsmith initie (4,9 %), achat insider de 20 000 actions par un directeur.\",\n      \"risque\": \"Valorisation élevée (P/E 50x+), concurrence AMD/Intel, décalage 45 jours.\",\n      \"pourquoi_detaille\": \"Bridgewater a augmenté sa position à 3,7 %, Fundsmith a initié une position à 4,9 %, et Mark Stevens (directeur) a acheté 20 000 actions. La thèse repose sur la domination des GPU IA, avec une croissance des revenus de 50 %+ attendue. Le signal est fort mais tempéré par la valorisation élevée. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"MSFT\",\n      \"nom\": \"Microsoft Corporation\",\n      \"score\": 68,\n      \"capitalisation\": \"large\",\n      \"source\": \"Pershing Square + Fundsmith\",\n      \"raison\": \"Pershing Square initie une position massive (15,3 %), Fundsmith augmente (8,5 %), Azure bénéficie de l'IA.\",\n      \"risque\": \"Vente d'insider par Satya Nadella (2 000 actions), concurrence cloud AWS/GCP, décalage 45 jours.\",\n      \"pourquoi_detaille\": \"Pershing Square a initié une position de 15,3 % et Fundsmith a augmenté à 8,5 %. La thèse mise sur Azure et l'intégration de l'IA (Copilot, OpenAI). Cependant, la vente d'insider par le CEO tempère le signal. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    }\n  ],\n  \"propositions_vente\": [\n    {\n      \"ticker\": \"BABA\",\n      \"nom\": \"Alibaba Group Holding Ltd.\",\n      \"score\": 72,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa (réduction 10,9 %→7,3 %)\",\n      \"raison\": \"Réduction significative d'Appaloosa, exposition Chine risquée (régulation, géopolitique), concurrence e-commerce accrue.\",\n      \"risque\": \"Rebond possible si détente géopolitique, valorisation basée sur la croissance future.\",\n      \"pourquoi_detaille\": \"Appaloosa a réduit sa position de 10,9 % à 7,3 %, signalant une prudence sur la Chine. La thèse de vente repose sur les risques réglementaires et la concurrence de PDD/Temu. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"CHV\",\n      \"nom\": \"Chevron Corporation\",\n      \"score\": 68,\n      \"capitalisation\": \"large\",\n      \"source\": \"Berkshire Hathaway (réduction 7,2 %→6,6 %)\",\n      \"raison\": \"Réduction de Berkshire, secteur pétrolier sous pression (prix du Brent stable à 72 $), transition énergétique.\",\n      \"risque\": \"Hausse des prix du pétrole due à des tensions géopolitiques, rendement du dividende attractif.\",\n      \"pourquoi_detaille\": \"Berkshire a réduit sa position de 7,2 % à 6,6 %, signalant une prudence sur le secteur énergétique. La thèse de vente repose sur un Brent stable et une pression réglementaire. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"META\",\n      \"nom\": \"Meta Platforms Inc.\",\n      \"score\": 65,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa (réduction 5,7 %→4,2 %) + Fundsmith (achat 5,8 %)\",\n      \"raison\": \"Signal contradictoire : Appaloosa réduit, Fundsmith achète. Risque réglementaire (antitrust, protection des données) et dépenses IA élevées.\",\n      \"risque\": \"Croissance des revenus publicitaires soutenue par l'IA, valorisation attractive.\",\n      \"pourquoi_detaille\": \"Appaloosa a réduit sa position de 5,7 % à 4,2 %, tandis que Fundsmith a initié une position à 5,8 %. Le signal est mitigé, mais la réduction d'Appaloosa suggère une prudence. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"HLT\",\n      \"nom\": \"Hilton Worldwide Holdings Inc.\",\n      \"score\": 62,\n      \"capitalisation\": \"large\",\n      \"source\": \"Pershing Square (exit 5,6 %→0 %)\",\n      \"raison\": \"Sortie totale de Pershing Square, secteur hôtelier cyclique, risque de ralentissement économique.\",\n      \"risque\": \"Rebond du tourisme, valorisation attractive après baisse.\",\n      \"pourquoi_detaille\": \"Pershing Square a vendu l'intégralité de sa position de 5,6 %, signalant une perte de confiance. La thèse de vente repose sur la cyclicité et les risques macro. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    },\n    {\n      \"ticker\": \"AAL\",\n      \"nom\": \"American Airlines Group Inc.\",\n      \"score\": 60,\n      \"capitalisation\": \"large\",\n      \"source\": \"Appaloosa (exit 3,1 %→0 %)\",\n      \"raison\": \"Sortie totale d'Appaloosa, secteur aérien sous pression (coûts carburant, concurrence, dette élevée).\",\n      \"risque\": \"Reprise de la demande de voyages, consolidation du secteur.\",\n      \"pourquoi_detaille\": \"Appaloosa a vendu l'intégralité de sa position de 3,1 %, signalant une prudence sur le secteur aérien. La thèse de vente repose sur les coûts élevés et la cyclicité. Attention au décalage de 45 jours des 13F.\",\n      \"drift_note\": \"Vérifier drift depuis date 13F avant toute décision\"\n    }\n  ],\n  \"small_mid_caps\": [\n    {\n      \"ticker\": \"SNDK\",\n      \"nom\": \"SanDisk Corp.\",\n      \"score\": 64,\n      \"capitalisation\": \"mid\",\n      \"source\": \"Appaloosa (new 0 %→3,0 %) + Druckenmiller\",\n      \"raison\": \"Cycle mémoire NAND en reprise, supercycle IA demande stockage, valorisation attractive.\",\n      \"risque\": \"Liquidité plus faible, volatilité élevée, concurrence Samsung/Micron.\",\n      \"pourquoi_detaille\": \"Appaloosa a initié une position de 3,0 % et Drucken",
+    "propositions_achat": [],
+    "propositions_vente": [],
+    "small_mid_caps": [],
+    "secteurs_a_privilegier": [],
+    "secteurs_a_eviter": [],
+    "avertissement": "Signaux à analyser uniquement — pas des conseils en investissement.",
+    "timestamp": "2026-07-05T15:47:16.437402Z"
   }
 }
